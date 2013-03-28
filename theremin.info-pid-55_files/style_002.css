@@ -1,0 +1,244 @@
+/* class to show a sortable li or div */
+.pn-sortable {
+    /* cursor: move; has to be set in the js code to avoid wrong css in non javascript environments */
+}
+
+/* classes to show/hide elements */
+.pn-hide {
+    display: none;
+}
+.pn-show {
+    display: inherit;
+}
+
+/* style for buttons in inline 'ajax' forms */
+button.pn-imagebutton {
+    padding: 0;
+    margin: 3px 0 0 0;
+    float: left;
+    border:none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* generic clearfix solution */
+.pn-clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/* IE-Patches for clearfix */
+.pn-clearfix {
+    display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .pn-clearfix {
+    height: 1px;
+}
+.pn-clearfix {
+    display: block;
+}
+/* End hide from IE-mac */
+
+/* Overflow-Method to clear float environments */
+.pn-floatbox { 
+    overflow: hidden; 
+}
+
+/* generic clearer */
+.pn-clearer {
+	clear: both;
+}
+
+/* generic secondary text */
+.pn-sub {
+	color:#999;
+	font-size: 0.9em;
+}
+
+
+/* Miscelaneous styles */
+.pn-toggle {
+	display:block;
+	background-image:url(../images/global/toggle.gif);
+	background-repeat:no-repeat;
+	background-position:0px;
+	border:0pt none;
+	margin:0pt;
+	/*overflow:hidden;*/
+	padding:0pt;
+	width:27px;
+	height:25px;
+}
+.pn-toggle-open, .pn-toggle-open:visited {
+	background-position:0pt -18px;
+	height:25px;
+	width:27px;
+}
+
+.pn-toggle-link, .pn-toggle-link:visited {
+	background-image:url(../images/global/toggle.gif);
+	background-repeat:no-repeat;
+	background-position:right top;
+	padding-right:25px;
+	border:0pt none;
+}
+.pn-toggle-link-open, .pn-toggle-link-open:visited {
+	background-position:right -18px;
+}
+
+
+/* main form style */
+form.pn-form {
+	border-bottom: 1px solid #ccc;
+	border-top-width: 1px;
+	border-left-width: 1px;
+	border-right-width: 1px;
+	margin: 15px 0px 10px 0px; /* top, right, bottom, left */
+}
+
+/* formrow is used to style a div containing a label and control pair */
+.pn-formrow {
+	border-top: 0px solid #ccc;
+	margin: 0.5em 0px 1em; /* top, right, bottom, left */
+	min-height: 2em;
+}
+
+/* style for a input control contained in a div of class formrow */
+/* style for a textarea control contained in a div of class formrow */
+/* style for a select control contained in a div of class formrow */
+/* style for a div contained in a div of class formrow - allows for grouping
+of a control and subsequent non label text.
+e.g. yes (radio) no (radio)*/
+div.pn-formrow input, div.pn-formrow textarea,
+div.pn-formrow select, div.pn-formrow span, div.pn-formrow label {
+	margin-left: 0;
+	text-align: left;
+}
+
+div.pn-formrow .pn-form-text {
+	display:block;
+	width:99%;
+	color: #494949;
+	padding:3px 2px;
+}
+
+/* style to the labels of multiple checkboxes */
+div.pn-formrow .pn-form-checklabel {
+	padding-right:10px;
+}
+
+/* styles to ensure that control elements inside the floated div directly above
+don't themselves float*/
+div.pn-formrow div input, div.pn-formrow div textarea,
+div.pn-formrow div select {
+	/* float: none;*/
+}
+
+/* styles to allow sub headings to be embedded correctly in admin forms */
+form.pn-form div h1, form.pn-form div h2, form.pn-form div h3,
+form.pn-form div h4, form.pn-form div h5, form.pn-form div h6 {
+	padding: 0;
+	text-transform:capitalize;
+}
+
+/* add the help cursor to labels that provide additional help via the title
+tag of the label */
+form.pn-formrow label.pn-formhelp {
+    cursor: help;
+}
+
+/* style for a label contained in a div of class formrow */
+div.pn-formrow label {
+	display: inline;
+	color: #494949;
+	font-weight: bold;
+	margin: 0px;
+    padding-right: 8px;
+	text-align: left;
+	line-height: 170%;
+}
+form.pn-adminform div.pn-formrow label {
+	font-weight: normal;
+}
+
+/* styles for the buttons on a form */
+form.pn-form div.pn-formbuttons {
+	text-align: left;
+	margin-left: 15em;
+}
+form.pn-form div.pn-formbuttons input, form.pn-form div.pn-formbuttons img {
+	margin: 5px;
+}
+form.pn-form div.pn-formbuttons button {
+    border: 0px;
+	padding: 0px;
+	background-color: transparent;
+}
+
+/* category selector */
+div.pn-formrow ul.selector_category {
+	list-style:none;
+	margin-left:0;
+}
+div.pn-formrow ul.selector_category li {
+	margin-left:0;
+}
+
+/* form fielset styles */
+fieldset.pn-form-fieldset legend {
+	background-color: inherit;
+	color: #0074B0;
+	padding: 5px;
+	font-weight:bold;
+	font-size:1.2em;
+}
+fieldset.pn-form-fieldset {
+	border: 1px solid #D9DAD5;
+	margin-bottom:1em;
+	padding:0px 15px;
+}
+
+/* collapsible styles */
+fieldset.pn-collapsed {
+	border: none;
+	border-top: 1px solid #D9DAD5;
+}
+
+
+/**************************************************
+* CSS Based Messages
+* http://www.edg3.co.uk/resources/css-based-messages/
+* http://creativecommons.org/licenses/by/2.5/
+**************************************************/
+div.pn-errormsg {
+	background: #ffe1da url('../images/icons/extrasmall/error.gif') 13px 50% no-repeat;
+	border: 2px solid #f34f4f;
+	color: #be0b0b;
+	padding: 5px 5px 5px 36px;
+	margin: 5px;
+}
+div.pn-informationmsg {
+	background: #dedfff url('../images/icons/extrasmall/info.gif') 13px 50% no-repeat;
+	border: 2px solid #9bb8d9;
+	color: #406299;
+	padding: 5px 5px 5px 36px;
+	margin: 5px;
+}
+div.pn-statusmsg {
+	background: #e2f9e3 url('../images/icons/extrasmall/button_ok.gif') 13px 50% no-repeat;
+	border: 2px solid #9c9;
+	color: #080;
+	padding: 5px 5px 5px 36px;
+	margin: 5px;
+}
+div.pn-warningmsg {
+	background: #fff8bf url('../images/icons/extrasmall/bell.gif') 13px 50% no-repeat;
+	border: 2px solid #ffd324;
+	color: #eb830c;
+	padding: 5px 5px 5px 36px;
+	margin: 5px;
+}
+
