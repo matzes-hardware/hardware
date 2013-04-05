@@ -1,0 +1,76 @@
+.dada { margin:0 auto; width: 1000px }
+
+/* Links defaults */
+
+a:link, a:visited, a:active {color: #004444; text-decoration: none }
+a:hover { text-decoration: none; color: #007777; text-decoration: none}
+
+/* General Font */
+div, p, td {font-family: Tahoma, Verdana, Arial, MS Sans Serif; color: black; font-size: 8pt}
+* {font-family: Tahoma, Verdana, Arial, MS Sans Serif; font-size: 8pt}
+
+/* Fonts */
+.fontNB {font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; font-weight: 700; background-color: #aadddd}
+.fontSB {font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 10px; font-weight: 700; background-color: #aadddd}
+.fontL {font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 12px}
+.fontX       { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 14pt; 
+               background-color: #669999; color: #FFFFFF; font-weight: bold }
+.fontXB {font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 16px; font-weight: 700; color: white}
+.fontS {font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 10px; font-weight: 500}
+.fontH {font-family:Arial; font-size: 12px; color:#3AB2B2}
+.fontD {font-family:Arial;font-size:10.0pt;mso-ansi-language:EN-GB}
+.fontDH {font-family:Arial;font-size:12.0pt;font-weight: bold; mso-ansi-language:EN-GB}
+.fontRH {font-family:Arial;font-size:12.0pt; mso-ansi-language:EN-GB}
+.fontR {font-family:Arial;font-size:12.0pt;font-weight: bold; mso-ansi-language:EN-GB}
+.fontL {font-family:Arial;color:white}
+.fontT {font-family:Tahoma, Verdana, Arial, Helvetica; color: black; font-size: 8pt; font-weight: 100 }
+.fontNewsText {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: normal }
+.fontNewsH1 {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: 600 }
+.fontNewsH2 {font-family:Arial, Helvetica; color: #222222; font-size: 10pt; font-weight: normal }
+.fontNewsH3 {font-family:Arial, Helvetica; color: #FFFFFF; font-size: 12pt; font-weight: bold; text-indent: 30 }
+.fontNewsH4 {font-family:Arial, Helvetica; color: #222222; font-size: 12pt; font-weight: bold }
+.fontOfferText {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: normal }
+.fontOfferH1 {font-family:Arial, Helvetica; color: #669999; font-size: 10pt; font-weight: bold }
+.fontOfferH2 {font-family:Arial, Helvetica; color: #669999; font-size: 12pt; font-weight: bold }
+.fontOfferH3 {font-family:Arial, Helvetica; color: #669999; font-size: 14pt; font-weight: bold }
+.fontFooter {font-family:Arial, Helvetica; color: #eeeeee; font-size: 8pt; font-weight: normal; text-align: center; }
+.borderFooter {border-top: 1px; border-top-style: dotted; border-color:#eeeeee; padding:3px; }
+.fontM {font-family:Arial, Helvetica, Verdana; color: black; font-size: 9pt; font-weight: bold }
+.fontMH {font-family:Arial, Helvetica; color: black; font-size: 10pt; font-weight: bold }
+.fontFormH {font-family:Arial, Helvetica; color: white; font-size: 10pt; font-weight: bold }
+.fontFormT {font-family:Arial, Helvetica; color: black; font-size: 9pt; font-weight: normal }
+.fontFormF {font-family:Arial, Helvetica; color: black; font-size: 9pt; font-weight: normal }
+.fontPath {font-family:Arial, Helvetica; color: black; font-size: 7pt; font-weight: normal }
+.fontHwlH1 {font-family:Arial, Helvetica; color: black; font-size: 8pt; font-weight: bold }
+.fontHwlH2 {font-family:Arial, Helvetica; color: black; font-size: 10pt; font-weight: normal }
+.fontHwlH3 {font-family:Arial, Helvetica; color: black; font-size: 12pt; font-weight: bold }
+.fontConName {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: bold }
+.fontConDate {font-family:Arial, Helvetica; color: #222222; background-color:#eaf6f6; font-size: 8pt; font-weight: normal }
+.fontConSize {font-family:Arial, Helvetica; color: #222222; background-color:#eaf6f6; font-size: 8pt; font-weight: normal }
+.fontConDetails {font-family:Arial, Helvetica; color: #222222;  background-color:#eaf6f6; font-size: 8pt; font-weight: normal }
+.fontConDescr {font-family:Arial, Helvetica; color: #222222; background-color:#eaf6f6; font-size: 8pt; font-weight: normal }
+.fontConInfo {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: normal }
+.fontConListHead {font-family:Arial, Helvetica; color: white; font-size: 8pt; font-weight: normal }
+.fontConText {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: normal }
+.fontConBox {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: normal }
+.fontConClass {font-family:Arial, Helvetica; color: #808080; font-size: 10pt; font-weight: bold }
+.fontConMd5 {font-family:Arial, Helvetica; color: #404040; font-size: 8pt; font-weight: normal }
+.fontSearch {font-family:Arial, Helvetica; color: #808080; font-size: 8pt; font-weight: normal }
+.fontNew {font-family:Arial, Helvetica; color: #ffffff;  background-color: #0096b5; font-size: 8pt; font-weight: bold }
+.fontPacH0 {font-family:Arial, Helvetica; color: #222222; font-size: 12pt; font-weight: bold }
+.fontPacProdDescr {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: bold }
+.fontPacBaseKey {font-family:monospace; color: #222222; font-size: 10pt; font-weight: normal }
+.fontPacHostId {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: normal }
+.fontPacCode {font-family:monospace; color: #222222; font-size: 10pt; font-weight: bold }
+.fontPacDate {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: normal }
+.fontPacButton {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: normal }
+.fontPacComment {font-family:Arial, Helvetica; color: #666666; font-size: 8pt; font-weight: normal }
+.fontPacColHead {font-family:Arial, Helvetica; color: #669999; font-size: 8pt; font-weight: normal }
+.fontPacTableHead {font-family:Arial, Helvetica; color: #FFFFFF; font-size: 10pt; font-weight: bold }
+.fontPacLics {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: normal }
+.fontMenuH {font-family:Arial, Helvetica; color: #FFFFFF; font-size: 10pt; font-weight: bold; background-color:#0096B5; text-indent: 5 }
+.fontMenuI {font-family:Arial, Helvetica; color: #000000; font-size: 10pt; font-weight: 500; background-color:#DEDBDE; text-indent: 5 }
+.fontSearch {font-family:Arial, Helvetica; color: #222222; font-size: 8pt; font-weight: normal }
+.fontTicker {font-family:Arial, Helvetica; color: #ffffff; font-size: 10pt; font-weight: normal;  text-indent: 50; text-decoration:blink }
+#f1 { position:fixed; top:190px; left:670px; width:200px; height:150px; background-color:#eaf6f6; }
+
