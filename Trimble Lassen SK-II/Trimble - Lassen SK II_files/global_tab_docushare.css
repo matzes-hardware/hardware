@@ -1,0 +1,64 @@
+/* Docushare CSS */
+/* Applies to global_tab_docushare.xls */
+
+.Title { 
+color:#333333; 
+font-size: 9pt; 
+font-weight: bold; 
+font-family: Arial, Helvetica, sans-serif; 
+text-decoration: none;
+letter-spacing: 0.2em;
+border-bottom: 1px solid #dddddd;
+position: relative;
+padding-left: 10px;
+padding-top: 8px;
+}
+.TDCBody {
+display: block; 
+font-size: 10pt;
+}
+UL { list-style-type: none;  padding: 0px; margin: 0px 0px 0px 10px; }
+UL LI { margin-bottom: 3px; }
+UL LI P { padding: 0px; margin: 0px; }
+
+UL LI a:link { 
+	color: #336699; 
+	font-weight: bold; 
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif; 
+} 
+UL LI a:visited { 
+	color: #336699; 
+	font-weight: bold; 
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif; 
+}
+UL LI a:hover { 
+	color: #005588;
+	/*background: #DDEEFF;*/
+	font-weight: bold; 
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif; 
+} 
+UL LI a:active { 
+	color: #005588; 
+	/*background: #DDEEFF;*/
+	font-weight: bold; 
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif; 
+}
+.size {
+color:#999999; 
+font-size: 8pt; 
+font-weight: normal; 
+font-family: Arial, Helvetica, sans-serif; 
+text-decoration: none;
+padding-left: 10px;
+}
+.subtext {
+color:#111; 
+font-size: 10pt; 
+font-weight: normal; 
+font-family: Arial, Helvetica, sans-serif; 
+text-decoration: none;
+}

@@ -1,0 +1,29 @@
+/* JH */
+#allcontent {
+	position: relative;
+	margin-top: 10px;
+}
+#allcontent a:link { color: #1F79A5; font-size: 12px; text-decoration: none; }
+#allcontent a:visited { color: #1F79A5; font-size: 12px; text-decoration: none; }
+#allcontent a:hover { color: #1F79A5; font-size: 12px; text-decoration: underline; }
+#allcontent a:active { color: #ff0000; font-size: 12px; text-decoration: none; padding-left: 0px; font-weight: normal; }
+.caption { font-size: 11px; font-style: italic; }
+#prod_links {
+	font-weight: normal;
+	font-size: 12px;
+	list-style-type: none;
+}
+#prod_links li {
+	list-style-image: url(/graphics/file_txt.jpg);
+	padding-left: 3px;
+	padding-bottom: 5px;
+}
+#allcontent #nlft { padding: 0px 0px 0px 10px; }
+/* Tabs layout */
+#tabContainer { margin-left: 10px; }
+#tabContent_1, #tabContent_3, #tabContent_4, #tabContent_5 {
+	padding: 20px;
+}
+#tabContent_2 {
+	padding-left: 5px;
+}
