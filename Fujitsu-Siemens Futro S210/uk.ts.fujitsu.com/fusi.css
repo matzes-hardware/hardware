@@ -1,0 +1,76 @@
+/* major rule used for left side nav */
+td{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#636363;}
+
+/* hrefs for main content */
+A.c:LINK{color:#000099;font-size:12px;text-decoration:none;}
+A.c:VISITED{color:#000099;font-size:12px;text-decoration:none;}
+A.c:ACTIVE{color:#000099;font-size:12px;text-decoration:none;}
+A.c:HOVER{color:#000099;font-size:12px;text-decoration:none;}
+
+/* special hrefs for homepage */
+A.h:LINK{color:#000099;font-size:12px;text-decoration:none;}
+A.h:VISITED{color:#000099;font-size:12px;text-decoration:none;}
+A.h:ACTIVE{color:#000099;font-size:12px;text-decoration:none;}
+A.h:HOVER{color:#000099;font-size:12px;text-decoration:none;}
+
+/* active menu points for left side nav */
+A.n:LINK{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000000;text-decoration:none;}
+A.n:VISITED{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000000;text-decoration:none;}
+A.n:ACTIVE{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000000;text-decoration:none;}
+A.n:HOVER{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000000;text-decoration:none;}
+
+/* in-active menu points for left side nav OLD STYLE */
+A:LINK{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000099;text-decoration:none;}
+A:VISITED{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000099;text-decoration:none;}
+A:ACTIVE{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000099;text-decoration:none;}
+/* A:HOVER{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000099;text-decoration:none;font-weight:bold;} */
+
+/* in-active menu points for left side nav NEW STYLE */
+A:LINK{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000099;text-decoration:none;}
+A:VISITED{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000099;text-decoration:none;}
+A:ACTIVE{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000099;text-decoration:none;}
+A:HOVER{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000099;text-decoration:none;}
+
+/* special highlighted menu points for left side nav */
+A.s:LINK{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#959595;text-decoration:none;}
+A.s:VISITED{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#959595;text-decoration:none;}
+A.s:ACTIVE{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#959595;text-decoration:none;}
+A.s:HOVER{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000000;text-decoration:none;}
+
+/* different head-sizes used for main content */
+.h1{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#000099;font-weight:bold;}
+.h2{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#000099;font-weight:bold;}
+.h3{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#333333;}
+.h4{font-family:Arial,Helvetica,sans-serif;font-size:19px;}
+
+.nb{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#FFFFFF;}
+
+/* necessary form-styles */
+.fo{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#000000}
+.go{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#636363;}
+
+/* different color-styles used for main content */
+#green{color:#000099;text-decoration:none;}
+#orange{color:#FF9900;}
+#blue{color:#0066CC;}
+#black{color:#000000;}
+
+
+
+.menugrey1 { font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#000099; font-weight:bold; background-color:#EEEEEE; }
+.text {font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#636363;}
+.textnic {font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#000000;}
+
+.greytitle {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 1em; PADDING-BOTTOM: 2px; VERTICAL-ALIGN: baseline; PADDING-TOP: 2px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #CDCDCD; TEXT-ALIGN: left
+}
+.contentgrey {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #EEEEEE; TEXT-ALIGN: left
+}
+.contentgrey2 {
+FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #EEEEEE; TEXT-ALIGN: left
+}
+
+.tableline {
+background-color:#000000; padding:0;
+}
