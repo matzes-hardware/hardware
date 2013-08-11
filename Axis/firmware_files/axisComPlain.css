@@ -1,0 +1,11 @@
+﻿@import url('axisCom.css');
+
+#axisFlexMainBanner, #axisFlexSubNav {
+	display: none;
+	visibility: hidden;
+	position: absolute;
+} 
+
+h3 {
+margin:	 5px;
+}

@@ -1,0 +1,1798 @@
+﻿/* This CSS file merges all the styles from the following old includes/imports: */
+/* @import url(html_basic.css);	 */	/* Overrides standard HTML-elements */
+/* @import url(axis_classes.css);*/		/* Contains classes for formatting content */
+/* @import url(axis_design.css); */		/* Contains classes for axisLight design*/
+/* @import url(rbox.css);		 */		/* Classes that builds rounded boxes in axisRound design */
+/* @import url(rtab.css);		 */		/* Classes that builds rounded tabs in axisRound design */
+/* --------------------------------------- */
+/* created by: Stefan Strand on 2013-07-29 */
+
+
+/*==========================================================================*/
+/* html_basic.css                                                           */
+/*                                                                          */
+/* A style sheet containing styles that modifies standard HTML elements     */
+/*                                                                          */
+/* (c) Axis Communications                                                  */
+/*==========================================================================*/
+
+
+/*--------*/
+/* <body> */
+/*--------*/
+
+	body	{
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 10px;
+		background-image: url('/core/graphics/top_and_footer/bg-pattern.jpg');
+		background-color: #FFFFFF;
+		color: #000000; 
+		margin: 0px;		
+		padding: 0px;
+		margin-bottom: 40px;
+		}
+
+
+/*------*/
+/* <td> */
+/*------*/
+
+	td	{
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 10px;
+		color: #000000;
+		/*text-align: left;*/
+		}
+
+
+/*--------*/
+/* <form> */
+/*--------*/
+
+	form	{
+		margin: 0px;
+		padding: 0px;
+		}
+
+	form td{
+		/* slightly larger font size for table cells within forms */
+		font-size: 11px;
+	}
+	
+	/* .standardform is used for main contact form */
+	.standardform input[type=text], .standardform textarea, .standardform select, .standardform select option{
+		/*padding: 3px;*/
+		font-size: 11px;
+	}
+	.standardform td{
+		vertical-align: middle;
+	}
+	.msg-input{
+		width: 450px;
+	}
+	textarea.msg-input{
+		height: 150px;
+}
+
+/*-------------------------------*/
+/* <select>, <input>, <textarea> */
+/*-------------------------------*/
+
+	select,
+	input,
+	textarea	{
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 10px;
+		color: #000000
+		}
+
+
+
+/*-----*/
+/* <a> */
+/*-----*/
+
+	a,
+	a:link,
+	a:hover,
+	a:active,
+	a:visited	{
+		color: #3366CC;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-weight: normal;
+		text-decoration: underline;
+		}
+
+	a:active	{
+		color: #666666;
+		}
+
+
+
+/*-----------------------------------------------------------*/
+/* <h1>, <h2>, <h3>                                          */
+/*-----------------------------------------------------------*/
+		
+	h1	{
+		color: #666666;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 30px;
+		font-style: normal;
+		font-weight: normal;
+		margin: 0px;
+		padding: 0px;		
+		}
+
+	h2	{
+		color: #444444;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 17px;
+		line-height: 20px;
+		font-style: normal;  
+		font-weight: bold;
+		margin: 10px 0px 0px 0px;
+		padding: 0px;
+		}
+
+	h3	{
+		color: #333333;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 12px;	 
+		font-style: normal;  
+		font-weight: bold;
+		margin: 10px 0px 0px 0px;
+		padding: 0px;
+		}		
+
+/*-----------------------------------------------------------*/
+/* <p>                                                       */
+/*-----------------------------------------------------------*/
+	p	{
+		margin: 0px 0px 20px 0px;
+		padding: 0px;		
+		}
+
+/*------*/
+/* <hr> */
+/*------*/
+
+	hr	{
+		color: #CCCCCC;
+		}
+
+
+/*--------------------------------*/
+/* <ul>, <li> (for li used in ul) */
+/*--------------------------------*/
+
+	ul,
+	ul#mainNav	{
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		padding-left: 0px;
+		list-style-type: none;
+		}
+
+
+	ul li,
+	ul#mainNav li	{
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		text-decoration: none;
+		
+		background: url("/core/graphics/dots/dot_gray.gif") no-repeat 0px 0px;
+		margin-bottom: 8px;
+		padding: 0 0 0 9px;
+		}
+		
+		
+
+/*==========================================================================*/
+/* axis_classes_reduced.css                                                 */
+/*                                                                          */
+/* Essential css classes for formatting content (text).                     */
+/*                                                                          */
+/* 20051002 Jonas Elmqvist jonase@axis.com                                  */
+/* Upgraded with definition for tag type to prevent noncommom css-classes   */
+/* to be visible in frontpage                                               */
+/*                                                                          */
+/* Jonas Elmqvist, Tord Karlsson                                            */
+/* (c) Axis Communications                                                  */
+/*==========================================================================*/
+	
+	.title {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 24px;	
+		font-style: normal;  
+		font-weight: normal;
+		color: #666666;
+		}
+		
+	.halftitle {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 17px;
+		line-height: 20px;
+		font-style: normal;  
+		font-weight: bold;
+		color: #666666;
+		}
+		
+	.subtitle {
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 12px;	 
+		font-style: normal;  
+		font-weight: bold;
+		color: #666666;
+		margin:0px;
+		padding:0px;
+		}
+	
+	div.smallheadline, span.smallheadline, p.smallheadline {
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 10px;	 
+		font-style: normal;  
+		font-weight: bold;
+		color: #666666;
+		margin:0px;
+		padding:0px;
+		}			
+		
+	.largetext	{
+		color: #000000; 
+		font-weight: normal; 
+		font-size: 12px;
+		line-height: 19px;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		text-decoration: none;
+		}
+	 
+	.midtext {
+		color: #000000; 
+		font-weight: normal; 
+		font-size: 11px;
+		line-height: 16px;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		text-decoration: none;
+		}
+	
+	.ingresstext	{
+		color: #333333; 
+		font-weight: bold; 
+		font-size: 12px;
+		line-height: 19px;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		text-decoration: none;
+		}
+	
+	.arrowsdown, 
+	ul#mainNav .arrowsdown {
+		color: #000000;
+ 		list-style-type: none; 
+ 		font-family: Verdana, Arial, Helvetica, sans-serif; 
+ 		font-size: 11px; text-decoration: none;
+		margin-top: 0em;
+    	margin-bottom: 8px;
+    	margin-left: 0em;
+    	list-style-type: none;
+    	padding: 0 0 0 9px;
+    	background:  url("/core/graphics/arrowsdown.gif") no-repeat 0px 0em;
+	}
+
+	.dash,
+	ul#mainNav .dash {
+  		font-family: Verdana, Arial, Helvetica, sans-serif; 
+ 		font-size: 11px; text-decoration: none;
+	  	margin-top: 0em;
+    	margin-bottom: 8px;
+		margin-left: 0em;
+    	list-style-type: none;
+    	padding: 0 0 0 18px;
+    	background:  url("/core/graphics/dash.gif") no-repeat 0px 0em;
+	}
+
+	li.nobullet,
+	ul#mainNav li.nobullet{
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		color: #666666;
+		margin-bottom: 8px;
+		list-style-type: none;
+		background:  url("/core/graphics/blank.gif") no-repeat 0px 0em;
+		padding-left:0px; 
+		padding-right:0; 
+		padding-top:0; 
+		padding-bottom:0;
+		}
+
+	li.nobulletplain,
+	ul#mainNav	li.nobulletplain{
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 11px;
+		margin-bottom: 8px;
+		list-style-type: none;
+		background:  url("/core/graphics/blank.gif") no-repeat 0px 0em;
+		padding-left:0px; 
+		padding-right:0; 
+		padding-top:0px; 
+		padding-bottom:0;
+		}
+
+	li.indentnobullet,
+	ul#mainNav li.indentnobullet {
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 11px;
+		font-weight: normal;
+		color: #000000;
+		margin-bottom: 8px;
+		list-style-type: none;
+		background:  url("/core/graphics/blank.gif") no-repeat 0px 0em;
+		padding-left:9px; 
+		padding-right:0; 
+		padding-top:5px; 
+		padding-bottom:0
+		} 
+
+	.bulletlargetext {
+		color: #000000;
+ 		list-style-type: none; 
+ 		font-family: Verdana, Arial, Helvetica, sans-serif; 
+ 		text-decoration: none;
+		margin-top: 0em;
+    	margin-bottom: 8px;
+		margin-left: 0em;
+    	list-style-type: none;
+    	padding: 0 0 0 9px;
+    	background:  url("/core/graphics/dot_gray_largetext.gif") no-repeat 0px 0em;
+	}
+
+	.bulletsmalltext  {
+		color: #000000;
+ 		list-style-type: none; 
+ 		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		font-size: 10px; 		
+		text-decoration: none;
+		margin-top: 0em;
+    	margin-bottom: 2px;
+    	margin-left: 0em;
+    	list-style-type: none;
+    	padding: 0 0 0 9px;
+   		background:  url("/core/graphics/dots/bullet_blackdot.gif") no-repeat 0px 0em;
+	}
+  
+	div.dotline {
+		background-image: url(/core/graphics/dots/dots_hor_147w.gif);
+		background-repeat: repeat-x;
+		margin:0px;
+		margin-top:10px;
+		padding-top: 10px;
+		padding-bottom: 0px;
+		width: 100%;
+	}
+	
+	div.greybox {
+		border: 1px solid #CCCCCC;
+		background-color: #EEEEEE;
+		padding: 10px;
+	}
+
+	a.iconPdf {
+		background-image: url(/core/graphics/filetypes/pdf_20x20px.gif);	
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+		/*display: inline-block;*/
+		padding-left: 25px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	
+	a.iconTxt {
+		background-image: url(/core/graphics/filetypes/txt_20x20px.gif);	
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+		/*display: inline-block;*/
+		padding-left: 25px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	
+	a.iconFile {
+		background-image: url(/core/graphics/filetypes/file_20x20px.gif);	
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+		/*display: inline-block;*/
+		padding-left: 25px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	
+	a.iconRight {
+		background-image: url(/core/graphics/readmore_blue.gif);	
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+		/*display: inline-block;*/
+		padding-left: 25px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	
+	a.iconDownload {
+		background-image: url(/core/graphics/download.png);	
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+		/*display: inline-block;*/
+		padding-left: 25px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	
+	li.iconwriteus {
+  		font-family: Verdana, Arial, Helvetica, sans-serif; 
+ 		font-size: 11px; 
+ 		text-decoration: none;
+    	margin-top: 15px;
+    	margin-bottom: 5px;
+	  	margin-left: 0em;
+    	list-style-type: none;
+    	padding: 0 0 0 18px;
+    	background:  url("/core/graphics/icon_writeus.gif") no-repeat 0px 0em;
+  	}
+
+	.invisible {
+		visibility: hidden;
+	}
+	.visible {
+		visibility: visible;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*==========================================================================*/
+/* axis_design.css  (previously axis_light_reduced.css)                     */
+/*                                                                          */
+/* A style sheet containing classes for design of light-weight html-code    */
+/*                                                                          */
+/* 20060413 Katarina Tham                                                   */
+/* Event box blue                                                           */
+/*                                                                          */
+/* 20060628 Daniel Browne                                                   */
+/* Added axislight_centreline                                               */
+/*                                                                          */
+/* 20060413 Katarina Tham                                                   */
+/* Green top Event box to match 216 campaign banner
+/*                                                                          */
+/* 20060210 Katarina Tham                                                   */
+/* Added definitions for Event box                                          */
+/*                                                                          */
+/* 20051002 Jonas Elmqvist jonase@axis.com                                  */
+/* Upgraded with definition for tag type to prevent noncommom css-classes   */
+/* to be visible in frontpage                                               */
+/*                                                                          */
+/* 20091118 Marina Möller                                                   */
+/* Added teaserImageNoBorder, largeBox2                                              */
+/*                                                                          */
+/* Jonas Elmqvist, Tord Karlsson                                            */
+/* (c) Axis Communications                                                  */
+/*==========================================================================*/
+
+/*--------------------------------------------------------------------------*/
+/* Classes for building basic design like corners and outer border          */
+/* for the axisLight design                                                 */
+/*--------------------------------------------------------------------------*/
+
+	div.axisLight_BgTop	{
+		background-image: url(/core/graphics/backgrounds/bg_top.gif);
+		background-repeat: no-repeat;
+		width:750px;
+		}
+
+	div.axisLight_Include {
+		width:741px;
+		padding-left:5px;
+		padding-right:4px;
+		padding-top:5px;
+		padding-bottom:9px;
+		}
+		
+	div.axisLight_BgMid {
+		background-image: url(/core/graphics/backgrounds/bg_mid.gif);
+		background-repeat: repeat-y;
+		width: 750px;
+		}
+		
+	div.axisLight_BgMidPlain {
+		background-image: url(/core/graphics/backgrounds/bg_plain.gif);
+		background-repeat: repeat-y;
+		width: 750px;
+		}
+	
+	div.axisLight_BgMid_line_right {
+		background-image: url(/core/graphics/backgrounds/bg_mid_line_right.gif);
+		background-repeat: repeat-y;
+		width: 750px;
+		}
+
+	div.axisLight_BgBottom {
+		background-image: url(/core/graphics/backgrounds/bg_bottom.gif);
+		background-repeat: no-repeat;
+		width:750px;
+		}
+
+	div.axisLight_BgBottom_line_right {
+		background-image: url(/core/graphics/backgrounds/bg_bottom_line_right.gif);
+		background-repeat: no-repeat;
+		width:750px;
+		}
+
+	div.axisLight_BgBanner {
+		background-image: url(/core/graphics/backgrounds/bg_plain.gif);
+		background-repeat: repeat-y;
+		border-bottom: 1px solid #CCCCCC;
+		width: 750px;
+		}
+	
+
+/*--------------------------------------------------------------------------*/
+/* Classes for building table widths for the axisLight design               */
+/*--------------------------------------------------------------------------*/
+
+	td.axisLight_TwoColLeft,
+	td.axisLight_ThreeColLeft	{
+		width: 147px;
+		padding-left: 16px;
+		padding-right: 16px;
+		padding-top: 15px;
+		padding-bottom: 0px;
+		vertical-align: top;
+		text-align: left;
+		}
+
+	td.axisLight_TwoColRight {
+		width: 540px;
+		padding-left: 15px;
+		padding-right: 16px;
+		padding-top: 15px;
+		padding-bottom: 0px;
+		vertical-align: top;
+		text-align: left;
+		}
+
+	td.axisLight_TwoColWideRight {
+		width: 570px;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top: 15px;
+		padding-bottom: 0px;
+		vertical-align: top;
+		text-align: left;
+		}
+
+	td.axisLight_TwoColWideRightImage {
+		width: 570px;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		vertical-align: top;
+		text-align: left;
+		}
+
+
+	td.axisLight_ThreeColMiddle {
+		width: 360px;	
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 15px;
+		padding-bottom: 0px;
+		vertical-align: top;
+		text-align: left;
+		}
+
+	td.axisLight_ThreeColRight {
+		width: 165px;
+		padding-right: 16px;
+		padding-top: 15px;
+		padding-bottom: 0px;
+		vertical-align: top;
+		text-align: left;
+		}
+
+	td.axisLight_FourColRight {
+		width: 190px;
+		padding-right: 0px;
+		padding-top: 15px;
+		padding-bottom: 0px;
+		vertical-align: top;
+		text-align: left;
+		}
+
+/*--------------------------------------------------------------------------*/
+/* Fixes for geiving the left align in td tag                               */
+/* and design on /index.html                                                */
+/*--------------------------------------------------------------------------*/
+
+	td.axisLight_ThreeColRight td {
+		vertical-align: top;
+		text-align: left;
+		}
+
+/*--------------------------------------------------------------------------*/
+/* Home page classes for building the boxes                                 */
+/* and design on /index.html                                                */
+/*--------------------------------------------------------------------------*/
+
+	div.axisLight_HomePageMenu	{
+		background-image: url(/core/graphics/backgrounds/bg_plain.gif);
+		background-repeat: repeat-y;
+		background-color: #F7F7F7; 
+		border-top: 0px; 
+		border-bottom: 1px solid #CCCCCC;
+		width:750px;
+		text-align: left;
+		}
+	
+	div.axisLight_HomePageMenu #countySelect {
+		text-align: left;
+	}
+	
+	div.axisLight_HomePageMenu	#interestSelect {
+		text-align: right;
+	}
+	
+	div.axisLight_HomePageImage	{
+		background-image: url(/core/graphics/backgrounds/bg_homepage_image.gif);
+		background-repeat: repeat-y;
+		border-bottom: 1px solid #CCCCCC;
+		width: 750px;
+		text-align: left;
+		}
+
+	div.axisLight_HomePageBoxRowStart	{
+		background-image: url(/core/graphics/backgrounds/bg_plain.gif);
+		background-repeat: repeat-y;
+		height: 10px;
+		width: 750px;
+		text-align: left;
+		}
+
+	div.axisLight_HomePageBoxRow	{
+		background-image: url(/core/graphics/backgrounds/bg_hompage_boxrow.gif);
+		background-repeat: repeat-y;
+		width: 750px;
+		text-align: left;
+		}
+
+	div.axisLight_HomePageBoxRowEnd	{
+		background-image: url(/core/graphics/backgrounds/bg_plain.gif);
+		background-repeat: repeat-y;
+		border-bottom: 1px solid #CCCCCC;
+		height: 10px;
+		width: 750px;
+		text-align: left;
+		}
+	div.axisLight_HomePageEventRow	{
+		background-image: url(/core/graphics/backgrounds/bg_plain.gif);
+		background-repeat: repeat-y;
+		width: 750px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: left;
+		}
+
+	div.axisLight_HomePageLineRight {
+		background-image: url(/core/graphics/backgrounds/bg_homepage_lineright.gif);
+		background-repeat: repeat-y;
+		width: 520px;
+		padding-right: 15px;
+		text-align: left;
+		}
+			
+	div.axisLight_EventBox {
+		float: left;
+		width: 200px;
+		height: 100%;
+		padding: 0px;
+		margin: 0px 0px 0px 0px;
+		text-align: left;
+		display: block;
+	}
+	div.axisLight_EventBox h3 {
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 12px;	 
+		font-style: normal;  
+		font-weight: bold;
+		line-height: 26px;
+		color: #ffffff;
+		margin: 0px;
+		margin-top: 2px;
+		padding: 0px;
+		text-indent: 22px;
+		text-align: left;
+		/*display: block;*/
+		background-image: url('/core/graphics/eventbox/top_background.gif');
+		background-position: left -2px;
+		background-repeat: no-repeat;
+		/*width: 200px; */
+		height: 26px;	
+	}
+	div.axisLight_EventBox h5 {
+		font-size: 10px;
+		font-weight: normal;
+		background-image: url('/core/graphics/eventbox/bottom_background.gif');
+		background-position: left bottom;
+		background-repeat: no-repeat;
+		margin: 0px;
+		padding: 0px;
+		padding-left: 22px;
+		text-align: left;
+		/*width: 200px; */
+		/*display: block; */
+		line-height: 12px;
+	}
+	div.axisLight_HomePageSearch	{
+		background-image: url(/core/graphics/backgrounds/bg_plain.gif);
+		background-repeat: repeat-y;
+		width: 735px;
+		padding-top: 10px;
+		padding-left: 15px;
+		padding-bottom: 0px;
+		text-align: left;
+		}
+
+	div.axisLight_HomePageSearchInclude	{
+		width: 750px;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-top: 5px;
+		margin-bottom: 2px;
+		text-align: left;
+		}
+		
+	td.axisLight_subColumn {
+		font-size: 9px;
+		line-height: 16px;						
+		padding-top: 20px;	
+		text-align: left;
+		}
+
+	td.axisLight_mainColumn {
+		font-size: 11px;
+		line-height: 16px;
+		text-align: left;
+		}
+
+/*--------------------------------------------------------------------------*/
+/* Classes for formatting boxes in content for both                          */
+/* axisLight and axisFlex design.                                           */
+/*--------------------------------------------------------------------------*/	
+
+div.axisLight_infoBoxLeft {
+		float:right;
+		border:1px solid #CCCCCC;
+		width: 180px;
+		height:100px;
+		margin:0px 0px 10px 10px;
+	}
+	
+	div.axisLight_infoBoxLeft h3 {
+		background-color:#EEEEEE;
+		font-size:10px;
+		font-weight:bold;
+		margin:0px;
+		padding:5px;
+		text-align: center;	
+	}
+
+	div.axisLight_infoBoxLeft p {
+		margin:5px;
+		padding:0px;
+	}
+
+	div.axisLight_teaserBoxLeft {
+		float:right;
+		width:182px;
+		padding:0px;
+		margin:0px 15px 0px 10px;
+		-webkit-box-shadow: 0px 2px 3px -2px #aaa;
+		-moz-box-shadow: 0px 2px 3px -2px #aaa;
+		box-shadow: 0px 2px 3px -2px #aaa;
+	}
+	
+	div.axisLight_teaserBoxRight {
+		float:left;
+		width:182px;
+		padding:0px;
+		margin:0px 15px 0px 15px;
+		-webkit-box-shadow: 0px 2px 3px -2px #aaa;
+		-moz-box-shadow: 0px 2px 3px -2px #aaa;
+		box-shadow: 0px 2px 3px -2px #aaa;
+	}
+
+	div.axisLight_teaserBoxLeft h3, 
+	div.axisLight_teaserBoxRight h3, 
+	div.axisLight_teaserBoxLeft div.subtitle, 
+	div.axisLight_teaserBoxRight div.subtitle {
+		font-size:10px;
+		font-weight: bold;
+		color: #555;
+		-webkit-text-shadow: 1px 1px 0 #eee;
+		-moz-text-shadow: 1px 1px 0 #eee;
+		text-shadow: 1px 1px 0 #eee;
+		margin:0px;
+		padding:0px;
+		text-align: center;
+		display: block;
+		height:25px;
+		line-height: 25px;
+		display:block;	
+		background-color: #E7E4E1;
+		background: -webkit-gradient(linear, left top, left bottom, from(#E7E4E1), to(#E2DFDC));
+    	background: -moz-linear-gradient(top,  #E7E4E1,  #E2DFDC);
+    	background: linear-gradient(to bottom, #E7E4E1,#E2DFDC);
+    	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E7E4E1', endColorstr='#E2DFDC');
+
+		/*
+		background-color: #eae2da;
+		background: -webkit-gradient(linear, left top, left bottom, from(#eae2da), to(#dad2ca));
+    	background: -moz-linear-gradient(top,  #eae2da,  #dad2ca);
+    	background: linear-gradient(to bottom, #eae2da,#dad2ca);
+    	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eae2da', endColorstr='#dad2ca');
+*/
+		/*
+		background-color: #e3e3e3;
+		background: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#d5d5d5));
+    	background: -moz-linear-gradient(top,  #e3e3e3,  #d5d5d5);
+    	background: linear-gradient(to bottom, #e3e3e3,#d5d5d5);
+    	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3e3e3', endColorstr='#d5d5d5');
+    	*/
+    	border: 1px solid #BBBBBB;
+    	border-bottom: 0;
+    	-moz-border-radius-topleft: 2px;
+    	-moz-border-radius-topright: 2px;
+    	-webkit-border-top-left-radius: 2px;
+       	-webkit-border-top-right-radius: 2px;
+    	border-top-left-radius: 2px;
+    	border-top-right-radius: 2px;
+    	overflow:hidden;
+	}
+	
+	div.axisLight_teaserBoxLeft.highlight h3, 
+	div.axisLight_teaserBoxRight.highlight h3, 
+	div.axisLight_teaserBoxLeft.highlight div.subtitle, 
+	div.axisLight_teaserBoxRight.highlight div.subtitle {
+		/*highlight uses another background color / gradient */
+		background-color: #4f7b8d;
+		background: -webkit-gradient(linear, left top, left bottom, from(#6a96a6), to(#4f7b8d));
+    	background: -moz-linear-gradient(top,  #6a96a6,  #4f7b8d);
+    	background: linear-gradient(to bottom, #6a96a6,#4f7b8d);
+    	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a96a6', endColorstr='#4f7b8d');
+    	color: #FFF;
+    	-webkit-text-shadow: 1px 1px 0 #222;
+		-moz-text-shadow: 1px 1px 0 #222;
+		text-shadow: 1px 1px 0 #222;
+		border: 1px solid #6a96a6;
+		border-bottom: 0;
+	}
+
+	div.axisLight_teaserBoxLeft img.teaserImage, 
+	div.axisLight_teaserBoxRight img.teaserImage {
+		margin: 0px;
+		padding: 0px;
+		display: block;
+		border: 1px solid #bbb;
+	}
+	
+	div.axisLight_teaserBoxLeft img.teaserImageNoBorder, 
+	div.axisLight_teaserBoxRight img.teaserImageNoBorder {
+		margin: 0px;
+		padding: 0px;
+		display: block;
+		border-right: 1px solid #999999;
+		border-left: 1px solid #999999;
+	}
+	
+	div.axisLight_teaserBoxLeft div.teaserContent,
+	div.axisLight_teaserBoxRight div.teaserContent {
+		margin: 0px;
+		padding: 10px;
+		display: block;
+		border: 1px solid #BBBBBB;
+	}
+	
+	div.axisLight_teaserBoxLeft div.teaserContent.centered,
+	div.axisLight_teaserBoxRight div.teaserContent.centered {
+		text-align: center;
+	}
+	
+	div.axisLight_teaserBoxLeft div.teaserContent a,
+	div.axisLight_teaserBoxRight div.teaserContent a {
+
+	}
+	
+	div.axisLight_teaserBoxLeft div.teaserTable,
+	div.axisLight_teaserBoxRight div.teaserTable,
+	div.axisLight_teaserBoxLeft div.teaserTableNoLines,
+	div.axisLight_teaserBoxRight div.teaserTableNoLines {
+		margin: 0px;
+		padding: 0px;
+		display: block;
+		border-bottom: 1px solid #bbb;
+		border-left: 1px solid #bbb;
+		border-right: 1px solid #bbb;
+		border-top: 1px solid #bbb;
+	}
+
+	div.teaserTable table th { 
+		background-color: #EEEEEE;
+		color: #666666;
+	}
+	
+	div.teaserTable table td { 
+		background-color: #FFFFFF;
+		border-top: 1px solid #CCCCCC;
+	}
+	
+	div.teaserTableNoLines table th { 
+		background-color: #EEEEEE;
+		color: #666666;
+	}
+	
+	div.teaserTableNoLines table td { 
+		background-color: #FFFFFF;
+	}
+	
+	/*--------------------------------------------------------------------------*/
+	div.axisLight_teaserBoxLeft div.teaserUseCasesTable ,
+	div.axisLight_teaserBoxRight div.teaserUseCasesTable {
+		width: 168px;
+		background-image: url('/core/graphics/teaserbox/usecase_background.jpg');
+		margin: 0px;
+		padding-top: 5px;
+		padding-left: 10px;
+		padding-right: 2px;
+		padding-bottom: 5px;
+		display: block;
+		border-right: 1px solid #bbb;
+		border-bottom: 1px solid #bbb;
+		border-left: 1px solid #bbb;
+		border-top: 1px solid #bbb;
+	}
+	div.axisLight_teaserBoxLeft div.teaserUseCasesTable td ,
+	div.axisLight_teaserBoxRight div.teaserUseCasesTable td {  
+		width: 90px;
+		padding-bottom: 1px;
+		font-size: 9px;
+		text-align: center;
+		height: 20px;
+	}
+	div.axisLight_teaserBoxLeft div.teaserUseCasesTable th ,
+	div.axisLight_teaserBoxRight div.teaserUseCasesTable th {  
+		padding-top: 5px;
+		padding-bottom: 2px;
+		padding-left: 10px;
+		color: #666666;		
+		font-weight: bold;
+	}		
+	/*--------------------------------------------------------------------------*/
+	
+	div.axisLight_teaserBoxLeft div.videoLink,
+	div.axisLight_teaserBoxRight div.videoLink {
+		background-image: url('/core/graphics/teaserbox/bottom_video_background.gif');
+		margin: 0px;
+		padding: 0px;
+		display: block;
+	}
+
+	div.axisLight_teaserBoxLeft div.plainLink ,
+	div.axisLight_teaserBoxRight div.plainLink {
+		/*background-color: #eee;*/
+/*		background-color: #eae2da;*/
+		background-color: #E7E4E1;
+		margin: 0px 15px 0 0;
+		width: 160px;
+		line-height: 1.4;
+		display: block;
+		padding: 5px 10px 8px 10px;
+		border: 1px solid #BBBBBB;
+		border-top: 0;
+		-moz-border-radius-bottomleft: 2px;
+    	-moz-border-radius-bottomright: 2px;
+    	-webkit-border-bottom-left-radius: 2px;
+       	-webkit-border-bottom-right-radius: 2px;
+    	border-bottom-left-radius: 2px;
+    	border-bottom-right-radius: 2px;
+	}
+	
+	div.axisLight_teaserBoxLeft div.plainLink a,
+	div.axisLight_teaserBoxRight div.plainLink a {
+
+	}
+	
+	div.axisLight_teaserBoxLeft div.plainLink a:hover,
+	div.axisLight_teaserBoxRight div.plainLink a:hover{
+
+	}
+/*==========================================================================*/
+	div.axisLight_middleBox {
+		width:340px;
+		padding:0px;
+		margin-bottom:10px;
+	}
+
+	div.axisLight_middleBox h3 {
+		font-size:10px;
+		font-weight: bold;
+		color: #FFFFFF;
+		margin:0px;
+		padding:0px;
+		text-align: center;
+		display: block;
+		background-image: url('/core/graphics/middlebox/top_background.gif');
+		width:340px;
+		height:25px;
+		line-height: 25px;			
+	}
+		
+	div.axisLight_middleBox div.border {
+		width:338px;
+		margin-top:0px;
+		margin-left:15px;
+		border-left: 1px solid #999999;
+		border-right: 1px solid #999999;
+	}
+
+	div.axisLight_middleBox div.content {
+		font-size:11px;
+		width: 340px;
+		margin-left:0px;
+		margin-top:0px;
+		margin-bottom:0px;
+		padding-bottom:10px;
+		padding: 10px;
+		display: block;
+		background-image: url('/core/graphics/middlebox/bottom_background.gif');
+		background-position: left bottom;
+		background-repeat: no-repeat;
+	}
+
+/*==========================================================================*/
+	div.axisLight_largeBox {
+		width:540px;
+		padding:0px;
+		margin:0px 0px 10px 0px;
+		-webkit-box-shadow: 0px 2px 3px -2px #aaa;
+		-moz-box-shadow: 0px 2px 3px -2px #aaa;
+		box-shadow: 0px 2px 3px -2px #aaa;
+
+	}
+
+	div.axisLight_largeBox h3, 
+	div.axisLight_largeBox div.subtitle {
+		font-size:10px;
+		font-weight: bold;
+		margin:0px;
+		padding:0px;
+		text-align: center;
+		display: block;
+		width:538px;
+		height:25px;
+		line-height: 25px;	
+		color: #555;
+		-webkit-text-shadow: 1px 1px 0 #eee;
+		-moz-text-shadow: 1px 1px 0 #eee;
+		text-shadow: 1px 1px 0 #eee;
+		background-color: #E7E4E1;
+		background: -webkit-gradient(linear, left top, left bottom, from(#E7E4E1), to(#E2DFDC));
+    	background: -moz-linear-gradient(top,  #E7E4E1,  #E2DFDC);
+    	background: linear-gradient(to bottom, #E7E4E1,#E2DFDC);
+    	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E7E4E1', endColorstr='#E2DFDC');
+
+/*		background-color: #e3e3e3;
+		background: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#d5d5d5));
+    	background: -moz-linear-gradient(top,  #e3e3e3,  #d5d5d5);
+    	background: linear-gradient(to bottom, #e3e3e3,#d5d5d5);
+    	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3e3e3', endColorstr='#d5d5d5');*/
+    	border: 1px solid #BBBBBB;
+		-moz-border-radius-topleft: 2px;
+    	-moz-border-radius-topright: 2px;
+    	-webkit-border-top-left-radius: 2px;
+       	-webkit-border-top-right-radius: 2px;
+    	border-top-left-radius: 2px;
+    	border-top-right-radius: 2px;
+		
+	}
+	div.axisLight_largeBox div.border {
+		border-right: 1px solid #bbb;
+		border-left: 1px solid #bbb;
+		border-bottom: 1px solid #bbb;
+		padding-bottom: 5px;
+		-moz-border-radius-bottomleft: 2px;
+    	-moz-border-radius-bottomright: 2px;
+    	-webkit-border-bottom-left-radius: 2px;
+       	-webkit-border-bottom-right-radius: 2px;
+    	border-bottom-left-radius: 2px;
+    	border-bottom-right-radius: 2px;
+
+	}
+
+	div.axisLight_largeBox div.content {
+		width: 519px;
+		margin: 0px;
+		padding: 10px;
+		display: block;
+	}
+
+	div.axisLight_largeBox img.bottom {
+		width: 540px;
+		height: 6px;
+		display: block;
+	}
+	
+	ul#axisLight_mainFearures {
+		margin-left: 0px;
+		margin-bottom: 20px;
+	}
+	
+	ul#axisLight_mainFearures li{
+		font-family: verdana;
+		font-weight: bold;
+		font-size: 12px;
+		color: #666666;
+	}
+	
+	#axisLight_largeBox ul {
+		margin: 0px;
+		padding: 0px;
+		
+	}
+	
+	.axisLight_cerntreline {
+		background-image: url('/core/graphics/dots/dots_vert_36h.gif');
+		background-repeat: repeat-y;
+		background-position: left;
+		margin:0px;
+		margin-top:5px;
+		
+		
+}
+
+
+/*==========================================================================*/
+	div.axisLight_largeBox2 {
+		width:720px;
+		padding:0px;
+		margin:0px 0px 10px 0px;
+	}
+
+	div.axisLight_largeBox2 h3, 
+	div.axisLight_largeBox2 div.subtitle {
+		font-size:10px;
+		font-weight: bold;
+		color: #555;
+		-webkit-text-shadow: 1px 1px 0 #eee;
+		-moz-text-shadow: 1px 1px 0 #eee;
+		text-shadow: 1px 1px 0 #eee;
+
+		margin:0px;
+		padding:0px;
+		text-align: center;
+		display: block;
+/*		background-image: url('/core/graphics/largebox/top_background2.gif');*/
+		background-color: #E7E4E1;
+		background: -webkit-gradient(linear, left top, left bottom, from(#E7E4E1), to(#E2DFDC));
+    	background: -moz-linear-gradient(top,  #E7E4E1,  #E2DFDC);
+    	background: linear-gradient(to bottom, #E7E4E1,#E2DFDC);
+    	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E7E4E1', endColorstr='#E2DFDC');
+		border: 1px solid #BBBBBB;
+    	border-bottom: 0;
+    	-moz-border-radius-topleft: 2px;
+    	-moz-border-radius-topright: 2px;
+    	-webkit-border-top-left-radius: 2px;
+       	-webkit-border-top-right-radius: 2px;
+    	border-top-left-radius: 2px;
+    	border-top-right-radius: 2px;
+
+		width:718px;
+		height:25px;
+		line-height: 25px;	
+		
+	}
+	div.axisLight_largeBox2 div.border {
+		width:718px;
+		margin-top:0px;
+		margin-left:15px;
+		border-left: 1px solid #bbb;
+		border-right: 1px solid #bbb;
+		border-top: 1px solid #bbb;
+		padding-bottom: 1px;
+	}
+
+	div.axisLight_largeBox2 div.content {
+		width: 699px;
+		margin: 0px;
+		padding: 10px;
+		display: block;
+	}
+
+	div.axisLight_largeBox2 div.bottom {
+		width: 718px;
+		height: 6px;
+		display: block;
+/*		background-image: url('/core/graphics/largebox/bottom_background2.gif');
+		background-position: right bottom;
+		background-repeat: no-repeat;*/
+		-moz-border-radius-bottomleft: 2px;
+    	-moz-border-radius-bottomright: 2px;
+    	-webkit-border-bottom-left-radius: 2px;
+       	-webkit-border-bottom-right-radius: 2px;
+    	border-bottom-left-radius: 2px;
+    	border-bottom-right-radius: 2px;
+		border: 1px solid #bbb;
+		border-top: 0;
+		margin-left:15px;
+		margin-top:0px;
+		margin-bottom:0px;
+		padding: 0px;
+	}
+	
+	div.axisLight_largeBox2 img.bottom {
+		width: 720px;
+		height: 6px;
+		display: block;
+		background-image: url('/core/graphics/largebox/bottom_background2.gif');
+		text-align: center;
+	}
+	
+	ul#axisLight_mainFearures {
+		margin-left: 0px;
+		margin-bottom: 20px;
+	}
+	
+	ul#axisLight_mainFearures li{
+		font-family: verdana;
+		font-weight: bold;
+		font-size: 12px;
+		color: #666666;
+	}
+	
+	#axisLight_largeBox2 ul {
+		margin: 0px;
+		padding: 0px;
+		
+	}
+	
+	.axisLight_cerntreline {
+		background-image: url('/core/graphics/dots/dots_vert_36h.gif');
+		background-repeat: repeat-y;
+		background-position: left;
+		margin:0px;
+		margin-top:5px;
+		
+		
+}
+
+
+/*--------------------------------------------------------------------------*/
+/* Old styles, perhas used somewhere will be replaced                       */
+/*--------------------------------------------------------------------------*/
+	a.country,a.country:link,a.country:visited,a.country:active {
+		color: #3366CC; 
+		font-weight: bold; 
+		font-size: 10px; 
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		text-decoration: none;
+		}
+	
+	a.country:hover	{
+		font-weight: bold; 
+		font-size: 10px; 
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		text-decoration: underline;
+		}
+
+	td.axisVLine {
+		background-color: #cccccc;
+		line-height: 0px;
+		width: 1px;
+		}	 
+	
+	td.axisHLine {
+		background-color: #cccccc;
+		line-height: 1px;
+		height: 1px;
+		}
+
+	td.axisGraphics {
+		line-height: 0px		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/*==========================================================================*/
+/* rbox_reduced.css                                                         */
+/*                                                                          */
+/* A style sheet containing classes for building rounded boxes              */
+/*                                                                          */
+/* 20051002 Jonas Elmqvist jonase@axis.com                                  */
+/* Upgraded with difinition for tag type to prevent noncommom css-classes   */
+/* to be visible in frontpage                                               */
+/*                                                                          */
+/* Jonas Elmqvist, Tord Karlsson                                            */
+/* (c) Axis Communications                                                  */
+/*==========================================================================*/
+
+
+/*------------------*/
+/* The Rounded Box  */
+/*------------------*/
+
+	td.axisRBoxT {
+/*		background-image:url(/core/graphics/rbox/top_line_100x5px.gif);
+		background-repeat: repeat-x;*/
+		height: 5px;
+		line-height: 0px;
+		}
+		
+	td.axisRBoxTL {
+/*		background-image:url(/core/graphics/rbox/top_left_corner_5x5px.gif);
+		background-repeat: no-repeat;*/
+		width: 5px;
+		height: 5px;
+		line-height: 0px;
+		}
+	
+	td.axisRBoxTR {
+/*		background-image:url(/core/graphics/rbox/top_right_corner_5x5px.gif);
+		background-repeat: no-repeat;*/
+		width: 5px;
+		height: 5px;
+		line-height: 0px;
+		}
+		
+	td.axisRBoxSL {
+/*		background-image:url(/core/graphics/rbox/side_left_5x5px.gif);
+		background-repeat: repeat-y;*/
+		width: 5px;
+		line-height: 0px;
+		}
+
+	td.axisRBoxSR {
+/*		background-image:url(/core/graphics/rbox/side_right_5x5px.gif);
+		background-repeat: repeat-y;*/
+		width: 5px;
+		line-height: 0px;
+		}
+
+	td.axisRBoxB {
+/*		background-image:url(/core/graphics/rbox/bottom_line_100x5px.gif);
+		background-repeat: repeat-x;*/
+		height: 5px;
+		line-height: 0px;
+		}
+		
+	td.axisRBoxBL {
+/*		background-image:url(/core/graphics/rbox/bottom_left_corner_5x5px.gif);
+		background-repeat: no-repeat;*/
+		width: 5px;
+		height: 5px;
+		line-height: 0px;
+		}
+	
+	td.axisRBoxBR {
+/*		background-image:url(/core/graphics/rbox/bottom_right_corner_5x5px.gif);
+		background-repeat: no-repeat;*/
+		width: 5px;
+		height: 5px;
+		line-height: 0px;
+		}
+
+
+/*-----------------------------------------*/
+/* The Rounded Box with Transparent center */
+/*-----------------------------------------*/
+
+	td.axisRBoxTransT {
+		background-image:url(/core/graphics/rbox/trans_top_line_100x5px.gif);
+		background-repeat: repeat-x;
+		height: 5px;
+		line-height: 0px;
+		}
+
+	td.axisRBoxTransTL {
+		background-image:url(/core/graphics/rbox/trans_top_left_corner_5x5px.gif);
+		background-repeat: no-repeat;
+		width: 5px;
+		height: 5px;
+		line-height: 0px;
+		}
+
+	td.axisRBoxTransTR {
+		background-image:url(/core/graphics/rbox/trans_top_right_corner_5x5px.gif);
+		background-repeat: no-repeat;
+		width: 5px;
+		height: 5px;
+		line-height: 0px;
+		}
+
+	td.axisRBoxTransSL {
+		background-image:url(/core/graphics/rbox/trans_side_left_5x5px.gif);
+		background-repeat: repeat-y;
+		width: 5px;
+		line-height: 0px;
+		}
+
+	td.axisRBoxTransSR {
+		background-image:url(/core/graphics/rbox/trans_side_right_5x5px.gif);
+		background-repeat: repeat-y;
+		width: 5px;
+		line-height: 0px;
+		}
+
+	td.axisRBoxTransB {
+		background-image:url(/core/graphics/rbox/trans_bottom_line_100x5px.gif);
+		background-repeat: repeat-x;
+		height: 5px;
+		line-height: 0px;
+		}
+
+	td.axisRBoxTransBL {
+		background-image:url(/core/graphics/rbox/trans_bottom_left_corner_5x5px.gif);
+		background-repeat: no-repeat;
+		width: 5px;
+		height: 5px;
+		line-height: 0px;
+		}
+
+	td.axisRBoxTransBR {
+		background-image:url(/core/graphics/rbox/trans_bottom_right_corner_5x5px.gif);
+		background-repeat: no-repeat;
+		width: 5px;
+		height: 5px;
+		line-height: 0px;
+		}
+
+
+/*--------------------------------------*/
+/* The Alternate Gray Top with Headline */
+/*--------------------------------------*/
+
+	td.axisRBoxHeadlineT {
+		background-image:url(/core/graphics/rbox/gray_top_line_5x50px.gif);
+		background-repeat: repeat-x;
+		line-height: 150%;
+		}
+
+	td.axisRBoxHeadlineTL {
+		background-image:url(/core/graphics/rbox/gray_top_left_corner_5x50px.gif);
+		background-repeat: no-repeat;
+		width: 5px;
+		line-height: 0px;
+		}
+
+	td.axisRBoxHeadlineTR {
+		background-image:url(/core/graphics/rbox/gray_top_right_corner_5x50px.gif);
+		background-repeat: no-repeat;
+		width: 5px;
+		line-height: 0px;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=================================================================================*/
+/* rtab_reduced.css                                                                */
+/*                                                                                 */
+/* A style sheet containing classes for building tabs connected to rounded boxes   */
+/*                                                                                 */
+/* 20051002 Jonas Elmqvist jonase@axis.com                                         */
+/* Upgraded with difinition for tag type to prevent noncommom css-classes          */
+/* to be visible in frontpage                                                      */
+/*                                                                                 */
+/* Jonas Elmqvist, Tord Karlsson                                                   */
+/* (c) Axis Communications                                                         */
+/*=================================================================================*/
+
+
+
+/*---------------------*/
+/* The Link Text Style */
+/*---------------------*/
+
+  a.axisRTabLink,
+  a.axisRTabLink:link,
+  a.axisRTabLink:visited,
+  a.axisRTabLink:active,
+  a.axisRTabLink:hover {
+		text-decoration: none;
+		font-weight: bold;
+		color: #3366CC;
+		}
+
+
+/*------------------------*/
+/* The Large Rounded Tabs */
+/*------------------------*/
+
+	td.axisRTabLargeCT {
+		height: 30px;
+		width: 5px;
+		}
+
+	td.axisRTabLargeLine {
+		background-image:url(/core/graphics/rtab/large/bg_line_72x35px.gif);
+		background-repeat: repeat;
+		line-height: 0px;
+		height: 35px;
+		}
+
+	/*-----------------*/
+	/* Large, Inactive */
+	/*-----------------*/
+	td.axisRTabLargeInActiveL {
+		background-image:url(/core/graphics/rtab/large/inactive_left_31x35px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 31px;	
+		height: 35px;
+		}
+		
+	td.axisRTabLargeInActiveM {
+		background-image:url(/core/graphics/rtab/large/inactive_bg_72x35px.gif);
+		background-repeat: repeat;
+		height: 35px;
+		text-align: center;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 12px;	 
+		font-style: normal;  
+		font-weight: bold;
+		line-height: 14px;  
+		color: #666666;
+		}
+
+	td.axisRTabLargeInActiveR {
+		background-image:url(/core/graphics/rtab/large/inactive_right_31x35px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 31px;
+		height: 35px;
+		}
+
+	/*---------------*/
+	/* Large, Active */
+	/*---------------*/
+	td.axisRTabLargeActiveL {
+		background-image:url(/core/graphics/rtab/large/active_left_31x35px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 31px;	
+		height: 35px;
+		}
+
+	td.axisRTabLargeActiveM {
+		background-image:url(/core/graphics/rtab/large/active_bg_72x35px.gif);
+		background-repeat: repeat;
+		height: 35px;
+		text-align: center;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 12px;	 
+		font-style: normal;  
+		font-weight: bold;
+		line-height: 14px;  
+		color: #666666;
+		}
+
+	td.axisRTabLargeActiveR {
+		background-image:url(/core/graphics/rtab/large/active_right_31x35px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 31px;	
+		height: 35px;
+		}
+
+
+/*------------------------*/
+/* The Small Rounded Tabs */
+/*------------------------*/
+
+	td.axisRTabSmallCT {
+		height: 20px;
+		width: 5px;
+		}
+
+	td.axisRTabSmallLine {
+		background-image:url(/core/graphics/rtab/small/bg_line_20x25px.gif);
+		background-repeat: repeat;
+		line-height: 0px;
+		height: 25px;
+		}
+
+	/*-----------------*/
+	/* Small, Inactive */
+	/*-----------------*/
+	td.axisRTabSmallInActiveL {
+		background-image:url(/core/graphics/rtab/small/inactive_left_20x25px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 20px;	
+		height: 25px;
+		}
+		
+	td.axisRTabSmallInActiveM {
+		background-image:url(/core/graphics/rtab/small/inactive_bg_20x25px.gif);
+		background-repeat: repeat;
+		height: 25px;
+		text-align: center;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 10px;	 
+		font-style: normal;  
+		font-weight: bold;
+		line-height: 12px;  
+		color: #666666;
+		}
+
+	td.axisRTabSmallInActiveR {
+		background-image:url(/core/graphics/rtab/small/inactive_right_20x25px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 20px;
+		height: 25px;
+		}
+
+	/*---------------*/
+	/* Small, Active */
+	/*---------------*/
+	td.axisRTabSmallActiveL {
+		background-image:url(/core/graphics/rtab/small/active_left_20x25px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 20px;	
+		height: 25px;
+		}
+
+	td.axisRTabSmallActiveM {
+		background-image:url(/core/graphics/rtab/small/active_bg_20x25px.gif);
+		background-repeat: repeat;
+		height: 25px;
+		text-align: center;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 10px;	 
+		font-style: normal;  
+		font-weight: bold;
+		line-height: 12px;  
+		color: #666666;
+		}
+
+	td.axisRTabSmallActiveR {
+		background-image:url(/core/graphics/rtab/small/active_right_20x25px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 20px;	
+		height: 25px;
+		}
+
+
+/*------------------------*/
+/* Large Rounded Tabs with smaller text */
+/*------------------------*/
+
+	td.axisRTab2LargeCT {
+		height: 30px;
+		width: 5px;
+		}
+
+	td.axisRTab2LargeLine {
+		background-image:url(/core/graphics/rtab/large/bg_line_72x35px.gif);
+		background-repeat: repeat;
+		line-height: 0px;
+		height: 35px;
+		}
+
+	/*-----------------*/
+	/* Large, Inactive */
+	/*-----------------*/
+	td.axisRTab2LargeInActiveL {
+		background-image:url(/core/graphics/rtab/large/inactive_left_31x35px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 31px;	
+		height: 35px;
+		}
+		
+	td.axisRTab2LargeInActiveM {
+		background-image:url(/core/graphics/rtab/large/inactive_bg_72x35px.gif);
+		background-repeat: repeat;
+		height: 35px;
+		text-align: center;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 10px;	 
+		font-style: normal;  
+		font-weight: bold;
+		line-height: 14px;  
+		color: #666666;
+		}
+
+	td.axisRTab2LargeInActiveR {
+		background-image:url(/core/graphics/rtab/large/inactive_right_31x35px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 31px;
+		height: 35px;
+		}
+
+	/*---------------*/
+	/* Large, Active */
+	/*---------------*/
+	td.axisRTab2LargeActiveL {
+		background-image:url(/core/graphics/rtab/large/active_left_31x35px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 31px;	
+		height: 35px;
+		}
+
+	td.axisRTab2LargeActiveM {
+		background-image:url(/core/graphics/rtab/large/active_bg_72x35px.gif);
+		background-repeat: repeat;
+		height: 35px;
+		text-align: center;
+		font-family: Verdana, Helvetica, Arial, sans-serif;
+		font-size: 10px;	 
+		font-style: normal;  
+		font-weight: bold;
+		line-height: 14px;  
+		color: #666666;
+		}
+
+	td.axisRTab2LargeActiveR {
+		background-image:url(/core/graphics/rtab/large/active_right_31x35px.gif);
+		background-repeat: no-repeat;
+		line-height: 0px;
+		width: 31px;	
+		height: 35px;
+		}

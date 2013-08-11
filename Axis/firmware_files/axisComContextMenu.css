@@ -1,0 +1,306 @@
+﻿/*
+Width for diffrent Context Navigations
+4 cells default
+*/
+ul.navItemsNarrow2 {
+	width: 540px;
+}
+
+ul.navItemsNarrow2 li {
+	width: 270px;
+}
+
+ul.navItemsNarrow2 li ul li {
+	width: 270px;
+}
+
+ul.navItemsNarrow3 {
+	width: 540px;
+}
+
+ul.navItemsNarrow3 li {
+	width: 180px;
+}
+
+ul.navItemsNarrow3 li ul li {
+	width: 180px;
+}
+
+
+ul.navItemsNarrow4 {
+	width: 540px;
+}
+
+ul.navItemsNarrow4 li {
+	width: 135px;
+}
+
+ul.navItemsNarrow4 li ul li {
+	width: 133px;
+}
+
+
+ul.navItemsNarrow5 {
+	width: 540px;
+}
+
+
+ul.navItemsNarrow5 li {
+	width: 108px;
+}
+
+ul.navItemsNarrow5 li ul li {
+	width: 106px;
+}
+
+ul.navItemsNarrow6 {
+	width: 540px;
+}
+
+ul.navItemsNarrow6 li {
+	width: 90px;
+}
+
+ul.navItemsNarrow6 li ul li {
+	width: 88px;
+}
+
+ul.navItemsWide3 {
+	width: 600px;
+}
+
+ul.navItemsWide3 li {
+	width: 200px;
+}
+
+ul.navItemsWide4 {
+	width: 708px;
+}
+
+ul.navItemsWide4 li {
+	width: 177px;
+}
+
+ul.navItemsWide4 li ul li {
+	width: 88px;
+}
+
+
+ul.navItemsWide5 {
+	width: 708px;
+}
+
+ul.navItemsWide5 li {
+	width: 141px;
+}
+
+
+ul.navItemsWide5 li ul li {
+	width: 88px;
+}
+
+
+ul.navItemsWide6 {
+	width: 708px;
+}
+
+ul.navItemsWide6 li {
+	width: 118px;
+}
+
+ul.navItemsWide6 li ul li {
+	width: 88px;
+}
+
+ul.navItemsWide7 {
+	width: 708px;
+}
+
+ul.navItemsWide7 li {
+	width: 101px;
+}
+
+ul.navItemsWide7 li ul li {
+	width: 88px;
+}
+
+ul.navItemsNarrow7 {
+	width: 539px;
+}
+
+ul.navItemsNarrow7 li {
+	width: 77px;
+}
+
+ul.navItemsNarrow7 li ul li {
+	width: 88px;
+}
+
+ul.navItemsWide8 {
+	width: 704px;
+}
+
+ul.navItemsWide8 li {
+	width: 88px;
+}
+
+ul.navItemsWide8 li ul li {
+	width: 88px;
+}
+
+/* 
+The Context navigation 
+*/
+ul#contextNav {
+	border: 0px;
+	display: block;
+	height: 22px;
+ 
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+}
+
+/* First menue */
+ul#contextNav li {
+	background-image: url('/core/graphics/axisFlex/background_round_menu_mid.gif');
+	background-position: top left;
+	background-repeat: repeat-x;
+	background-color: #EEEEEE;
+	
+	display: inline;
+	
+	float: left;
+	line-height: 13px;
+	
+	list-style: none;
+	
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	
+	text-align: center;
+	vertical-align: top;
+}
+
+ul#contextNav li div {
+	border-right: 1px solid #CCCCCC;
+	display: block;
+	height: 22px;
+	
+	position: relative;
+}
+
+ul#contextNav li div#firstNavItem {
+	background-image: url('/core/graphics/axisFlex/background_round_menu_left.gif');
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+
+ul#contextNav li div#lastNavItem {
+	background-image: url('/core/graphics/axisFlex/background_round_menu_right.gif');
+	background-position: top right;
+	background-repeat: no-repeat;
+	border-right: 0px;
+			
+}
+
+ul#contextNav li a {
+	color: #0066CC;
+	display: block;
+	font-weight: bold;
+	font-size: 10px;
+	height: 18px;
+	padding-top: 4px;
+	text-decoration: none;
+}
+
+ul#contextNav li a:hover {
+	text-decoration: underline;
+}
+
+/* 2-rows submenu High */
+ul#contextNav li div#NavItemHigh {
+	background-image: url('/core/graphics/axisFlex/background_round_menu_high_mid.gif');
+	background-color: #EEEEEE;
+	border-right: 1px solid #CCCCCC;
+	display: block;
+	height: 34px;
+	position: relative;
+}
+
+ul#contextNav li div#firstNavItemHigh {
+	background-image: url('/core/graphics/axisFlex/background_round_menu_high_left.gif');
+	background-position: top left;
+	background-repeat: no-repeat;
+	display: block;
+	height: 34px;}
+
+ul#contextNav li div#lastNavItemHigh {
+	background-image: url('/core/graphics/axisFlex/background_round_menu_high_right.gif');
+	background-position: top right;
+	background-repeat: no-repeat;
+	border-right: 0px;			
+	display: block;
+	height: 34px;}
+
+
+
+/* Second menue 
+ul#contextNav li ul {
+	background-color: #939393;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px -1px;
+	position: relative;
+	list-style: none;
+	display: none;
+	padding-top: 0px;
+}
+
+ul#contextNav li ul li {
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	height: 22px;
+	line-height: 12px;
+	padding: 0px 0px 0px 1px;
+	margin: 0px 0px 0px 0px;
+	vertical-align: top;
+	float: none;
+	background-image: none;
+}
+
+
+ul#contextNav li  ul li a {
+	display: block;
+	font-weight: bold;
+	height: 17px;
+}
+
+ul#contextNav li ul li a:hover {
+}
+
+
+ul#contextNav li ul {
+  display: none;
+  position: absolute;
+  left: 0px;
+}
+
+ul#contextNav li>ul { 
+	top: auto;
+	left: auto;
+}
+
+ul#contextNav li li { 
+	display: block;
+	float: none;
+	border: 0;
+}
+
+ul#contextNav li:hover ul, 
+ul#contextNav li.over ul { 
+	display: block;
+}
+*/
+
