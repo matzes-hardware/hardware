@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1032"
-   height="567"
+   width="1034.5034"
+   height="531.57568"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
@@ -25,11 +25,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.0553846"
-     inkscape:cx="517.89504"
-     inkscape:cy="283.49999"
+     inkscape:zoom="1"
+     inkscape:cx="513.45367"
+     inkscape:cy="210.21542"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g2996"
      showgrid="false"
      inkscape:window-width="1280"
      inkscape:window-height="973"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,25 +56,29 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(141,-254.57646)">
+     transform="translate(182.20332,-396.14917)">
     <image
-       y="254.57646"
-       x="-141"
+       y="396.14917"
+       x="-182.20332"
        id="image2993"
-       xlink:href="file:///home/code/Hardware/Graupner%20Fluppi/2013-09-07%2019.56.24.jpg"
-       height="567"
-       width="1032" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M -99.489796,546.38551 C 15.756068,387.08518 668.91522,312.07845 839.50437,320.8753 l -32.21574,126.96793 0,169.60642 40.74344,134.5481 C 517.01387,744.21987 45.537255,703.65117 -99.489796,546.38551 z"
-       id="path3015"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M -86.224489,546.38551 C 48.779841,392.80292 580.53338,347.69457 815.81632,334.14061 l -39.79591,118.44023 0,168.65889 60.6414,115.59767 C 594.7196,736.23574 89.222959,708.67226 -86.224489,546.38551 z"
-       id="path3017"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccc" />
+       xlink:href="file:///home/code/Hardware/Graupner%20Fluppi/Umriss.jpg"
+       height="531.57568"
+       width="1034.3287" />
+    <g
+       id="g2996"
+       transform="matrix(-2.9153059,0,0,3.1351079,2356.2387,-532.03995)">
+      <path
+         sodipodi:nodetypes="cccccc"
+         inkscape:connector-curvature="0"
+         id="path3015"
+         d="m 516.06596,387.39124 c 42.0466,-60.35232 322.58809,-84.52829 343.27111,-81.31883 l -10.72463,44.40951 1.02905,58.68996 13.14986,45.8992 c -71.71808,4.1796 -307.19101,-17.95786 -346.72539,-67.67984 z"
+         style="fill:none;stroke:#ff0000;stroke-width:0.36484259px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cccccc"
+         inkscape:connector-curvature="0"
+         id="path3017"
+         d="M 521.59175,387.07227 C 551.63812,341.88373 773.08582,309.1589 855.4969,309.6363 l -18.63546,43.21204 1.71509,56.11149 19.38043,41.85598 c -73.52109,0.0995 -285.04616,-11.23274 -336.36521,-63.74354 z"
+         style="fill:none;stroke:#ff0000;stroke-width:0.36484259px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
   </g>
 </svg>
