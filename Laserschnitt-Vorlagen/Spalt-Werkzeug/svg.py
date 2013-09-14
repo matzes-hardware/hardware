@@ -27,11 +27,11 @@ class LineTo:
     def __str__(self):
         return 'l '+str(self.lineTo)
 
+
 class CubicBezier:
     def __init__(self, path):
         self.bezierTriples = []
         points = path.split(' ')[1:]
-        print points
         i = 0
         while i < range(len(points)):
             t = ( Point(points[i]), Point(points[i+1]), Point(points[i+2]) )
@@ -39,10 +39,9 @@ class CubicBezier:
             i += 3
             if (i >= len(points)) or (points[i][0] not in '-0123456789'):
                 break
-        print str(len(self.bezierTriples))+' Bezierhandles geparst'
     
     def __str__(self):
-        return 'c '+' '.join([str(b[0])+' '+str(b[1])+' '+str(b[2]) for b in self.bezierTriples])
+        return 'c '+' '.join( [str(b[0])+' '+str(b[1])+' '+str(b[2]) for b in self.bezierTriples] )
 
 
 class Path:

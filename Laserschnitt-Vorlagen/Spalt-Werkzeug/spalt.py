@@ -11,17 +11,19 @@ path_xml = betweens(piece_group, "<path\n", "/>", include_before=True, include_a
 #for p in path_xml:
 #    piece_group = piece_group.replace(p,'')
 
-path = []
+paths = []
 for p in path_xml:
     P = Path(p)
-    print str(P)
-    print P.points
-    if len(P.d) == 3:
-        # cut
-        path.append( P )
+    if len(P.d) == 2:
+        paths.append( P )
     else:
-        # piece
         piece = P
-        print 'PIECE'
+
+print '\nBezier:'
+print str(piece)
+
+print '\nSpalten:'
+for path in paths:
+    print str(path)
 
 open("Pteranodon2.svg","w").write(svg)
