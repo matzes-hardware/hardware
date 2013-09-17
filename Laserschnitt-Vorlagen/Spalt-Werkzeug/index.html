@@ -73,27 +73,106 @@ iframe {
 </svg>
 
 <script>
+// enter SVG
 var svg = document.getElementById('svg');
 var paths = svg.getElementsByTagName('path');
 
-// identify which path is the piece and which are slots
-var piece, slots; 
-
-
-var segments = paths[0].pathSegList;
-console.log(segments)
-for (var i=0,len=segments.numberOfItems;i<len;++i){
-  var segment = segments.getItem(i);
-  switch(segment.pathSegType){
-    case SVGPathSeg.PATHSEG_CURVETO_CUBIC_REL:
-      // segment is a SVGPathSegLinetoAbs object
-      console.log( "relative cubic Bezier curveto ", segment.x, segment.y );
-    break;
-//    case SVGPathSeg.PATHSEG_CLOSEPATH:
-      // ...
-    //break;
-    // see http://www.w3.org/TR/SVG11/paths.html#DOMInterfaces for constants
+/*
+ * http://stackoverflow.com/questions/9677885/convert-svg-path-to-absolute-commands
+ */
+function convertToAbsolute(path){
+    var x0,y0,x1,y1,x2,y2,segs = path.pathSegList;
+    for (var x=0,y=0,i=0,len=segs.numberOfItems;i<len;++i){
+      var seg = segs.getItem(i), c=seg.pathSegTypeAsLetter;
+      if (/[MLHVCSQTA]/.test(c)){
+        if ('x' in seg) x=seg.x;
+        if ('y' in seg) y=seg.y;
+      }else{
+        if ('x1' in seg) x1=x+seg.x1;
+        if ('x2' in seg) x2=x+seg.x2;
+        if ('y1' in seg) y1=y+seg.y1;
+        if ('y2' in seg) y2=y+seg.y2;
+        if ('x'  in seg) x+=seg.x;
+        if ('y'  in seg) y+=seg.y;
+        switch(c){
+          case 'm': segs.replaceItem(path.createSVGPathSegMovetoAbs(x,y),i);                   break;
+          case 'l': segs.replaceItem(path.createSVGPathSegLinetoAbs(x,y),i);                   break;
+          case 'h': segs.replaceItem(path.createSVGPathSegLinetoHorizontalAbs(x),i);           break;
+          case 'v': segs.replaceItem(path.createSVGPathSegLinetoVerticalAbs(y),i);             break;
+          case 'c': segs.replaceItem(path.createSVGPathSegCurvetoCubicAbs(x,y,x1,y1,x2,y2),i); break;
+          case 's': segs.replaceItem(path.createSVGPathSegCurvetoCubicSmoothAbs(x,y,x2,y2),i); break;
+          case 'q': segs.replaceItem(path.createSVGPathSegCurvetoQuadraticAbs(x,y,x1,y1),i);   break;
+          case 't': segs.replaceItem(path.createSVGPathSegCurvetoQuadraticSmoothAbs(x,y),i);   break;
+          case 'a': segs.replaceItem(path.createSVGPathSegArcAbs(x,y,seg.r1,seg.r2,seg.angle,seg.largeArcFlag,seg.sweepFlag),i);   break;
+          case 'z': case 'Z': x=x0; y=y0; break;
+        }
+      }
+      // Record the start of a subpath
+      if (c=='M' || c=='m') x0=x, y0=y;
+    }
   }
+
+// identify which path is the piece and which are slots
+piece = null;
+slots = []; 
+for (var i=0; i<paths.length; i++) {
+    convertToAbsolute(paths[i]);
+    if (paths[i].pathSegList.numberOfItems > 2) {
+        if (piece != undefined)
+            slots.push(piece);
+        piece = paths[i];
+    } else {
+        slots.push(paths[i]);
+    }
+}
+console.log('Slots: ');
+console.log(slots);
+console.log('Piece: ');
+console.log(piece);
+
+/*
+ * for every slot:
+ * identify the affected piece segment
+ * create a segment from slot path
+ * replace piece segment by slot segment
+ * remove slot path
+ */
+
+calcDistance = function(A, B) {
+    return Math.sqrt( Math.pow(B.x-A.x,2) + Math.pow(B.y-A.y,2) );
+}
+
+findClosestPieceSegment = function(slot) {
+    var slotStart = slot.pathSegList.getItem(0);
+    var slotStop = slot.pathSegList.getItem(1);
+    var minimumDistance = null, minimumSegment = null, minimumIndex = null;
+    var segments = piece.pathSegList;
+    for (var i=0,len=segments.numberOfItems; i<len; ++i){
+        var segment = segments.getItem(i);
+        if (segment.pathSegType== SVGPathSeg.PATHSEG_CURVETO_CUBIC_ABS) {
+//            console.log(segment);
+//            console.log(slotStart);
+            var distance = calcDistance(segment, slotStart);
+            console.log(distance);
+            if (minimumSegment == null || minimumDistance > distance) {
+                minimumDistance = distance;
+                minimumSegment = segment;
+                minimumIndex = i;
+            }
+        }
+    }
+    piece.pathSegList.removeItem(minimumIndex);
+    return minimumSegment;
+ }
+
+for (var i=0; i<slots.length; i++) {
+    var segment = findClosestPieceSegment(slots[i]);
+    console.log('closest:');
+    console.log(segment);
+        
+    
+    // remove slot path
+    slots[i].parentNode.removeChild(slots[i]);
 }
 </script>
 
