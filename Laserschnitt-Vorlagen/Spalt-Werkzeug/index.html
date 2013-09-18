@@ -25,6 +25,9 @@ iframe {
 <input type="button" value="1. Load" onclick="loadPiece();" />
 <input type="button" value="2. Cut puzzle" onclick="cutSlots();" />
 
+<!--
+  The following SVG will be manipulated
+  -->
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -113,11 +116,11 @@ iframe {
 
 
 <script>
-// enter SVG
 var svg = document.getElementById('svg');
 var paths = svg.getElementsByTagName('path');
 
 /*
+ * convert all segments of a path from relative coordinates to absolute
  * http://stackoverflow.com/questions/9677885/convert-svg-path-to-absolute-commands
  */
 convertToAbsolute = function(path){
@@ -152,6 +155,9 @@ convertToAbsolute = function(path){
     }
   }
 
+/*
+ * draw some Inkscape-like rectangles to show where the path points are
+ */
 addPathPointRects = function(path, prefixId, addClass) {
     for (var i=0; i<path.pathSegList.numberOfItems; ++i){
         var segment = path.pathSegList.getItem(i);
@@ -171,7 +177,7 @@ addPathPointRects = function(path, prefixId, addClass) {
 }
 
 loadPiece = function() {
- // discriminate between piece and slot paths
+    // discriminate between piece and slot paths
     piece = null;
     slots = []; 
     for (var i=0; i<paths.length; i++) {
@@ -182,12 +188,12 @@ loadPiece = function() {
             slots.push(paths[i]);
         }
     }
-
+    
     // draw some Inkscape-like rectangles to show where the path points are 
     addPathPointRects(piece, 'piecePoint', 'piecePoint');
     for (var i=0; i<slots.length; i++)
         addPathPointRects(slots[i], 'slotPoint'+i+'_', 'slotPoint');
-
+    
     console.log('Slots: '+slots.length);
     console.log(slots);
     console.log('Piece: ');
@@ -195,6 +201,7 @@ loadPiece = function() {
 }
 
 /*
+ * Algorithm: 
  * for every slot:
  * identify the affected piece segment
  * create a slot segment from slot path
@@ -202,10 +209,16 @@ loadPiece = function() {
  * remove slot path
  */
 
+/*
+ * calculate the distance in pixels between two points A and B
+ */
 calcDistance = function(A, B) {
     return Math.sqrt( Math.pow(B.x-A.x,2) + Math.pow(B.y-A.y,2) );
 }
 
+/*
+ * Identify the smaller point index of the intersected piece segment
+ */
 findPieceSlotIntersection = function(piece, slot) {
     
     // get slot dimensions
@@ -242,6 +255,11 @@ findPieceSlotIntersection = function(piece, slot) {
     return minDistancePointIndex1;
 }
 
+/*
+ * for all slots:
+ * remove intersected piece segment
+ * insert four Lineto segments drawing a slot
+ */
 cutSlots = function() {
     var width=12;
     for (var i=0; i<slots.length; i++) {
