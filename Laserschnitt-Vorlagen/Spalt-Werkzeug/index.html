@@ -9,7 +9,7 @@ iframe {
     height: 90%;
     overflow: scroll;
     }
-.rectPathPoint {
+.pathPoint {
     stroke: gray;
     }
 .piecePoint {
@@ -30,10 +30,34 @@ iframe {
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    width="1346.4567"
    height="1346.4567"
-   id="svg">
+   id="svg"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="Pteranodon.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="973"
+     id="namedview13"
+     showgrid="false"
+     inkscape:zoom="0.53677925"
+     inkscape:cx="676.95426"
+     inkscape:cy="673.22833"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g2990" />
   <defs
      id="defs4" />
   <metadata
@@ -44,7 +68,7 @@ iframe {
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,30 +82,34 @@ iframe {
          id="path3084"
          style="fill:none;stroke:#000000;stroke-width:2.5395" />
       <path
-         d="m -239.28287,1190.1578 -7.5,83.5"
+         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -239.28287,1190.1578 c -2.5,27.8333 -5,55.6667 -7.5,83.5"
          id="path3026"
-         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         inkscape:connector-curvature="0" />
       <path
-         d="m 735.5,613.95666 9,82"
-         transform="translate(-804.78287,577.20117)"
+         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -69.28287,1191.1578 c 3,27.3334 6,54.6667 9,82"
          id="path3028"
-         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         inkscape:connector-curvature="0" />
       <path
-         d="m -151.28287,1442.1578 -1.5,-133.5"
+         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -151.28287,1442.1578 c -0.5,-44.5 -1,-89 -1.5,-133.5"
          id="path3030"
-         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         inkscape:connector-curvature="0" />
       <path
-         d="m 800.5,910.95666 -18,-148"
-         transform="translate(-804.78287,577.20117)"
+         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -4.28287,1488.1578 c -6,-49.3333 -12,-98.6666 -18,-148"
          id="path3032"
-         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         inkscape:connector-curvature="0" />
       <path
-         d="m -298.78287,1488.1578 15,-148.5"
+         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -298.78287,1488.1578 c 5,-49.5 10,-99 15,-148.5"
          id="path3034"
-         style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         inkscape:connector-curvature="0" />
     </g>
   </g>
 </svg>
+
 
 <script>
 // enter SVG
@@ -123,7 +151,7 @@ function convertToAbsolute(path){
     }
   }
 
-addPathPointRects = function(path, addClass) {
+addPathPointRects = function(path, prefixId, addClass) {
     for (var i=0; i<path.pathSegList.numberOfItems; ++i){
         var segment = path.pathSegList.getItem(i);
 //        console.log(i+': ');
@@ -131,8 +159,8 @@ addPathPointRects = function(path, addClass) {
         if (segment.pathSegType != SVGPathSeg.PATHSEG_CLOSEPATH)
             d3.select('#g2990')
                 .append('rect')
-                    .attr("id", addClass+i)
-                    .attr("class", "rectPathPoint "+addClass)
+                    .attr("id", prefixId+i)
+                    .attr("class", "pathPoint "+addClass)
                     .attr("x", parseFloat(segment.x)-4)
                     .attr("y", parseFloat(segment.y)-4)
                     .attr("width", 8)
@@ -147,8 +175,6 @@ slots = [];
 for (var i=0; i<paths.length; i++) {
     convertToAbsolute(paths[i]);
     if (paths[i].pathSegList.numberOfItems > 2) {
-        if (piece != undefined)
-            slots.push(piece);
         piece = paths[i];
     } else {
         slots.push(paths[i]);
@@ -156,11 +182,11 @@ for (var i=0; i<paths.length; i++) {
 }
 
 // draw some Inkscape-like rectangles to show where the path points are 
-addPathPointRects(piece, 'piecePoint');
+addPathPointRects(piece, 'piecePoint', 'piecePoint');
 for (var i=0; i<slots.length; i++)
-    addPathPointRects(slots[i], 'slotPoint');
+    addPathPointRects(slots[i], 'slotPoint'+i+'_', 'slotPoint');
 
-console.log('Slots: ');
+console.log('Slots: '+slots.length);
 console.log(slots);
 console.log('Piece: ');
 console.log(piece);
@@ -169,7 +195,7 @@ console.log(piece);
 /*
  * for every slot:
  * identify the affected piece segment
- * create a segment from slot path
+ * create a slot segment from slot path
  * replace piece segment by slot segment
  * remove slot path
  */
