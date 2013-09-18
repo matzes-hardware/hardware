@@ -22,7 +22,8 @@ iframe {
 </head>
 
 <body>
-<!--object type="image/svg+xml" id="svg" data="Pteranodon.svg"></object-->
+<input type="button" value="1. Load" onclick="loadPiece();" />
+<input type="button" value="2. Cut puzzle" onclick="cutSlots();" />
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -119,7 +120,7 @@ var paths = svg.getElementsByTagName('path');
 /*
  * http://stackoverflow.com/questions/9677885/convert-svg-path-to-absolute-commands
  */
-function convertToAbsolute(path){
+convertToAbsolute = function(path){
     var x0,y0,x1,y1,x2,y2,segs = path.pathSegList;
     for (var x=0,y=0,i=0,len=segs.numberOfItems;i<len;++i){
       var seg = segs.getItem(i), c=seg.pathSegTypeAsLetter;
@@ -169,28 +170,29 @@ addPathPointRects = function(path, prefixId, addClass) {
     }
 }
 
-// discriminate between piece and slot paths
-piece = null;
-slots = []; 
-for (var i=0; i<paths.length; i++) {
-    convertToAbsolute(paths[i]);
-    if (paths[i].pathSegList.numberOfItems > 2) {
-        piece = paths[i];
-    } else {
-        slots.push(paths[i]);
+loadPiece = function() {
+ // discriminate between piece and slot paths
+    piece = null;
+    slots = []; 
+    for (var i=0; i<paths.length; i++) {
+        convertToAbsolute(paths[i]);
+        if (paths[i].pathSegList.numberOfItems > 2) {
+            piece = paths[i];
+        } else {
+            slots.push(paths[i]);
+        }
     }
+
+    // draw some Inkscape-like rectangles to show where the path points are 
+    addPathPointRects(piece, 'piecePoint', 'piecePoint');
+    for (var i=0; i<slots.length; i++)
+        addPathPointRects(slots[i], 'slotPoint'+i+'_', 'slotPoint');
+
+    console.log('Slots: '+slots.length);
+    console.log(slots);
+    console.log('Piece: ');
+    console.log(piece);
 }
-
-// draw some Inkscape-like rectangles to show where the path points are 
-addPathPointRects(piece, 'piecePoint', 'piecePoint');
-for (var i=0; i<slots.length; i++)
-    addPathPointRects(slots[i], 'slotPoint'+i+'_', 'slotPoint');
-
-console.log('Slots: '+slots.length);
-console.log(slots);
-console.log('Piece: ');
-console.log(piece);
-
 
 /*
  * for every slot:
@@ -238,20 +240,31 @@ findPieceSlotIntersection = function(piece, slot) {
     $('#piecePoint'+minDistancePointIndex2).css('fill', 'red');
     
     return minDistancePointIndex1;
- }
+}
 
-for (var i=0; i<slots.length; i++) {
-    console.log('Piece path intersection of slot '+i+':');
-    var a = findPieceSlotIntersection(piece, slots[i]);
-    var b = a+1;
-    console.log(a+' - '+b);
-    
-    var A = slots[i].pathSegList.getItem(1);
-    var slotSegment = piece.createSVGPathSegLinetoAbs( A.x, A.y );
-    piece.pathSegList.insertItemBefore(slotSegment, b);
-    
-    // remove slot path
-    //slots[i].parentNode.removeChild(slots[i]);
+cutSlots = function() {
+    var width=12;
+    for (var i=0; i<slots.length; i++) {
+        console.log('Piece path intersection of slot '+i+':');
+        var a = findPieceSlotIntersection(piece, slots[i]);
+        var b = a+1;
+        console.log(a+' - '+b);
+        
+        var A = slots[i].pathSegList.getItem(0);
+        var B = slots[i].pathSegList.getItem(1);
+        var w = width/2;
+        if (piece.pathSegList.getItem(a).x > piece.pathSegList.getItem(b).x)
+            w = -w;
+        piece.pathSegList.removeItem(b);
+        piece.pathSegList.insertItemBefore(piece.createSVGPathSegLinetoAbs( A.x-w, A.y ), b++);
+        piece.pathSegList.insertItemBefore(piece.createSVGPathSegLinetoAbs( B.x-w, B.y ), b++);
+        piece.pathSegList.insertItemBefore(piece.createSVGPathSegLinetoAbs( B.x+w, B.y ), b++);
+        piece.pathSegList.insertItemBefore(piece.createSVGPathSegLinetoAbs( A.x+w, A.y ), b++);
+        
+        // remove slot path
+        slots[i].parentNode.removeChild(slots[i]);
+        $('.slotPoint').remove();
+    }
 }
 </script>
 
