@@ -235,9 +235,9 @@ findPieceSlotIntersection = function(piece, slot) {
     if (minDistancePointIndex2 < minDistancePointIndex1) // then swap variables
         minDistancePointIndex2 = [minDistancePointIndex1, minDistancePointIndex1 = minDistancePointIndex2][0];
     
-    // highlight intersection
+/*    // highlight intersection
     $('#piecePoint'+minDistancePointIndex1).css('fill', 'red');
-    $('#piecePoint'+minDistancePointIndex2).css('fill', 'red');
+    $('#piecePoint'+minDistancePointIndex2).css('fill', 'red'); */
     
     return minDistancePointIndex1;
 }
