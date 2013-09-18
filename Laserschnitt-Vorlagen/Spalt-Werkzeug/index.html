@@ -1,12 +1,23 @@
 <html>
 
 <head>
+<script src="jQuery.js"></script>
+<script src="d3.js"></script>
 <style>
 iframe {
     width: 90%;
     height: 90%;
     overflow: scroll;
     }
+.rectPathPoint {
+    stroke: gray;
+    }
+.piecePoint {
+    fill: blue;
+}
+.slotPoint {
+    fill: yellow;
+}
 </style>
 </head>
 
@@ -112,7 +123,25 @@ function convertToAbsolute(path){
     }
   }
 
-// identify which path is the piece and which are slots
+addPathPointRects = function(path, addClass) {
+    for (var i=0; i<path.pathSegList.numberOfItems; ++i){
+        var segment = path.pathSegList.getItem(i);
+//        console.log(i+': ');
+//        console.log(segment);
+        if (segment.pathSegType != SVGPathSeg.PATHSEG_CLOSEPATH)
+            d3.select('#g2990')
+                .append('rect')
+                    .attr("id", addClass+i)
+                    .attr("class", "rectPathPoint "+addClass)
+                    .attr("x", parseFloat(segment.x)-4)
+                    .attr("y", parseFloat(segment.y)-4)
+                    .attr("width", 8)
+                    .attr("height", 8)
+                    .attr("tooltip", i);
+    }
+}
+
+// discriminate between piece and slot paths
 piece = null;
 slots = []; 
 for (var i=0; i<paths.length; i++) {
@@ -125,10 +154,17 @@ for (var i=0; i<paths.length; i++) {
         slots.push(paths[i]);
     }
 }
+
+// draw some Inkscape-like rectangles to show where the path points are 
+addPathPointRects(piece, 'piecePoint');
+for (var i=0; i<slots.length; i++)
+    addPathPointRects(slots[i], 'slotPoint');
+
 console.log('Slots: ');
 console.log(slots);
 console.log('Piece: ');
 console.log(piece);
+
 
 /*
  * for every slot:
@@ -142,37 +178,56 @@ calcDistance = function(A, B) {
     return Math.sqrt( Math.pow(B.x-A.x,2) + Math.pow(B.y-A.y,2) );
 }
 
-findClosestPieceSegment = function(slot) {
-    var slotStart = slot.pathSegList.getItem(0);
-    var slotStop = slot.pathSegList.getItem(1);
-    var minimumDistance = null, minimumSegment = null, minimumIndex = null;
-    var segments = piece.pathSegList;
-    for (var i=0,len=segments.numberOfItems; i<len; ++i){
-        var segment = segments.getItem(i);
-        if (segment.pathSegType== SVGPathSeg.PATHSEG_CURVETO_CUBIC_ABS) {
-            var distance = calcDistance(segment, slotStart);
-//            console.log(segment);
-//            console.log(slotStart);
-//            console.log(distance);
-            if (minimumSegment == null || minimumDistance > distance) {
-                minimumDistance = distance;
-                minimumSegment = segment;
-                minimumIndex = i;
+findPieceSlotIntersection = function(piece, slot) {
+    // slot dimensions
+    var slotFrom = slot.pathSegList.getItem(0);
+    var slotTo = slot.pathSegList.getItem(1);
+    var slotWidth = 20;
+    
+    var pointBeforeIndex = pointAfterIndex = null;
+    var minDistance1 = minDistance2 = piece.getTotalLength(); // maximum possible distance
+    var minDistancePointIndex1 = minDistancePointIndex2 = null;
+    for (var i=0; i<piece.pathSegList.numberOfItems; ++i){
+        var segment = piece.pathSegList.getItem(i);
+        if (segment.pathSegType == SVGPathSeg.PATHSEG_CURVETO_CUBIC_ABS) {
+            var distance = calcDistance(segment, slotFrom);
+            console.log(i+': '+distance)
+            if (distance < minDistance1) {
+                minDistance2 = minDistance1;
+                minDistancePointIndex2 = minDistancePointIndex1;
+                minDistance1 = distance;
+                minDistancePointIndex1 = i;
+            } else if (distance < minDistance2) {
+                minDistance2 = distance;
+                minDistancePointIndex2 = i;
             }
         }
     }
-    console.log('Segment no '+minimumIndex+':');
-    console.log(minimumSegment);
+
+    console.log(minDistancePointIndex1);
+    $('#piecePoint'+minDistancePointIndex1).css('fill', 'red');
+    console.log(minDistancePointIndex2);
+    $('#piecePoint'+minDistancePointIndex2).css('fill', 'red');
+/*
+    d3.select('#g2990')
+        .append('rect')
+            .attr("class", "rect")
+            .attr("x", parseFloat(minimumSegment.x)-3)
+            .attr("y", parseFloat(minimumSegment.y)-3)
+            .attr("width", 6)
+            .attr("height", 6);
+            */
+
     //piece.pathSegList.removeItem(minimumIndex);
-    return minimumSegment;
+  //  return minimumSegment;
  }
 
 for (var i=0; i<slots.length; i++) {
-    console.log('Piece path segment closest to slot '+i+':');
-    var segment = findClosestPieceSegment(slots[i]);
+    console.log('Piece path intersection of slot '+i+':');
+    var segment = findPieceSlotIntersection(piece, slots[i]);
     
     // remove slot path
-    slots[i].parentNode.removeChild(slots[i]);
+    //slots[i].parentNode.removeChild(slots[i]);
 }
 </script>
 
