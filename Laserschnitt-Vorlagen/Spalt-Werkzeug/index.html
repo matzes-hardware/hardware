@@ -205,7 +205,8 @@ calcDistance = function(A, B) {
 }
 
 findPieceSlotIntersection = function(piece, slot) {
-    // slot dimensions
+    
+    // get slot dimensions
     var slotFrom = slot.pathSegList.getItem(0);
     var slotTo = slot.pathSegList.getItem(1);
     var slotWidth = 20;
@@ -217,7 +218,7 @@ findPieceSlotIntersection = function(piece, slot) {
         var segment = piece.pathSegList.getItem(i);
         if (segment.pathSegType == SVGPathSeg.PATHSEG_CURVETO_CUBIC_ABS) {
             var distance = calcDistance(segment, slotFrom);
-            console.log(i+': '+distance)
+//            console.log(i+': '+distance)
             if (distance < minDistance1) {
                 minDistance2 = minDistance1;
                 minDistancePointIndex2 = minDistancePointIndex1;
@@ -229,28 +230,25 @@ findPieceSlotIntersection = function(piece, slot) {
             }
         }
     }
-
-    console.log(minDistancePointIndex1);
+    if (minDistancePointIndex2 < minDistancePointIndex1) // then swap variables
+        minDistancePointIndex2 = [minDistancePointIndex1, minDistancePointIndex1 = minDistancePointIndex2][0];
+    
+    // highlight intersection
     $('#piecePoint'+minDistancePointIndex1).css('fill', 'red');
-    console.log(minDistancePointIndex2);
     $('#piecePoint'+minDistancePointIndex2).css('fill', 'red');
-/*
-    d3.select('#g2990')
-        .append('rect')
-            .attr("class", "rect")
-            .attr("x", parseFloat(minimumSegment.x)-3)
-            .attr("y", parseFloat(minimumSegment.y)-3)
-            .attr("width", 6)
-            .attr("height", 6);
-            */
-
-    //piece.pathSegList.removeItem(minimumIndex);
-  //  return minimumSegment;
+    
+    return minDistancePointIndex1;
  }
 
 for (var i=0; i<slots.length; i++) {
     console.log('Piece path intersection of slot '+i+':');
-    var segment = findPieceSlotIntersection(piece, slots[i]);
+    var a = findPieceSlotIntersection(piece, slots[i]);
+    var b = a+1;
+    console.log(a+' - '+b);
+    
+    var A = slots[i].pathSegList.getItem(1);
+    var slotSegment = piece.createSVGPathSegLinetoAbs( A.x, A.y );
+    piece.pathSegList.insertItemBefore(slotSegment, b);
     
     // remove slot path
     //slots[i].parentNode.removeChild(slots[i]);
