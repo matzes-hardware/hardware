@@ -150,10 +150,10 @@ findClosestPieceSegment = function(slot) {
     for (var i=0,len=segments.numberOfItems; i<len; ++i){
         var segment = segments.getItem(i);
         if (segment.pathSegType== SVGPathSeg.PATHSEG_CURVETO_CUBIC_ABS) {
+            var distance = calcDistance(segment, slotStart);
 //            console.log(segment);
 //            console.log(slotStart);
-            var distance = calcDistance(segment, slotStart);
-            console.log(distance);
+//            console.log(distance);
             if (minimumSegment == null || minimumDistance > distance) {
                 minimumDistance = distance;
                 minimumSegment = segment;
@@ -161,15 +161,15 @@ findClosestPieceSegment = function(slot) {
             }
         }
     }
-    piece.pathSegList.removeItem(minimumIndex);
+    console.log('Segment no '+minimumIndex+':');
+    console.log(minimumSegment);
+    //piece.pathSegList.removeItem(minimumIndex);
     return minimumSegment;
  }
 
 for (var i=0; i<slots.length; i++) {
+    console.log('Piece path segment closest to slot '+i+':');
     var segment = findClosestPieceSegment(slots[i]);
-    console.log('closest:');
-    console.log(segment);
-        
     
     // remove slot path
     slots[i].parentNode.removeChild(slots[i]);
