@@ -1,0 +1,14 @@
+iframe {
+    width: 90%;
+    height: 90%;
+    overflow: scroll;
+    }
+.pathPoint {
+    stroke: gray;
+    }
+.piecePoint {
+    fill: blue;
+}
+.slotPoint {
+    fill: yellow;
+}
