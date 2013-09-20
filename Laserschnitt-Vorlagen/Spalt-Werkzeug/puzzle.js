@@ -40,32 +40,39 @@ applyMatrixToPoint = function(matrix, x, y) {
     var p = svg.createSVGPoint();
     p.x = x;
     p.y = y;
-    return p;
+    return p.matrixTransform(matrix);
 }
 
 applyMatrixToPath = function(matrix, path) {
     var segs = path.pathSegList;
+    console.log('Before transformation:');
+    console.log(path);
+    console.log('Transformation matrix:');
+    console.log(matrix);
     for (var i=0; i < segs.numberOfItems; i++) {
         var seg = path.pathSegList.getItem(i);
         var c = seg.pathSegTypeAsLetter;
         switch(c) {
-            case 'M':
+            case 'M','L':
                 var coord = applyMatrixToPoint(matrix, seg.x, seg.y);
-                segs.replaceItem(path.createSVGPathMovetoAbs(coord.x, coord.y), i);
+                segs.replaceItem(path.createSVGPathSegMovetoAbs(coord.x, coord.y), i);
+                console.log(coord);
                 break;
             case 'C':
                 var coord = applyMatrixToPoint(matrix, seg.x, seg.y);
                 var handle1 = applyMatrixToPoint(matrix, seg.x1, seg.y1);
                 var handle2 = applyMatrixToPoint(matrix, seg.x2, seg.y2);
-                segs.replaceItem(path.createSVGPathCurvetoCubicAbs(coord.x, coord.y, handle1.x, handle1.y, handle2.x, handle2.y), i);
+                segs.replaceItem(path.createSVGPathSegCurvetoCubicAbs(coord.x, coord.y, handle1.x, handle1.y, handle2.x, handle2.y), i);
                 break;
         }
     }
+    console.log('After transformation:');
+    console.log(path);
 }
 
 applyMatrixToGroup = function(matrix, group) {
-    for (var i=0; i=group.childNodes.length; i++) {
-        if (group.childNodes[i].nodeName.toLowerCase == 'path')
+    for (var i=0; i < group.childNodes.length; i++) {
+        if (group.childNodes[i].nodeName.toLowerCase() == 'path')
             applyMatrixToPath(matrix, group.childNodes[i]);
     }
 }
@@ -78,7 +85,7 @@ applyGroupTransform = function(group) {
     
     applyMatrixToGroup(transform, group);
     
-    //group.setAttribute('transform', '');
+    group.setAttribute('transform', '');
 }
 
 /*
@@ -174,6 +181,8 @@ Piece = function(path) {
             
             // is it a slot ?
             if (path.pathSegList.numberOfItems == 2) {
+                applyMatrixToPath(path.getCTM(), path);
+               // path.setAttribute('transform', '');
                 obj.slots.push(path);
                 addPathPointRects(path, 'slotPoint'+i+'_', 'slotPoint');
             }
@@ -187,8 +196,8 @@ Piece = function(path) {
     console.log(obj.slots);
     
     // apply and remove <g transform="matrix(...);"> from parent
-    if (obj.piece.parentNode.nodeName.toLowerCase() == 'g')
-        applyGroupTransform(obj.piece.parentNode);
+    //if (obj.piece.parentNode.nodeName.toLowerCase() == 'g')
+      //  applyGroupTransform(obj.piece.parentNode);
     
     /*
      * for all slots:
