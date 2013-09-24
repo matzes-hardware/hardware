@@ -74,7 +74,8 @@ transformPath = function(path, matrix, debug) {
         return transformPoint(x, y, matrix);
     }
     
-    console.log('Transforming path "'+path.id+'" ...');
+    if (debug)
+        console.log('Transforming path "'+path.id+'" ...');
     
     var segs = path.pathSegList;
     for (var i=0; i < segs.numberOfItems; i++) {

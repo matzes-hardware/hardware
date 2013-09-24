@@ -12,7 +12,7 @@
  */
 
 load = function() {
-    $('#svg').remove();
+    $('#view').html('');
     
     // Open selected file
     var files = $('#fileSVG')[0].files;
@@ -40,10 +40,12 @@ loaded = function(data) {
         // cut off XML header
         var data = data.substr(data.indexOf('<svg'));
     }
-    $('#body').append($(data));
+    $('#view').append($(data));
+    
+    absolutizeCoordinates();
 }
 
-absolutize = function() {
+absolutizeCoordinates = function() {
     var svg = document.getElementById('svg');
     
     allPaths = svg.getElementsByTagName('path');
@@ -55,11 +57,11 @@ absolutize = function() {
     var allGroups = svg.getElementsByTagName('g');
     // for some reason the following seems not to work when counting up
     for (var i=allGroups.length-1; i>=0; i--) {
-        bakeGroupTransform(allGroups[i], debug=true);
+        bakeGroupTransform(allGroups[i]);
     }
 }
 
-identify = function() {
+identifyPieces = function() {
     allPiecePaths = [];
     allSlotPaths = [];
     for (var i=0; i<allPaths.length; i++) {
@@ -73,11 +75,11 @@ identify = function() {
     console.log(allPaths.length+' paths identified: '+allPiecePaths.length+' pieces, '+allSlotPaths.length+' slots');
 }
 
-cut = function() {
-    // for all pieces:
+cutSlots = function() {
     // cut slots
 }
 
+//open a new tab with the modified SVG
 exportSVG = function() {
-    // open a new tab with the modified SVG
+    window.open("data:image/svg+xml," + encodeURIComponent( $('#view').html() ), 'tmp');
 }

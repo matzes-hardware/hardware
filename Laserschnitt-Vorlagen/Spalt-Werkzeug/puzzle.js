@@ -64,7 +64,7 @@ Piece = function(path) {
         obj.piecePath.style['fill']='cyan';
     
     // debug:
-    console.log('Piece "'+obj.piecePath.id+'" has '+obj.slotPaths.length+' slot(s).');
+    console.log('Piece "'+obj.piecePath.id+'" has '+obj.slotPaths.length+' slots.');
     //console.log(obj.slotPaths);
     
     /*
