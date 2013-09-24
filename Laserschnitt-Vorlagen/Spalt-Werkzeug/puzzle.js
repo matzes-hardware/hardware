@@ -45,42 +45,27 @@ Piece = function(path) {
             slotPaths: []
     }
     
-    // debug:
-    console.log('Piece: ');
-    console.log(obj.piece);
-    
-    // draw some Inkscape-like rectangles to show where the path points are 
-    addPathPointRects(obj.piece, 'piecePoint', 'piecePoint');
+    appendPathPointRects(obj.piecePath, 'piecePoint', 'piecePoint');
    
-    // iterate parent's child elements
+    // Iterate parent's child elements:
     // those with only two points are slots
-    var childNodes = obj.piece.parentNode.childNodes;
+    var childNodes = obj.piecePath.parentNode.childNodes;
     for (var i=0; i < childNodes.length; i++) {
         if (childNodes[i].nodeName.toLowerCase() == 'path') {
             path = childNodes[i];
-            
-            // convert coordinates to absolute
-            convertPathToAbsolute(path);
-            
             // is it a slot ?
             if (path.pathSegList.numberOfItems == 2) {
-                applyMatrixToPath(path.getCTM(), path);
-               // path.setAttribute('transform', '');
-                obj.slots.push(path);
-                addPathPointRects(path, 'slotPoint'+i+'_', 'slotPoint');
+                obj.slotPaths.push(path);
+                appendPathPointRects(path, 'slotPoint'+i+'_', 'slotPoint');
             }
         }
     }
-    if (obj.slots.length > 0)
-        obj.piece.style['fill']='cyan';
+    if (obj.slotPaths.length > 0)
+        obj.piecePath.style['fill']='cyan';
     
     // debug:
-    console.log('Slots: '+obj.slots.length);
-    console.log(obj.slots);
-    
-    // apply and remove <g transform="matrix(...);"> from parent
-    //if (obj.piece.parentNode.nodeName.toLowerCase() == 'g')
-      //  applyGroupTransform(obj.piece.parentNode);
+    console.log('Piece "'+obj.piecePath.id+'" has '+obj.slotPaths.length+' slot(s).');
+    //console.log(obj.slotPaths);
     
     /*
      * for all slots:

@@ -3,16 +3,19 @@
 <head>
 <script src="jQuery.js"></script>
 <script src="d3.js"></script>
+<script src="svg.js"></script>
 <script src="puzzle.js"></script>
 <link rel="stylesheet" type="text/css" href="puzzle.css"/>
 <script src="index.js"></script>
 </head>
 
 <body id="body">
-<input type=file id="fileSVG" />
-<input type="button" value="1. Load" onclick="load();" />
-<input type="button" value="2. Cut" onclick="cut();" />
-<input type="button" value="3. Export" onclick="export();" />
+<b>1.</b>
+<input type=file id="fileSVG" onchange="load();" />
+<input type="button" value="2. Absolutize coordinates" onclick="absolutize();" />
+<input type="button" value="3. Identify puzzle pieces" onclick="identify();" />
+<input type="button" value="4. Cut slots" onclick="cut();" />
+<input type="button" value="5. Export modified SVG" onclick="export();" />
 <br/>
 <br/>
 

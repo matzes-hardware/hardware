@@ -12,7 +12,6 @@
  */
 
 load = function() {
-    $('#body').css('cursor','wait');
     $('#svg').remove();
     
     // Open selected file
@@ -21,11 +20,11 @@ load = function() {
         alert('Please choose a file to be loaded.');
         return;
     }
-    var file = files[0];
+    $('#body').css('cursor','wait');
 
+    var file = files[0];
     // Create an instance of the file reader and jSBGN.
     var reader = new FileReader();
-
     // This event handler is called when the file reading task is complete
     reader.onload = function (read) {
         // Get the data contained in the file
@@ -42,28 +41,44 @@ loaded = function(data) {
         var data = data.substr(data.indexOf('<svg'));
     }
     $('#body').append($(data));
-    
+}
+
+absolutize = function() {
     var svg = document.getElementById('svg');
-    var paths = svg.getElementsByTagName('path');
     
-    allPieces = [];
-    allSlots = [];
-    for (var i=0; i<paths.length; i++) {
-        if (paths[i].pathSegList.numberOfItems > 2)
-            allPieces.push(Piece(paths[i]));
-        else
-            allSlots.push(paths[i]);
+    allPaths = svg.getElementsByTagName('path');
+    for (var i=0; i<allPaths.length; i++) {
+        convertPathToAbsolute(allPaths[i]);
+        bakePathTransform(allPaths[i]);
     }
-    console.log(allPieces.length+' pieces identified');
-    
-    // now that we have identified all slots, we have to sort them to the corresponding pieces
-    for (var i=0; i<paths.length; i++) {
-        
-        }
+
+    /* doesn't work yet
+    var allGroups = svg.getElementsByTagName('g');
+    for (var i=0; i<allGroups.length; i++) {
+        bakeGroupTransform(allGroups[i]);
+    }
+    */
+}
+
+identify = function() {
+    allPiecePaths = [];
+    allSlotPaths = [];
+    for (var i=0; i<allPaths.length; i++) {
+        if (allPaths[i].pathSegList.numberOfItems > 2) {
+            var p = Piece(allPaths[i]);
+            if (p.slotPaths.length > 0)
+                allPiecePaths.push(p);
+        } else
+            allSlotPaths.push(allPaths[i]);
+    }
+    console.log(allPaths.length+' paths identified: '+allPiecePaths.length+' pieces, '+allSlotPaths.length+' slots');
 }
 
 cut = function() {
     // for all pieces:
-    //  cut slots
+    // cut slots
 }
 
+exportSVG = function() {
+    // open a new tab with the modified SVG
+}
