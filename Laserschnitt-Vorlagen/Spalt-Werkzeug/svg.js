@@ -22,7 +22,12 @@ transformPoint = function(x, y, matrix) {
  * http://stackoverflow.com/questions/9677885/convert-svg-path-to-absolute-commands
  */
 convertPathToAbsolute = function(path){
-    var x0,y0,x1,y1,x2,y2,segs = path.pathSegList;
+    
+    if (path == null || path == undefined)
+        return;
+    
+    var x0,y0,x1,y1,x2,y2;
+    var segs = path.pathSegList;
     for (var x=0,y=0,i=0,len=segs.numberOfItems;i<len;++i){
         var seg = segs.getItem(i);
         var c = seg.pathSegTypeAsLetter;
@@ -60,11 +65,16 @@ convertPathToAbsolute = function(path){
  * all segments of a path
  * (without modifying or removing the matrix)
  */
-transformPath = function(path, matrix) {
+transformPath = function(path, matrix, debug) {
+    
+    if (path == null || path == undefined)
+        return;
     
     var transform = function(x, y) {
         return transformPoint(x, y, matrix);
-    } 
+    }
+    
+    console.log('Transforming path "'+path.id+'" ...');
     
     var segs = path.pathSegList;
     for (var i=0; i < segs.numberOfItems; i++) {
@@ -89,8 +99,10 @@ transformPath = function(path, matrix) {
                     break;
             }
             if (new_segment != segment) {
-                console.log(segment);
-                console.log(new_segment);
+                if (debug) {
+                    console.log(segment);
+                    console.log(new_segment);
+                }
                 segs.replaceItem(new_segment, i);
             }
         }
@@ -99,13 +111,18 @@ transformPath = function(path, matrix) {
 
 /*
  * Apply the transform attribute of a path
- * onto the path segments and remove it afterwards
+ * onto the path segments and remove the attribute afterwards
  */
-bakePathTransform = function(path) {
+bakePathTransform = function(path, debug) {
+    
+    if (path == null || path == undefined)
+        return;
+    
     var t = path.getAttribute('transform');
     if (t != undefined && t != null && t.trim() != '') {
-        console.log(t);
-        transformPath(path, path.transform.baseVal.getItem(0).matrix);
+        if (debug)
+            console.log(t);
+        transformPath(path, path.transform.baseVal.consolidate().matrix);
         path.removeAttribute('transform');
         console.log('Path "'+path.id+'" transform baked in.')
     }
@@ -113,20 +130,39 @@ bakePathTransform = function(path) {
 
 /*
  * Apply the transform attribute of a group
- * onto all child paths of this group
+ * onto all child paths of this group recursively
  * and remove the attribute afterwards
  */
-bakeGroupTransform = function(group) {
+bakeGroupTransform = function(group, debug) {
+    
+    if (group == null || group == undefined)
+        return;
+    
+    /*
+     * Recursive transformation of group children
+     */
+    var baked = 0;
+    transformChildren = function(group, matrix) {
+        for (var i=0; i < group.childNodes.length; i++) {
+            var child = group.childNodes[i];
+            var childName = child.nodeName.toLowerCase();
+            if (childName == 'path') {
+                transformPath(child, matrix);
+                baked += 1;
+            }
+            else if (childName == 'g')
+                transformChildren(child, matrix);
+        }
+    }
+    
     var t = group.getAttribute('transform');
     if (t != undefined && t != null && t.trim() != '') {
-        console.log(t);
-        var matrix = group.transform.baseVal.getItem(0).matrix;
-        for (var i=0; i < group.childNodes.length; i++) {
-            if (group.childNodes[i].nodeName.toLowerCase() == 'path')
-                transformPath(group.childNodes[i], matrix);
-        }
+        if (debug)
+            console.log(t);
+        var matrix = group.transform.baseVal.consolidate().matrix;
+        transformChildren(group, matrix);
         group.removeAttribute('transform');
-        console.log('Group "'+group.id+'" transform baked in.')
+        console.log('Group "'+group.id+'" transform baked into '+baked+' paths.');
     }
 }
 

@@ -52,12 +52,11 @@ absolutize = function() {
         bakePathTransform(allPaths[i]);
     }
 
-    /* doesn't work yet
     var allGroups = svg.getElementsByTagName('g');
-    for (var i=0; i<allGroups.length; i++) {
-        bakeGroupTransform(allGroups[i]);
+    // for some reason the following seems not to work when counting up
+    for (var i=allGroups.length-1; i>=0; i--) {
+        bakeGroupTransform(allGroups[i], debug=true);
     }
-    */
 }
 
 identify = function() {
