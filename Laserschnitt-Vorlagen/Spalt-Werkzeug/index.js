@@ -9,6 +9,11 @@
  * replace piece segment by slot segment
  * remove slot path
  * 
+ * Slots need to be grouped with their corresponding pieces (<g>).
+ * 
+ * Top level must be <g id="layer1">.
+ * 
+ * SVG id must be "svg".
  */
 
 load = function() {
@@ -59,6 +64,8 @@ absolutizeCoordinates = function() {
     for (var i=allGroups.length-1; i>=0; i--) {
         bakeGroupTransform(allGroups[i]);
     }
+    
+    window.setTimeout(identifyPieces, 100);
 }
 
 identifyPieces = function() {
@@ -76,10 +83,13 @@ identifyPieces = function() {
 }
 
 cutSlots = function() {
-    // cut slots
+    for (var i=0; i<allPiecePaths.length; i++) {
+        allPiecePaths[i].cutSlots();
+    }
 }
 
 //open a new tab with the modified SVG
 exportSVG = function() {
+    $('.pathPoint').remove();
     window.open("data:image/svg+xml," + encodeURIComponent( $('#view').html() ), 'tmp');
 }

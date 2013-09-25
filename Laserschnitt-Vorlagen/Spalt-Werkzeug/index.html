@@ -3,6 +3,7 @@
 <head>
 <script src="jQuery.js"></script>
 <script src="d3.js"></script>
+<script src="vector.js"></script>
 <script src="svg.js"></script>
 <script src="puzzle.js"></script>
 <link rel="stylesheet" type="text/css" href="puzzle.css"/>
@@ -12,9 +13,8 @@
 <body id="body">
 <b>1.</b>
 <input type=file id="fileSVG" onchange="load();" />
-<input type="button" value="2. Identify puzzle pieces" onclick="identifyPieces();" />
-<input type="button" value="3. Cut slots" onclick="cutSlots();" />
-<input type="button" value="4. Export modified SVG" onclick="exportSVG();" />
+<input type="button" value="2. Cut marked slots" onclick="cutSlots();" />
+<input type="button" value="3. Export modified SVG" onclick="exportSVG();" />
 <br/>
 <br/>
 <div id="view"></div>
