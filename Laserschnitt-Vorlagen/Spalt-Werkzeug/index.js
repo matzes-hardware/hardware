@@ -22,7 +22,7 @@ load = function() {
     // Open selected file
     var files = $('#fileSVG')[0].files;
     if (files.length === 0) {
-        alert('Please choose a file to be loaded.');
+//        alert('Please choose a file to be loaded.');
         return;
     }
     $('#body').css('cursor','wait');
