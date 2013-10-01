@@ -1,0 +1,1 @@
+(function($){function getRequestStatus(){$.ajax({url:document.location.protocol+"//"+document.location.host+"/head/receivedmessage.do",type:"get",dataType:"json",cache:false,success:function(data){if(data!=null&&data.length>0){$(".inquiry.menu-item #inquiry_number").html(data[0].newMailNumber||0)}}})}getRequestStatus();window.logonRefresh=getRequestStatus})(jQuery);

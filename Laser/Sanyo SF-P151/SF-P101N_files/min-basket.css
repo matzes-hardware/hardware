@@ -1,0 +1,209 @@
+/*@import url("/css/reset.css");*/
+@import url("/css/btn.css");
+#in-basket{
+    position: fixed;
+    bottom: 0;
+    right:0;
+    width: 230px;
+    -webkit-box-shadow:  0 0 5px #ccc;
+    -moz-box-shadow:  0 0 5px #ccc;
+    box-shadow:  0 0 5px #ccc;
+    border:1px solid #ddd;
+    border-bottom: 0 none;
+    background: #fff;
+    z-index: 999;
+    font-size: 12px;
+    font-family: arial,sans-serif;
+}
+#in-basket a:link{
+    text-decoration: none;
+}
+#in-basket .in-basket-tab {
+    background: #807474;
+    height: 36px;
+    margin-right: -2px;
+}
+#in-basket .in-basket-tab li {
+    float: left;
+    list-style: none;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    text-align: center;
+    border-right:1px solid #999;
+    cursor: pointer;
+}
+#in-basket .in-basket-nomsg {
+    padding: 10px
+}
+#in-basket .in-basket-tab li:hover {
+    background: #908383;
+}
+#in-basket .in-basket-tab .in-basket-tab-p{
+    width: 110px;
+}
+#in-basket .in-basket-tab .in-basket-tab-c{
+    width: 120px;
+}
+#in-basket .in-basket-tab .ibselected {
+    background: #f1f1f1;
+    border-right:1px solid #f1f1f1;
+    color: #333;
+}
+#in-basket .in-basket-tab .ibselected:hover {
+    background: #f1f1f1;
+}
+#in-basket .in-basket-tab .in-basket-tab-c.ibinner {
+    -webkit-box-shadow: inset 3px 3px 3px #666;
+    -moz-box-shadow: inset 3px 3px 3px #666;
+    box-shadow: inset 3px 3px 3px #666;
+}
+#in-basket .in-basket-tab .in-basket-tab-p.ibinner {
+    -webkit-box-shadow: inset -3px 3px 3px #666;
+    -moz-box-shadow: inset -3px 3px 3px #666;
+    box-shadow: inset -3px 3px 3px #666;
+}
+#in-basket .in-basket-fun {
+    padding: 15px 10px;
+    height: 30px;
+    background: #f1f1f1;
+}
+#in-basket .in-basket-fun .btn {
+    margin-right: 25px;
+    color: #fff;
+}
+#in-basket .in-basket-fun .goto {
+    color: #999;
+    text-decoration: none;
+}
+#in-basket .in-basket-fun .go-to:hover {
+    color: #666;
+}
+#in-basket .in-basket-con {
+    display: none;
+}
+#in-basket .in-basket-con.show {
+    display: block;
+}
+#in-basket .in-basket-con ul {
+    margin: 10px 2px 10px 0;
+    padding: 0 0 0 10px;
+    overflow-x:hidden;
+    *position: relative;
+}
+#in-basket .in-basket-wrap li {
+    border: 1px solid #eee;
+    padding: 5px;
+    height: 50px;
+    width: 190px;
+    margin-bottom: 10px;
+}
+#in-basket .in-basket-wrap li .in-basket-check {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url(http://www.made-in-china.com/img/sundry/check.png);
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+}
+#in-basket .in-basket-pic {
+    float: left;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    display: table;
+    text-align: center;
+    overflow: hidden;
+}
+#in-basket .in-basket-pic a {
+    display: table-cell;
+    *display: inline;
+    *height: 100%;
+    *writing-mode: tb-rl;
+    vertical-align: middle;
+}
+#in-basket .in-basket-text {
+    overflow: hidden;
+    width: 90px;
+    zoom: 1;
+}
+#in-basket .in-basket-text a:hover {
+    text-decoration: underline;
+}
+#in-basket .in-basket-title {
+    max-height: 36px;
+    overflow: hidden;
+    color: #333;
+}
+#in-basket .in-basket-title:hover {
+    color: #f60;
+}
+#in-basket .in-basket-delete {
+    color: #333;
+    display: none;
+}
+#in-basket .in-basket-wrap .hover {
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    position: relative;
+}
+#in-basket .in-basket-wrap .hover .in-basket-delete
+{
+    display: block;
+    width: 40px;
+}
+#in-basket .in-basket-wrap .hover .in-basket-check {
+    background-position: 0 -24px;
+}
+#in-basket .in-basket-wrap .ibselected {
+    border: 1px solid #f3ca4f;
+    background: #fff4bd;
+    position: relative;
+}
+#in-basket .in-basket-wrap .ibselected .in-basket-check {
+    background-position: 0 -48px;
+}
+#in-basket .in-basket-tips {
+    padding:5px;
+    background: #ffdbdb;
+}
+#in-basket .in-basket-con ul::-webkit-scrollbar{
+    width:5px;
+    border-radius: 10px
+}
+#in-basket .in-basket-con ul::-webkit-scrollbar-track {
+    background-color:rgba(0,0,0,.1);
+    background-clip:padding-box;
+    border-radius: 10px
+}
+#in-basket .in-basket-con ul::-webkit-scrollbar-thumb{
+    background-color:rgba(0,0,0,.4);
+    background-clip:padding-box;
+    border-radius: 10px
+}
+.already-in-basket {
+    margin: 0 10px 0 0;
+    -webkit-text-size-adjust: none;
+    padding: 0 !important;
+    background: none !important;
+}
+.already-in-basket .icon {
+    color: #90cf23;
+    font-size: 14px !important;
+}
+
+.add-to-basket {
+    margin: 0;
+    -webkit-text-size-adjust: none;
+    padding: 0 !important;
+    background: none !important;
+}
+.add-to-basket .icon {
+    color: #666;
+    font-size: 14px !important;
+}
+/*hack for mini basket and webtm show together*/
+#webtm-wrapper{
+    right:242px !important;
+}
