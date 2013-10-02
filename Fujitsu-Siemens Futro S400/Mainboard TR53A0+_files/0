@@ -1,0 +1,1 @@
+try{raptor.require('raptor.tracking.idmap.IdMap').handleResponse(["http://ib.adnxs.com/setuid?mpt=1380725175177&entity=7&code=IiD7l2lZ_ZaQl2SM7PjScTsgKzMaqVQsRPpVhCnP8Lc",-1380120361]);}catch(e){}
