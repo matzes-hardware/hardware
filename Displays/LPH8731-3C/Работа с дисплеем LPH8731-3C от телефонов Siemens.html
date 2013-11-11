@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://cxem.net/mc/mc218.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/context.js" async="true"></script>
+<title>Работа с дисплеем LPH8731-3C от телефонов Siemens</title>
+<meta name="description" content="Описание методики работы с дисплеем LPH8731-3C от телефонов Siemens">
+<meta charset="utf-8">
+<meta name="Author" content="Copyright 2013 - http://cxem.net">
+
+<link rel="stylesheet" type="text/css" href="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/main.css">
+<link href="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/style.css" rel="stylesheet" type="text/css">
+
+<style type="text/css"></style></head>
+
+<body style="">﻿
+
+<script>var the_draft_name = "Работа с дисплеем LPH8731-3C от телефонов Siemens";</script><script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/jquery-1.7.min.js"></script>
+<script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/main.js"></script>
+
+<link rel="stylesheet" href="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/main.css">
+<link rel="stylesheet" href="http://cxem.net/cms/views/styles/modalWindows.css">
+<script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/modalWindows.js"></script>
+
+<script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/jquery.noty.js"></script>
+<script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/bottomRight.js"></script>
+<script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/top.js"></script>
+<script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/topRight.js"></script>
+<script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/default.js"></script>
+<script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/config.noty.js"></script>
+
+<script>
+	</script>
+
+<script>
+	$(document).ready(function() {
+	            var _cads = ['Sprint-Layout', 'Eagle', 'Altium Designer (P-CAD)', 'DipTrace', 'ExpressPCB'];
+	            var _seller = false;
+	            for (var i = 0, length = _cads.length; i < length; i++) {
+		            var _cad = _cads[i];
+					var _break = false;
+
+		            $('.tags a.ourtag').each(function(i, el) {
+			            if ($(el).text() == _cad) {
+				            _seller = true;
+				            _break = true;
+				            return false;
+			            }
+		            });
+
+		            if (_break) break;
+	            }
+
+	            if (_seller) {
+		            var _buy = $('<div class="buy-pcb"><span class="buy_pcb" id="buyPCB">Заказать печатную плату к данной статье</span></div>');
+		            _buy.insertAfter('ul.tags');
+		            $('#buyPCB').live('click', function() {
+			            location.href = '/pshop/order.php?id=482';
+		            });
+	            }
+	});
+</script>
+
+	        
+<script type="text/javascript">
+   window.google_analytics_uacct = "UA-18262495-2";
+</script>
+
+
+
+<!-- Начало НЕВИДИМЫХ СЧЕТЧИКОВ -->
+<div style="position:absolute;top:-100px;left:-100px;">
+<!--LiveInternet counter--><script type="text/javascript"><!--
+new Image().src = "//counter.yadro.ru/hit;payalnik_all?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape(document.title.substring(0,80))+
+";"+Math.random();//--></script><!--/LiveInternet-->
+
+<!--begin of Ramblers Top100 code -->
+
+<!--end of Top100 code-->
+
+</div>
+<!-- Конец НЕВИДИМЫХ СЧЕТЧИКОВ -->
+
+<div class="wrap">
+	
+<!-- Начало ШАПКИ -->
+	<div id="header">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="schem"></div>
+		<a href="http://cxem.net/" class="logo"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/logo.png" alt="Паяльник" border="0"></a>
+		<div class="round"></div>
+		<div class="hend"></div>
+		<div class="name"></div>
+		<div class="buttons">
+			<a href="http://translate.google.com/translate?hl=ru&sl=ru&tl=en&u=http://cxem.net/mc/mc218.php" class="lang" title="Translate to English"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/lang-eng.png" alt="English" border="0"></a>
+			<form action="http://cxem.net/search.php" method="get" class="search">
+				<div class="submit"><button type="submit"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/but-search.png" alt="OK"></button></div>
+				<div class="field"><input type="search" name="search_str"></div>
+			</form>
+			<div class="links">
+				<div class="rightCorner">&nbsp;</div>
+				<ul>
+					<li class="first last"><a href="http://cxem.net/circuit_send.php"><span><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/link-publish.png" alt="Прислать схему" border="0" title="Пришлите схему и получите гонорар"></span></a></li>
+				</ul>	
+				<div class="leftCorner">&nbsp;</div>
+			</div>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="http://cxem.net/chems.php" class="item"><b></b><span><div class="sprite_menu chems"></div></span><i></i></a>
+					<div class="subnav">
+						<div class="subnav-bg"></div>
+						<ul>
+							<li><a href="http://cxem.net/sound/sound.php"><em>&gt;</em>Аудио</a>
+								<div class="subnav">
+									<div class="subnav-bg"></div>
+									<ul>
+										<li><a href="http://cxem.net/sound/dinamics/dinamics.php">Динамики, сабвуферы </a></li>
+										<li><a href="http://cxem.net/sound/amps/amps.php">Усилители НЧ и ламповые УНЧ </a></li>
+										<li><a href="http://cxem.net/sound/tembrs/tembrs.php">Регуляторы тембра, эквалайзеры</a></li>
+										<li><a href="http://cxem.net/sound/soundpred/soundpred.php">Предварительные усилители</a></li>
+										<li><a href="http://cxem.net/sound/light/light.php">Светомузыкальные установки</a></li>
+										<li><a href="http://cxem.net/sound/music/music.php">Эффекты и примочки</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="http://cxem.net/mc/mc218.php#"><em>&gt;</em>Шпионские штучки</a>
+								<div class="subnav">
+									<div class="subnav-bg"></div>
+									<ul>
+										<li><a href="http://cxem.net/radiomic/radiomic.php">Радиомикрофоны и жучки</a></li>
+										<li><a href="http://cxem.net/indicator/indicator.php">Детекторы радиозакладок</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="http://cxem.net/avto/avto.php"><em>&gt;</em>Авто-электроника</a>
+								<div class="subnav">
+									<div class="subnav-bg"></div>
+									<ul>
+										<li><a href="http://cxem.net/avto/electronics/4.php">Электроника для автомобиля</a></li>
+										<li><a href="http://cxem.net/avto/alarm/alarm.php">Охранные устройства и сигнализации</a></li>
+										<li><a href="http://cxem.net/avto/injectors/inject.php">Инжектор</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="http://cxem.net/mc/mc218.php#"><em>&gt;</em>Радиоприем и передача</a>
+								<div class="subnav">
+									<div class="subnav-bg"></div>
+									<ul>
+										<li><a href="http://cxem.net/tuner/tuner.php">Радиоприемники</a></li>
+										<li><a href="http://cxem.net/cb/1.php">Си-Би техника связи</a></li>
+										<li><a href="http://cxem.net/rmodem/rmodem.php">Радиомодемы</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="http://cxem.net/mc/mc218.php#"><em>&gt;</em>Автоматика в быту</a>
+								<div class="subnav">
+									<div class="subnav-bg"></div>
+									<ul>
+										<li><a href="http://cxem.net/house/1.php">Домашняя электроника</a></li>
+										<li><a href="http://cxem.net/greentech/greentech.php">Зеленые технологии</a></li>										
+										<li><a href="http://cxem.net/ik/2.php">Инфракрасная техника</a></li>
+										<li><a href="http://cxem.net/dozimetr/3.php">Осторожно радиация</a></li>
+										<li><a href="http://cxem.net/medic/medic.php">Медицинская техника</a></li>
+										<li><a href="http://cxem.net/elud/elud.php">Электроудочки</a></li>
+										<li><a href="http://cxem.net/metal/metal.php">Металлоискатели</a></li>
+										<li><a href="http://cxem.net/guard/3.php">Охранные устройства</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="http://cxem.net/beginner/beginner.php">Начинающим</a></li>
+							<li><a href="http://cxem.net/telefon/2.php">Телефония и фрикинг</a></li>
+							<li><a href="http://cxem.net/comp/comp.php">Компьютерная электроника</a></li>
+							<li><a href="http://cxem.net/mc/mc.php">Микроконтроллеры</a></li>
+							<li><a href="http://cxem.net/arduino/arduino.php">Arduino</a></li>
+							<li><a href="http://cxem.net/uprav/uprav.php">Роботы и РУ-модели</a></li>					
+							<li><a href="http://cxem.net/tv/tv.php">Телевизионная техника</a></li>
+							<li><a href="http://cxem.net/ntv/ntv.php">Спутниковое ТВ</a></li>
+							<li><a href="http://cxem.net/sotov/sotov.php">Сотовая связь</a></li>
+							<li><a href="http://cxem.net/izmer/izmer.php">Измерительная техника</a></li>
+							<li><a href="http://cxem.net/remont/remont.php">Ремонт бытовой техники</a></li>
+							<li><a href="http://cxem.net/pitanie/5.php">Источники питания и ЗУ</a></li>
+							<li><a href="http://cxem.net/electric/electric.php">Электрика</a></li>
+							<li><a href="http://cxem.net/promelectr/promelectr.php">Промышленная электроника</a></li>
+							<li><a href="http://cxem.net/tesla/tesla.php">Высокое напряжение и Тесла</a></li>
+							<li><a href="http://cxem.net/master/oglav.php">Мастерская радиолюбителя</a></li>
+							<li><a href="http://cxem.net/sprav/sprav.php">Справочные материалы</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="http://cxem.net/programs.php" class="item"><b></b><span><div class="sprite_menu programs"></div></span><i></i></a>
+					<div class="subnav">
+						<div class="subnav-bg"></div>
+						<ul>
+							<li><a href="http://cxem.net/calc/calc.php">Он-лайн калькуляторы</a></li>
+							<li><a href="http://cxem.net/software/soft_PCB.php">PCB</a></li>
+							<li><a href="http://cxem.net/software/soft_CAD.php">CAD</a></li>
+							<li><a href="http://cxem.net/software/soft_sketch.php">Черчение схем</a></li>
+							<li><a href="http://cxem.net/software/soft_audio.php">Аудио-софт</a></li>
+							<li><a href="http://cxem.net/software/soft_mcu.php">Микроконтроллеры</a></li>
+							<li><a href="http://cxem.net/software/soft_measurement.php">Измерения</a></li>
+							<li><a href="http://cxem.net/software/soft_generator.php">Генераторы</a></li>
+							<li><a href="http://cxem.net/software/soft_calc.php">Расчеты</a></li>
+							<li><a href="http://cxem.net/software/soft_android.php">Android</a></li>
+							<li><a href="http://cxem.net/software/soft_misc.php">Разное</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="http://forum.cxem.net/" class="item"><b></b><span><div class="sprite_menu forum"></div></span><i></i></a></li>
+				<li><a href="http://cxem.net/konkurs.php" class="item"><b></b><span><div class="sprite_menu konkurs"></div></span><i></i></a>
+				<div class="subnav">
+						<div class="subnav-bg"></div>
+						<ul>
+							<li><a href="http://cxem.net/konkurs.php">Конкурсы с призами</a></li>
+							<li><a href="http://cxem.net/top.php">Рейтинг статей</a></li>
+						</ul>
+					</div>
+				</li>				
+				<li><a href="http://cxem.net/magazines/magazines.php" class="item"><b></b><span><div class="sprite_menu shops"></div></span><i></i></a>
+					<div class="subnav">
+						<div class="subnav-bg"></div>
+						<ul>
+							<li><a href="http://cxem.net/magazines/maps.php">Карта радио магазинов</a></li>
+							<li><a href="http://cxem.net/magazines/magazines.php">Обзоры интернет-магазинов</a></li>
+							<li><a href="http://cxem.net/books.php">Литература</a></li>
+						</ul>
+					</div>
+				</li>			
+				<li><a href="http://electronshiki.ru/" class="item" title="Скорая помощь для радиолюбителей. 1000 руб каждый месяц!"><b></b><span><div class="sprite_menu_electronshiki"></div></span><i></i></a></li>
+			</ul>
+            <ul class="enter">
+            	            		<li class="gologin" title="Войти в свой профиль" onclick="location.href = &#39;http://cxem.net/cms/login&#39;">
+ 	 	        		<img class="new" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/new.png">
+                		Войти
+                	</li>
+					
+                           </ul>
+		</div>
+	</div>
+<!-- Конец ШАПКИ -->
+
+<div align="center"><a href="http://service-gsm.ru/" targer="_blank"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/service-gsm.gif" title="Оборудование и комплектующие для ремонта сотовых телефонов"></a></div><div align="right" style="padding-right:25px; font-weight: bold">Раздел: <a href="http://cxem.net/" class="chems">Главная</a> <img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/arrow.gif" alt="»"> <a href="http://cxem.net/mc/mc.php" class="chems">Микроконтроллеры</a></div>
+	
+<div class="cont_right">
+	
+<div align="center" style="padding-top: 15px">	
+<script type="text/javascript">//<![CDATA[
+    var rnd = Math.floor(Math.random()*99999999999);
+    document.write("<iframe src='//server.adeasy.ru/servead/request/4206");
+    document.write("?cb=");
+    document.write(rnd+"'");
+    document.write(" width='160' height='700' style='width:160px; height:700px;' frameborder='0' scrolling='no'></iframe>");
+//]]></script>
+</div>
+	
+	<!-- /home/cxemnet/public_html/cache/similar/fcd3463260c197aa96b57e73b585a25f.php -->
+	<p align="center" style="padding-top: 15px"><a href="http://cxem.net/donate.php"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/donate.png" title="Поддержите сайт Паяльник!" border="0"></a></p>
+	
+	<p align="center" style="padding-top: 15px"><a href="http://forum.cxem.net/index.php?showforum=13"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/send_idea.png" title="Предложите свою идею по усовершенствованию сайта" border="0"></a></p>
+	
+	<script language="javascript" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/ajaxrun.js"></script>
+	<p align="center" style="padding-top: 10px"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/error-report2.jpg" title="Нашел ошибку? Нажми ctrl+enter для сообщения"></p>
+	
+	<!-- <div id="yd_right_panel" style="padding-top: 15px"></div> -->
+
+
+	
+
+</div>
+	
+<div class="cont">
+<script type="text/javascript">	
+    $(document).ready(function() {
+		$('.subscribe').hide();
+		var interval;
+
+		$('ul.tags li').hover(function(e) {
+			var popup = $(this).find('div');
+			var tag = $(this).find('a').attr('id');
+			interval = setTimeout(function() {
+				$.getJSON(URL + '/tagsubscribe/', 'tag=' + tag, function(json) {
+					if (json.success) {
+						popup.css('left', 0);
+						popup.html(json.message);
+						popup.show();
+					}
+				});
+			}, 600);
+		},
+		function() {
+			var popup1 = $(this).find('div');
+			popup1.html('');
+			popup1.hide();
+			clearInterval(interval);
+		});
+
+
+		//Подписать на тег
+		$('a[rel="subscribe"]').live('click', function() {
+			var a = $(this);
+			var tag = a.attr('id');
+			var user_id = '0';
+			if (user_id == 0) {
+				alert('Необходима регистрация');
+				return false;
+			}
+			$.getJSON(URL + '/tagsubscribe/', 'tag=' + tag + '&action=subscribe', function(json) {
+				if (json.success) {
+					a.attr('rel', 'unsubscribe');
+					a.text('отписаться');
+					a.unwrap('<u>');
+					a.wrap('<i>');
+				} else {
+					alert(json.message);
+				}
+			});
+			return false;
+		});
+
+		//Отписаться на тег
+		$('a[rel="unsubscribe"]').live('click', function() {
+			var a = $(this);
+			var tag = a.attr('id');
+			var user_id = '0';
+			if (user_id == 0) {
+				alert('Необходима регистрация');
+				return false;
+			}
+			$.getJSON(URL + '/tagsubscribe/','tag=' + tag + '&action=unsubscribe', function(json) {
+				if (json.success) {
+					a.attr('rel', 'subscribe');
+					a.text('подписаться');
+					a.unwrap('<i>');
+					a.wrap('<u>');
+				} else {
+					alert(json.message);
+				}
+			});
+			return false;
+		});
+
+	});
+</script><script>
+
+function loadJSCSS(src, type, callback) {
+	var link;
+	if (type == 'js') {
+		link = document.createElement('script');
+		link.setAttribute('src', src);
+		link.setAttribute('type', 'text/javascript');
+		if (callback) {
+			link.onload = callback;
+		}
+	} else if (type == 'css') {
+		link = document.createElement('link');
+		link.setAttribute('rel', 'stylesheet');
+		link.setAttribute('href', src);
+		link.setAttribute('type', 'text/css');
+	}
+	
+	if (typeof link != 'undefined') document.head.insertBefore(link, document.head.firstChild);
+}
+
+	$(document).ready(function() {
+		var f = '.main_content';
+		
+		if ($(f).length == 0) f = '#longright';
+		
+		var lng = new Array();
+		if ($(f).length == 1) {
+			$(f).find('pre').each(function() {
+				var l = this.className.split(':');
+				var lName = this.className.split(':')[l.length - 1].replace(';', '').trim();
+			
+				if (lng.length == 0) {
+					lng.push(lName);
+				} else {
+					for (var i in lng) {
+						if (lng[i] == lName) continue;
+						lng.push(lName);
+					}
+				}				
+			});
+		}
+		
+		if (lng.length > 0) {
+			
+			loadJSCSS(location.protocol + '//' + location.host + '/cms/views/js/syntax/styles/shCoreEclipse.css', 'css');
+			loadJSCSS(location.protocol + '//' + location.host + '/cms/views/js/syntax/scripts/shCore.js', 'js', function() {
+				for (var i in lng) {
+					var lang = lng[i].trim();		
+					if (lang === '') continue;
+				
+					if (lang == 'js') lang = 'JScript';
+					else if (lang == 'csharp') lang = 'CSharp';
+					else lang = lang[0].toUpperCase() + lang.substring(1);
+
+					var file = location.protocol + '//' + location.host + '/cms/views/js/syntax/scripts/shBrush' + lang + '.js';
+					loadJSCSS(file, 'js');
+				}
+				SyntaxHighlighter.all();
+			});
+		
+		}
+	
+	});
+	
+</script>
+
+
+
+
+
+
+<script type="text/javascript" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/arating.js"></script>
+
+
+
+
+<script>
+
+	var jquerysetting = {
+		allowAdd: false,
+		allowEdit: false,
+		allowDelete: false
+	}
+	
+function smallerImage(field, notes) {
+	window.onload = function() {
+	
+		var mfield = field.substring(1);
+		var images = document.getElementById(mfield);
+		if (!images) images = document.getElementsByClassName(mfield)[0];
+
+		images = images.getElementsByTagName('img');
+
+		for (var i = 0; i < images.length; i++) {
+			var img = images[i];
+			img.removeAttribute('style');
+			var width = img.naturalWidth;
+			
+			if (width == 0) {
+				img.onload = function(e) {
+					width = this.width;
+				}
+			}
+
+			if (width > 700) {
+				var src = img.src;
+				img.removeAttribute('style');
+				var thumbs = '';
+				
+								thumbs = src.replace('images', '_thumbs');
+				img.style.width = '700px';
+				img.style.height = 'auto';
+								img.title = 'Нажмите для увеличения';
+				img.src = thumbs;
+
+
+				
+				var wrapper = document.createElement('a');
+				wrapper.href = src;
+				wrapper.rel = 'lightbox';
+				wrapper.appendChild(img.cloneNode(true));
+				img.parentNode.replaceChild(wrapper, img);
+			}
+            else if (img.src.indexOf('/_thumbs/') > -1) {
+
+                var wrapper = document.createElement('a');
+                wrapper.href = img.src.replace('/_thumbs/', '/images/');
+                img.title = 'Нажмите для увеличения';
+                wrapper.rel = 'lightbox';
+				wrapper.target = '_blank';
+                wrapper.appendChild(img.cloneNode(true));
+                img.parentNode.replaceChild(wrapper, img);
+
+            }
+		}
+		
+		if (notes) {
+			$(field + ' img').jQueryNotes(jquerysetting);	
+		}			
+			
+	}
+		
+}
+		
+	
+	
+	
+		
+
+</script>
+
+ <script type="text/javascript">
+
+	$(document).ready(function() {
+		smallerImage('.main_content', false);
+	});
+
+	
+</script>
+
+
+
+<h1 align="center">Работа с дисплеем LPH8731-3C от телефонов Siemens</h1>
+<div align="left"><script type="text/javascript"><!--
+	google_ad_client = "ca-pub-5642252578316853";
+	/* CxemTop_Cxems_580_1 */
+	google_ad_slot = "7634606287";
+	google_ad_width = 580;
+	google_ad_height = 400;
+	//-->
+	</script>
+	<script type="text/javascript" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/show_ads.js">
+	</script></div>
+<div class="main_content">
+	<p>В процессе приобретения новых навыков и расширения сферы своих интересов, новоявленный специалист по встраиваемым системам, а попросту - разработчик схем на микроконтроллерах, сталкивается с необходимостью отображения большого количества разноплановой информации. Первые радостные впечатления при освоении алфавитно-символьных индикаторов на основе <a href="http://cxem.net/mc/mc134.php">HD44780</a> и графических индикаторов WG12864A постепенно угасают, т.к. первые обладают лишь минимумом возможностей, а вторые, несмотря на их "продвинутость", обладают излишней громоздкостью и являются монохромными, да и цена на них тоже немаленькая.</p>
+
+<p>Также и меня когда-то посетили такие мысли, и я стал искать альтернативу, пока не попался на глаза форум, где такие же радиолюбители рассматривали вопросы по применению различных дисплеев от мобильных телефонов.</p>
+
+<p>Когда-то, самым первым моим телефоном был Siemens A50, вторым - &nbsp;Siemens A60, и если первый ещё в здравом уме и доброй памяти, от второго остался только корпус и дисплей, который было решено приобщить к делу. Анализ данной проблемы показал, что в многочисленных любительских конструкциях хит-парад держат экраны от Nokia и от телефона Siemens S65, другим же дисплеям, которые ещё несложно найти (по сравнению с тем же Siemens S65) и применить для своих целей, уделено недостаточно внимания.</p>
+
+<p>Являясь одно время владельцем двух телефонов Siemens, решил уделить внимание дисплеям этой некогда популярной фирмы. Основным критерием выбора типа дисплея стали: 1) дисплей должен быть цветным; 2) простота применения в электронных конструкциях; 3) доступность и относительная низкая стоимость.</p>
+
+<p>После поиска и изучения информации о типе применяемого дисплея, способа его управления и анализа разных кодов была написана библиотека на С, полностью удовлетворяющая мои скромные запросы.</p>
+
+<p>Итак, целью данной статьи является рассмотрение вопроса применения дисплея <strong>LPH8731-3C</strong> (контроллер EPSON S1D15G14), который применялся в телефонах Siemens A60, C60, М55, MC60, S55, и которые ещё не сложно найти на барахолках или в центрах ремонта мобильной связи. Контроллер, применяемый в данном дисплее, присутствует также в дисплее <strong>LPH 9116-1</strong> (телефоны Siemens A75), из чего следует, что команды для работы с данным индикатором идентичны.</p>
+
+<p>Вообще, в телефонах Siemens A60, C60, М55, MC60, S55 применялись три типа дисплея - <strong>LPH8731</strong>-<strong>3C</strong>, <strong>LM15SGFNZ07 </strong>(контроллер Hynix HM17CM4101) и реже - <strong>LM15SGFNZ04</strong>. Разрешение всех данных дисплеев составляет 101х80 пикселей, что, при использовании библиотеки символов разрешением 5х8 пикселей, даёт возможность выводить текстовую информацию на 10 строк по 16 символов.</p>
+
+<p>Дисплеи<strong> LPH8731</strong>-<strong>3C</strong> и&nbsp;<strong>LM15SGFNZ07</strong>:</p>
+
+<table align="left" cellpadding="0" cellspacing="0"><tbody><tr><td height="15">&nbsp;</td>
+		</tr><tr><td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr></tbody></table><p><img alt="LPH8731-3C.jpg" height="246" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mc218-1.jpg" width="256"><img alt="LM15SGFNZ07.jpg" height="247" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mc218-2.jpg" width="247"></p>
+
+<p>У всех дисплеев разные контроллеры, поэтому и библиотека для работы с ними будет отличаться.</p>
+
+<p><span>Распиновка дисплея</span><strong> LPH8731</strong><span>-</span><strong>3C:</strong></p>
+
+<p><img alt="LPH8731-3C - рас�%B" height="292" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mc218-3.jpg" width="283"></p>
+
+<p>1 -&nbsp;CS – Chip Select. При установке в «0» контроллер дисплея принимает информацию;<br><span>2 - RESET – вывод для сброса контроллера;</span><br><span>3 - RS – вывод для определения типа передаваемых данных («0» - команда, «1» - данные);</span><br><span>4 - CLK – вывод тактового сигнала для передачи данных;</span><br><span>5 - DAT – вывод передачи данных;</span><br><span>6 - VDD – к источнику питания от +1.6V до +3.6V;</span><br><span>7 - GND – общий провод (земля);</span><br><span>8 - LED_1A – вывод питания подсветки;</span><br><span>9 - LED_К – вывод катодов светодиодов подсветки (к GND);</span><br><span>10 - LED_2A – вывод питания подсветки.</span></p>
+
+<p><span>Сопряжение дисплея с микроконтроллером можно сделать следующим образом:</span></p>
+
+<p><a href="http://cxem.net/mc/images/mc218-4.jpg" rel="lightbox" target="_blank"><img alt="LPH8731-3C - схе�%B" height="205" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mc218-4.jpg" width="546" title="Нажмите для увеличения"></a></p>
+
+<p>Для универсальности, свои дисплеи я оформляю в виде модулей, которые легко подключить напрямую к портам микроконтроллера. Немного громоздко, но, на мой взгляд, удобно.</p>
+
+<p><img alt="DSCN0016.jpg" height="233" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mc218-5.jpg" width="263"><img alt="DSCN0022.jpg" height="248" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mc218-6.jpg" width="255"></p>
+
+<p>Кому пришлась по душе такая конструкция, в архиве может найти чертёж печатной платы в формате PCB Layout.</p>
+
+<p><a href="http://cxem.net/mc/images/mc218-7.jpg" rel="lightbox" target="_blank"><img alt="Печатн�%" height="264" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mc218-7.jpg" width="293" title="Нажмите для увеличения"></a></p>
+
+<p>Библиотека работы с <strong>LPH8731</strong>-<strong>3C</strong> разрабатывалась для работы с компилятором CVAVR и содержит следующие пользовательские функции:</p>
+
+<p>1. <strong>void </strong><strong>LCD_</strong><strong>init ()</strong></p>
+
+<p>Инициализация дисплея.</p>
+
+<p>2.<strong> void Put_Pixel (char x, char y, unsigned int color)</strong></p>
+
+<p>Функция вывода точки (пикселя). <strong>x </strong>и <strong>y </strong>– координаты экрана, где будет отображён пиксель цветом <strong>color</strong>.</p>
+
+<p>3. <strong>void LCD_Putchar (char symbol, char x, char y, int t_color, int b_color, char zoom_width, char zoom_height, int rot)</strong>&nbsp;&nbsp;&nbsp;</p>
+
+<p>Функция вывода одного символа ASCII-кода. Данная функция рассчитана на вывод символов размером 5х8 пикселей, библиотека которых находится в файле Symbols.h. <strong>symbol </strong>– выводимый на экран символ в ASCII-кодировке; <strong>x </strong>и <strong>y </strong>– начальная координата вывода символа; <strong>t_</strong><strong>color</strong> – цвет пикселя; <strong>b_</strong><strong>color</strong> – цвет фона; переменные <strong>zoom_</strong><strong>width </strong>и <strong>zoom_</strong><strong>height </strong>увеличивают символ на экране в указанное число раз; &nbsp;<strong>rot</strong> – угол поворота текста (0º , 90º, 180º, 270º).</p>
+
+<p>4. <strong>void LCD_Putchar_Shadow (char symbol, char x, char y, int t_color, char zoom_width, char zoom_height, int rot)</strong></p>
+
+<p>То же, что и 3, только без цвета фона.</p>
+
+<p>5. <strong>void LCD_Puts(char *str, int x, int y,&nbsp;int t_color, int b_color, char zoom_width, char zoom_height, int rot)</strong></p>
+
+<p>Функция вывода строки, расположенной в ram-памяти микроконтроллера.&nbsp;<strong>x </strong>и <strong>y -</strong> координаты пикселя начала вывода строки. .</p>
+
+<p>6. <strong>void LCD_Puts_Shadow (char *str, int x, int y,&nbsp;int t_color, char zoom_width, char zoom_height, int rot)</strong></p>
+
+<p>То же, что и 5, только без цвета фона.</p>
+
+<p><strong>7. void LCD_Putsf(flash char *str, int x, int y,&nbsp;int t_color, int b_color, char zoom_width, char zoom_height, int rot)</strong></p>
+
+<p>Функция вывода строки, расположенной во flash-памяти микроконтроллера.</p>
+
+<p>8. <strong>void LCD_Putsf_Shadow (flash char *str, int x, int y,&nbsp;int t_color, char zoom_width, char zoom_height, int rot)</strong></p>
+
+<p>То же, что и 7, только без цвета фона.</p>
+
+<p>9. <strong>void LCD_FillScreen (unsigned int color)</strong></p>
+
+<p>Функция заливки экрана цветом <strong>color</strong>.</p>
+
+<p>10.<strong> void LCD_Output_image (char x, char y, char width, char height, flash char *img, int rot)</strong></p>
+
+<p>Функция вывода картинки. <strong>x</strong> и <strong>y</strong> начальная позиция выводимого на экран изображения; <strong>width</strong> и <strong>height</strong> – ширина и высота изображения (в пикселях);&nbsp;<strong>*</strong><strong>img – </strong>указатель на массив данных, составляющих изображение; <strong>rot</strong> – угол поворота изображения (0º , 90º, 180º, 270º). Данная функция предполагает, что массив данных изображения расположен во flash-памяти микроконтроллера. Для преобразования необходимого вам изображения в массив, содержащий цвет пикселей, можно воспользоваться программами <strong>Image2Lcd</strong> или <strong>Nokia Image Creator</strong>, которые несложно найти на просторах интернета. Единственное требование – направление вывода массива изображения должно выполняться слева-направо, сверху-вниз! При использовании 12-ти битной палитры, при преобразовании изображения в массив типа char, обязательно старший байт должен идти первым!</p>
+
+<p>11. <strong>void LCD_DrawLine (char x1, char y1, char x2, char y2, int color)</strong></p>
+
+<p>Нарисовать линию. <strong>x1</strong> и <strong>y1</strong> – начальная позиция линии; <strong>x2 </strong>и <strong>y2 </strong>– конечная позиция линии.</p>
+
+<p>12. <strong>void LCD_DrawRect (char x1, char y1, char width, char height, char size, int color)</strong></p>
+
+<p>Нарисовать рамку. <strong>size</strong> - толщина рамки.</p>
+
+<p>13. <strong>void LCD_FillRect (char x1, char y1, char width, char height, int color);</strong></p>
+
+<p>Нарисовать прямоугольник.</p>
+
+<p>14. <strong>void LCD_DrawCircle (char xcenter, char ycenter, char rad, int color);</strong></p>
+
+<p>Нарисовать окружность. <strong>rad</strong> – радиус окружности в пикселях.</p>
+
+<p>15. <strong>void LCD_FillCircle (char xcenter, char ycenter, char rad, int color);</strong></p>
+
+<p>Нарисовать круг, заполненный цветом <strong>color</strong>.</p>
+
+<p>16.<strong> void LCD_DrawTriangle (char x1, char y1, char x2, char y2, char x3, char y3, int color)</strong></p>
+
+<p>Нарисовать контуры треугольника.</p>
+
+<p>17.<strong> void LCD_FillTriangle (char x1, char y1, char x2, char y2, char x3, char y3, int color)</strong></p>
+
+<p>Нарисовать треугольник, заполненный цветом <strong>color</strong>.</p>
+
+<p>&nbsp;</p>
+
+<p>Дисплей<strong> LPH8731</strong>-<strong>3C</strong> даёт возможность работать с двумя цветовыми палитрами – 256 цветов и 4096 цветов. В первом случае цвет одного пикселя задаётся 8 битами, во втором - 12 битами.</p>
+
+<p>В самом начале библиотеки, если объявлен макрос <strong>_8_BIT_COLOR</strong>, то цветовая палитра дисплея будет составлять 256 цветов, иначе - 4096 цветов. Макрос <strong>_GEOMETRICAL</strong> позволяет использовать функции вывода линии, рамки, прямоугольника и окружности.</p>
+
+<p>Дисплей в составе работы COM-терминала:</p>
+
+<p><img alt="mc218_photo.jpg" height="451" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mc218-8.jpg" width="621"></p>
+
+<p><a href="http://cxem.net/mc/images/mc218-9.jpg" rel="lightbox" target="_blank"><img alt="DSCN0241.jpg" height="335" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mc218-9.jpg" width="447" title="Нажмите для увеличения"></a><a href="http://cxem.net/mc/images/mc218-10.jpg" rel="lightbox" target="_blank"><img alt="DSCN6956.jpg" height="335" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mc218-10.jpg" width="449" title="Нажмите для увеличения"></a></p>
+
+<p>&nbsp;</p>
+
+<p>Для тех, кто хочет выжать «все соки» из данного дисплея, для скачивания прилагается Datasheet на контроллер.</p>
+
+<p>Почитать про азы управления данным индикатором можно в статье "<a href="http://habrahabr.ru/post/159011/">Простенькие часики на MSP430</a>".</p>
+
+<p>Версия библиотеки для <strong>LPH8731</strong>-<strong>3C </strong>обновлена до версии v 1.1.</p>
+
+<p>Просьба обновить скачанные Вами файлы библиотеки для <strong>LPH8731</strong>-<strong>3C</strong>, т.к. в новой версии исправлены ошибки в функциях работы с 12-битной палитрой и расширен функционал, аналогично библиотеке для <a href="http://cxem.net/mc/mc221.php"><strong>LPH9157-2</strong></a>.</p><div style="font-weight: bold;">Прикрепленные файлы:<ul><li><a href="http://cxem.net/mc/files/mc218_S1D15G14.pdf">S1D15G14.pdf</a> (732 Кб)</li><li><a href="http://cxem.net/mc/files/mc218_Plata-pod-LUT.rar">Плата под ЛУТ.rar</a> (20 Кб)</li><li><a href="http://cxem.net/mc/files/mc218_LPH8731-3C-(LPH9116)---v-1_1.rar">LPH8731-3C (LPH9116) - v 1_1.rar</a> (8 Кб)</li></ul></div><h3 class="tagh3">Теги:</h3><ul class="tags"><li>
+									<a class="ourtag" href="http://cxem.net/cms/tags/%25D0%259C%25D0%25B8%25D0%25BA%25D1%2580%25D0%25BE%25D0%25BA%25D0%25BE%25D0%25BD%25D1%2582%25D1%2580%25D0%25BE%25D0%25BB%25D0%25BB%25D0%25B5%25D1%2580/" id="%25D0%259C%25D0%25B8%25D0%25BA%25D1%2580%25D0%25BE%25D0%25BA%25D0%25BE%25D0%25BD%25D1%2582%25D1%2580%25D0%25BE%25D0%25BB%25D0%25BB%25D0%25B5%25D1%2580">Микроконтроллер</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li><li>
+									<a class="ourtag" href="http://cxem.net/cms/tags/AVR/" id="AVR">AVR</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li><li>
+									<a class="ourtag" href="http://cxem.net/cms/tags/Proteus/" id="Proteus">Proteus</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li><li>
+									<a class="ourtag" href="http://cxem.net/cms/tags/LCD/" id="LCD">LCD</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li><li>
+									<a class="ourtag" href="http://cxem.net/cms/tags/CodeVisionAVR/" id="CodeVisionAVR">CodeVisionAVR</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li></ul>
+</div>
+
+
+
+<div class="articlebottom">
+	<div style="float: left;">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mode_author.png" title="Автор статьи"> <strong><a href="http://cxem.net/cms/profile/253" rel="author">Igoryosha</a></strong>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mode_public.png" title="Дата публикации статьи"> Опубликована: 03.06.2013
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mode_change.png">Изменена: 24.06.2013
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mode_comment.png" title="Количество комментариев"> <span id="count_comments">24</span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mode_favorite.png" id="favArticle" title="Подписаться на статью"> 2	</div>
+
+	<div style="float: right; margin-right: 15px;">
+		<span id="donate" title="Поощрить автора статьи"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/mode_donate.png" title="Вознаградить автора статьи"> Вознаградить</span>
+
+		
+		<a id="buildadd" href="http://cxem.net/mc/mc218.php#" title="Написать про результат своей сборки">Я собрал</a>
+				<span id="buildcount" title="Количество сборок других пользователей">0</span>
+				
+		
+
+		<span title="Средний балл статьи: 5" id="arating" style="height: 15.181818181818px; background-position: 0 0px;"></span><span style="color: rgba(255, 255, 255, .5); padding: 0 10px 0 15px;" title="Количество оценивших статью: 2">2</span><div class="arating" style="display: none;">
+									<div class="close">x</div><h3 style="margin: 0; text-align: center;">Оценить статью</h3><ul class="rating"><li><span class="criterion">Техническая грамотность</span><div class="votes" data-id="1" data-weight="1"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li><li><span class="criterion">Актуальность материала</span><div class="votes" data-id="2" data-weight="0.8"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li><li><span class="criterion">Изложение материала</span><div class="votes" data-id="3" data-weight="0.6"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li><li><span class="criterion">Полезность устройства	</span><div class="votes" data-id="4" data-weight="0.4"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li><li><span class="criterion">Повторяемость устройства</span><div class="votes" data-id="5" data-weight="0.3"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li><li><span class="criterion">Орфография</span><div class="votes" data-id="6" data-weight="0.2"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li></ul><div class="result-rating">0</div><div class="additional" style="clear: both;"><div style="text-align: center; padding-top: 5px;"><textarea id="addittext" style="width: 290px; font-size: 11px; resize: vertical;" maxlength="255" rows="3" placeholder="Напишите пару слов о недостатках или достоинствах статьи. В дальнейшем Вы не сможете изменить свою оценку!"></textarea></div><div id="buttons" style="text-align: center; margin: 0;">
+										<button type="button" class="button-ok" id="dorating" style="font-size: 11px;">Оценить</button>
+										<button type="button" class="button-ok" id="resetrating" style="font-size: 11px;">Сбросить</button>
+									</div></div><p style="margin: 0; line-height: normal; color: #bbb;">
+									<span>Средний балл: 5</span>
+									<span style="float: right;">Проголосовало: 2 чел.</span>
+								</p></div>	</div>
+</div>
+
+
+
+<link type="text/css" rel="stylesheet" href="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/comments.css">
+
+<div align="left" style="margin: 25px 0;" id="yd_cxem_bottom1"></div>
+
+
+<div style="margin: 20px 0 25px 0;">
+	<div class="addthis_toolbox addthis_default_style addthis_16x16_style">
+	<a class="addthis_button_vk"></a>
+	<a class="addthis_button_google_plusone_share"></a>
+	<a class="addthis_button_odnoklassniki_ru"></a>
+	<a class="addthis_button_facebook"></a>
+	<a class="addthis_button_mymailru"></a>
+	<a class="addthis_button_livejournal"></a>
+	<a class="addthis_button_twitter"></a>
+	<a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+	</div>
+	<script type="text/javascript" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/addthis_widget.js"></script>
+</div>
+
+</div>
+
+<div align="center" style="padding: 10px; color: #666666; font-size: 12px">
+	
+</div>
+
+<div style="margin:0px 15px 15px 15px">
+
+<script>var countComments = 24</script>
+<script type="text/javascript" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/jquery.caret.1.02.min.js"></script>
+<script type="text/javascript" src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/comments.js"></script>
+
+<div id="comments">
+	<div id="commentslist">
+		<a name="comment-20443"></a>
+<div style="margin-left: 0px;" class="comment20443 comment" id="20443">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/790c626ab98d4e2b30d1cd6855fef4f0_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/119/">Kamikadza</a> <span class="date">03.06.2013 17:30</span> <a href="http://cxem.net/mc/mc218.php#comment-20443" rel="nofollow">#</a></div>
+		<div class="text">Спасибо за статью, полезная информация. Лежит такой дисплей, буду юзать.</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-20445"></a>
+<div style="margin-left: 0px;" class="comment20445 comment" id="20445">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/noavatar_48.png" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/51/">while(1)</a> <span class="date">03.06.2013 18:56</span> <a href="http://cxem.net/mc/mc218.php#comment-20445" rel="nofollow">#</a></div>
+		<div class="text"><div class="commentquote">для дисплеев LPH9157-2 (Siemens C75, ME75) и LPH9135 (Siemens А31, C72, АХ72, А75, АХ75, С76).</div>
+А для STM32 можно?</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-20446"></a>
+<div style="margin-left: 20px;" class="comment20446 comment" id="20446">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/40bea76e7488ec750d02f24d5b5f81b2_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/253/">Igoryosha</a> <span class="date">03.06.2013 19:13</span> <a href="http://cxem.net/mc/mc218.php#comment-20446" rel="nofollow">#</a></div>
+		<div class="text">Я пока работаю только с AVR-семейством, STM32 только осваиваю, поэтому портировать смогу только через месяц-полтора!</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-20453"></a>
+<div style="margin-left: 0px;" class="comment20453 comment" id="20453">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Кирилл <span class="date">03.06.2013 20:40</span> <a href="http://cxem.net/mc/mc218.php#comment-20453" rel="nofollow">#</a></div>
+		<div class="text">Я портировал этот код <a href="http://habrahabr.ru/post/159011/" title="Ссылка на http://habrahabr.ru/post/159011/">Простенькие часики на MSP430</a> для STM32F4Discovery. Валялся у меня дисплейчик от SIEMENS A60, точнее телефон целиком. Ну и накатал на скоряк (на дисплейчик выводится температура с датчика DS18B20)<br>
+https://www.dropbox.com/s/hd1by2q27dy1w3j/main.c</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-20457"></a>
+<div style="margin-left: 20px;" class="comment20457 comment" id="20457">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/noavatar_48.png" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/283/">mrcrook</a> <span class="date">03.06.2013 21:17</span> <a href="http://cxem.net/mc/mc218.php#comment-20457" rel="nofollow">#</a></div>
+		<div class="text">Вот кстати картинки работы этого дисплейчика с термо датчиком<br>
+https://www.dropbox.com/s/i9j9hn13fgsshn6/IMG_20130401_171709.jpg<br>
+https://www.dropbox.com/s/v3o5bk51ub7a244/IMG_20130401_213849.jpg</div>
+		<div class="commentchange">Отредактирован 03.06.2013 21:18</div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-20459"></a>
+<div style="margin-left: 0px;" class="comment20459 comment" id="20459">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/04e8e0f1b99331dacea2b9e12e37b05a_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/3/">alex98y</a> <span class="date">03.06.2013 22:20</span> <a href="http://cxem.net/mc/mc218.php#comment-20459" rel="nofollow">#</a></div>
+		<div class="text">Отлично! Как раз валяется пару цветных дисплеев от Сименсов. Буду разбиратся в коде и портировать его на BASCOM-AVR. Спасибо огромное за статью!</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-20460"></a>
+<div style="margin-left: 0px;" class="comment20460 comment" id="20460">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/40bea76e7488ec750d02f24d5b5f81b2_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/253/">Igoryosha</a> <span class="date">03.06.2013 23:01</span> <a href="http://cxem.net/mc/mc218.php#comment-20460" rel="nofollow">#</a></div>
+		<div class="text">Не за что! Приятно, когда твой труд оказывается полезен!</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-20673"></a>
+<div style="margin-left: 0px;" class="comment20673 comment" id="20673">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/noavatar_48.png" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/96/">олежка</a> <span class="date">11.06.2013 15:20</span> <a href="http://cxem.net/mc/mc218.php#comment-20673" rel="nofollow">#</a></div>
+		<div class="text">Хорошая статья. Когда будет под дисплей LPH9135?</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-20677"></a>
+<div style="margin-left: 0px;" class="comment20677 comment" id="20677">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/40bea76e7488ec750d02f24d5b5f81b2_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/253/">Igoryosha</a> <span class="date">11.06.2013 16:24</span> <a href="http://cxem.net/mc/mc218.php#comment-20677" rel="nofollow">#</a></div>
+		<div class="text">Спасибо за проявленный интерес, планирую до конца этой недели выложить статью про LPH9157-2, а про LPH9135 подождите ещё недельку-другую</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-23639"></a>
+<div style="margin-left: 0px;" class="comment23639 comment" id="23639">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Ринат <span class="date">02.10.2013 17:26</span> <a href="http://cxem.net/mc/mc218.php#comment-23639" rel="nofollow">#</a></div>
+		<div class="text">Хочу данный экран подключить на МК atmega8/48, к каким выводам МК подключаются выводы дисплея? Где и как это настраивается? Может я не заметил где это написано в статье? Или где в исходнике? Кто то еще собрал этот девайс? Работает?<br>
+Спасибо за ответ!</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-23640"></a>
+<div style="margin-left: 20px;" class="comment23640 comment" id="23640">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/40bea76e7488ec750d02f24d5b5f81b2_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/253/">Igoryosha</a> <span class="date">02.10.2013 18:32</span> <a href="http://cxem.net/mc/mc218.php#comment-23640" rel="nofollow">#</a></div>
+		<div class="text">В самом начале исходника есть пять макроопределений #define под комментарием "Назначение выводов порта", где Вы прописываете имя порта и номер бита, однако, сконфигурировать эти порты на выход Вы должны самостоятельно в основной программе!</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-23645"></a>
+<div style="margin-left: 40px;" class="comment23645 comment" id="23645">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Ринат <span class="date">02.10.2013 20:38</span> <a href="http://cxem.net/mc/mc218.php#comment-23645" rel="nofollow">#</a></div>
+		<div class="text">Ага, кажется понял. Там стоят PORTA.0 и т.д. То есть вместо этого мы берем числовые коды портов из даташита?</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-23661"></a>
+<div style="margin-left: 0px;" class="comment23661 comment" id="23661">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/40bea76e7488ec750d02f24d5b5f81b2_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/253/">Igoryosha</a> <span class="date">03.10.2013 17:29</span> <a href="http://cxem.net/mc/mc218.php#comment-23661" rel="nofollow">#</a></div>
+		<div class="text">Определения типа PORTA.0 и т.д. - это макросы <a href="http://cxem.net/software/codevisionavr.php" title="Ссылка на http://cxem.net/software/codevisionavr.php">CodeVisionAVR</a>, которые обеспечивают удобное управление отдельными выводами порта МК, и Вы легко можете выбрать любой бит любого порта, только самостоятельно определите порты на выход (DDRn).</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-23701"></a>
+<div style="margin-left: 0px;" class="comment23701 comment" id="23701">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Ринат <span class="date">04.10.2013 22:16</span> <a href="http://cxem.net/mc/mc218.php#comment-23701" rel="nofollow">#</a></div>
+		<div class="text">Подойдет ли стабиллитрон КС133А? <br>
+Номинальное напряжение стабилизации,В 3.3<br>
+Максимальное напряжение стабилизации,В 3.6<br>
+Ничего что у него максимальное напряжение немного выше нужного?</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-23712"></a>
+<div style="margin-left: 0px;" class="comment23712 comment" id="23712">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Ринат <span class="date">05.10.2013 09:48</span> <a href="http://cxem.net/mc/mc218.php#comment-23712" rel="nofollow">#</a></div>
+		<div class="text">Большое спасибо за ответы!<br>
+Все получилось, собрал на МК атмега8. Хочется заметить, что к МК стоит обязательно подключить внешний кварцевый резонатор на максимальную частоту, так как работа невероятно тормозит, на частоте 4 МГц ждать приходилось секунд 10 пока что-то нарисуется. Указанный мной выше стабилитрон подошел, проблем не возникло. Субъективно мне показалось, что резисторы на подсветку лучше взять поменьше, где нибудь на 200 Ом, так как экран светился слишком тускло. <br>
+Большое спасибо за столь масштабную разработку, данный код кажется очень и очень полезен как в отладке, так и в разработке готовых устройств!</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-23713"></a>
+<div style="margin-left: 20px;" class="comment23713 comment" id="23713">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/40bea76e7488ec750d02f24d5b5f81b2_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/253/">Igoryosha</a> <span class="date">05.10.2013 12:37</span> <a href="http://cxem.net/mc/mc218.php#comment-23713" rel="nofollow">#</a></div>
+		<div class="text">Спасибо! Сам использую графические дисплеи для отладки своих устройств. Насчёт тактовой частоты Вы правы, иначе работа с дисплеем получается очень медленной. Насчёт напряжения стабилизации: в оригинале, напряжение питания составляет 2,9 В, поэтому, чем оно будет ближе к этому значению, тем лучше, можно поставить стабилитрон и на 3,0 В.</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-24482"></a>
+<div style="margin-left: 0px;" class="comment24482 comment" id="24482">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Undead <span class="date">01.11.2013 05:34</span> <a href="http://cxem.net/mc/mc218.php#comment-24482" rel="nofollow">#</a></div>
+		<div class="text">Что-то у меня не заработала ваша библиотека на меге32, походу руки кривые. Если можно, выложите проект для проверки</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-24511"></a>
+<div style="margin-left: 0px;" class="comment24511 comment" id="24511">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Undead <span class="date">01.11.2013 19:35</span> <a href="http://cxem.net/mc/mc218.php#comment-24511" rel="nofollow">#</a></div>
+		<div class="text">ФЬюзы выставленные вот так:<br>
+<div class="commentquote">CKSEL0...3 - 1000<br>
+SUT0..1 - 01<br>
+BODEN - 1<br>
+BODLEVEL - 1<br>
+BOOTRST - 1<br>
+BOOTSZ0..1 - 11<br>
+EESAVE - 1<br>
+CKOPT - 1<br>
+JTAGEN - 1<br>
+OCDEN - 1</div>
+В программе сначала идёт инициализация, потом сброс, затем заливка дисплея белым цветом и всё. В схеме не использовал подтягивающие резисторы на землю и стабилитрон (без него питание 3,2В), они обязательны?</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-24530"></a>
+<div style="margin-left: 20px;" class="comment24530 comment" id="24530">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/40bea76e7488ec750d02f24d5b5f81b2_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/253/">Igoryosha</a> <span class="date">02.11.2013 13:41</span> <a href="http://cxem.net/mc/mc218.php#comment-24530" rel="nofollow">#</a></div>
+		<div class="text">А как у Вас тактируется схема, т.к. судя по Вашим фьюзам, Вы используете внешний RC-генератор на 8-12 МГц? Если питание схемы 3,2 В, то, естественно, резисторы на землю и стабилитрон не нужны. Насчёт проекта для проверки - давайте e-mail!</div>
+		<div class="commentchange">Отредактирован 02.11.2013 13:45</div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-24535"></a>
+<div style="margin-left: 0px;" class="comment24535 comment" id="24535">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Undead <span class="date">02.11.2013 15:05</span> <a href="http://cxem.net/mc/mc218.php#comment-24535" rel="nofollow">#</a></div>
+		<div class="text">Странно, но фьюзы стоят заводские кроме JTAGEN, на сколько знаю если его не отключить ничего не должно заработать. И по даташиту всё верно вроде на счёт генератора.</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-24538"></a>
+<div style="margin-left: 20px;" class="comment24538 comment" id="24538">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/40bea76e7488ec750d02f24d5b5f81b2_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/253/">Igoryosha</a> <span class="date">02.11.2013 19:00</span> <a href="http://cxem.net/mc/mc218.php#comment-24538" rel="nofollow">#</a></div>
+		<div class="text">Простите, не заметил порядок нумерации фьюзов, всё правильно, у вас - 1 МГц, встроенный RC-генератор. Однако для нормальной и быстрой работы с библиотекой желательно поставить внешний кварц на 16 МГц (ну, и соответственно, изменить фьюзы - http://www.engbedded.com/fusecalc).</div>
+		<div class="commentchange">Отредактирован 02.11.2013 19:01</div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-24540"></a>
+<div style="margin-left: 0px;" class="comment24540 comment" id="24540">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Undead <span class="date">02.11.2013 19:11</span> <a href="http://cxem.net/mc/mc218.php#comment-24540" rel="nofollow">#</a></div>
+		<div class="text">Фьюзы уже сменил и поставил на 8МГц от внутреннего генератора, хочу сначала хоть какое-то изменение на дисплее получить, а там уже и внешний кварц можно поставить... У меня на PORTD 0...4 висит и диод вешал на ноги, мигает как по программе, но дисплей молчит. Изменил контраст на 100, думал может в этом проблема, но и тут тишина...</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-24542"></a>
+<div style="margin-left: 20px;" class="comment24542 comment" id="24542">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/40bea76e7488ec750d02f24d5b5f81b2_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="http://cxem.net/cms/profile/253/">Igoryosha</a> <span class="date">02.11.2013 20:38</span> <a href="http://cxem.net/mc/mc218.php#comment-24542" rel="nofollow">#</a></div>
+		<div class="text">Глупый вопрос - а Вы переопределили порты на выход? Просто у меня в библиотеке подразумевается установка выводов вручную (DDRn) до цикла while(1) основной программы.</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-24547"></a>
+<div style="margin-left: 40px;" class="comment24547 comment" id="24547">
+	<div class="elements">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Undead <span class="date">02.11.2013 22:02</span> <a href="http://cxem.net/mc/mc218.php#comment-24547" rel="nofollow">#</a></div>
+		<div class="text">Да DDRD=0xFF первым делом. Сегодня всю ночь буду его мучить, посмотрим что получится.</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div>	</div>
+	
+	
+	<div id="comment_form">
+	<form id="comments">
+		<div class="caption">Добавить комментарий</div>
+
+		<div class="fields">
+
+			
+				<div class="line">
+					<div class="label"><b>Имя:</b></div>
+					<div class="inputs"><input type="text" id="name" name="name" placeholder="Ваше имя" required="required"></div>
+				</div>
+				<div class="line">
+					<div class="label"><b>E-mail:</b></div>
+					<div class="inputs">
+						<input type="email" id="email" name="email" placeholder="Ваш E-mail" required="required">
+						<span style="font-size: 10px; margin-left: 5px; color: #aaa;">не публикуется</span>
+					</div>
+				</div>
+				<div class="line" style="margin: 7px 0;">
+					<div class="label"></div>
+					<input class="hidden" type="checkbox" id="email_noty" name="email_noty">
+					<label for="email_noty" title="Уведомлять меня по E-mail об ответах на мой комментарий">Уведомлять об ответах на мой комментарий</label>
+
+				</div>
+
+			
+
+			<div id="toolbar">
+				<div class="panel">
+					<div class="tooltip" onclick="selText(&#39;[b]&#39;, &#39;[/b]&#39;)" title="Жирный"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/bold.png"></div>
+					<div class="tooltip" onclick="selText(&#39;[i]&#39;, &#39;[/i]&#39;)" title="Курсив"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/italic.png"></div>
+					<div class="tooltip" onclick="selText(&#39;[u]&#39;, &#39;[/u]&#39;)" title="Подчеркнутый"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/underline.png"></div>
+					<div class="tooltip" onclick="selText(&#39;[s]&#39;, &#39;[/s]&#39;)" title="Зачеркнутый"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/strike.png"></div>
+				</div>
+
+				<div class="panel">
+					<div class="tooltip" onclick="selText(&#39;[quote]&#39;, &#39;[/quote]&#39;)" title="Цитата"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/quote.png"></div>
+					<div class="tooltip" onclick="selText(&#39;[url=]&#39;, &#39;[/url]&#39;)" title="Ссылка"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/link.png"></div>
+									</div>
+			</div>
+
+			<div class="line" style="display: table;">
+				<div class="label" style="display:table-cell; vertical-align: middle;"><b>Текст:</b></div>
+				<div class="inputs"><textarea id="msg" name="msg" rows="7" placeholder="Ваш комментарий" required="required"></textarea></div>
+				<input type="hidden" name="root" id="root" value="0">
+			</div>
+
+			
+				<div class="line">
+					<div class="label"><b>Защита от спама:</b></div>
+					<div class="inputs">
+						<span style="font-size: 11px; color: #175aaa">В чем измеряется напряжение?</span><br>
+						<input type="text" name="answer" id="answer" placeholder="Ответ на вопрос" required="required">
+						<input type="hidden" name="answers" value="вольт, вольтах, вольты, в вольтах">
+					</div>
+				</div>
+
+			
+		</div>
+
+		<div style="margin: 10px 0 10px 80px;">
+			<input class="hidden" type="checkbox" id="commentsrules" name="rules">
+			<label for="commentsrules">Я согласен с <a href="http://cxem.net/mc/mc218.php#" id="rulescomments">правилами публикации комментариев</a></label>
+			<p>
+			<button type="submit" name="send" id="send" class="button-ok">Отправить</button></p>
+		</div>
+		<div class="errors">
+		</div>
+	</form>
+
+	
+<div class="comment-books">
+	<div class="cbooks-picture">
+		<img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/7605764_h225.jpg">
+		<div class="cbooks-buy"><a href="http://www.ozon.ru/context/detail/id/7605764/?partner=cxem" rel="nofollow" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Ozon-Comment&#39;, &#39;7605764&#39;]);" class="button button-ok">Купить</a></div>
+  </div>
+</div>
+
+	<div class="comment-books-additional">
+		<a href="http://www.ozon.ru/context/detail/id/4562517/?partner=cxem" rel="nofollow" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Ozon-Comment&#39;, &#39;4562517&#39;]);"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/4562517_h110.jpg" height="110px" srcset="http://cxem.net/cache/books/4562517_s.jpg 2x"></a>
+		<a href="http://www.ozon.ru/context/detail/id/5167138/?partner=cxem" rel="nofollow" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Ozon-Comment&#39;, &#39;5167138&#39;]);"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/5167138_h110.jpg" height="110px" srcset="http://cxem.net/cache/books/5167138_s.jpg 2x"></a>
+	</div>
+
+</div>	<div class="toTop">вверх</div>
+</div></div>
+	
+	<div id="footer">
+		<div class="copyright">
+			<div class="cnt"><strong>1999-2013 Сайт-ПАЯЛЬНИК  'cxem.net' 'payalnik.pro'</strong><br><br>
+			При использовании материалов сайта, обязательна<br>
+			ссылка на сайт ПАЯЛЬНИК и первоисточник</div>
+		</div>
+		<div class="social">
+			<a href="http://vk.com/cxem_net_payalnik" rel="nofollow"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/social_vk.png" border="0"></a>
+			<a href="http://www.youtube.com/user/tolik7772" rel="nofollow"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/social_youtube.png" border="0"></a>
+			<a href="https://plus.google.com/114323020554147549161" rel="nofollow"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/social_gplus.png" border="0"></a>
+			<a href="http://cxem.net/contact.php"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/social_email.png" border="0"></a>
+		</div>
+		<div class="adv_text">
+			<a href="http://cxem.net/reklama.php">Размещение рекламы</a>
+		</div>
+		<div class="stat">
+			<!-- СЧЕТЧИКИ -->
+				<a href="http://www.liveinternet.ru/click;payalnik_all" target="_blank" rel="nofollow"></a>
+				<a href="http://top100.rambler.ru/top100/" rel="nofollow"><img src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/b1.gif" alt="Rambler&#39;s Top100" width="88" height="31" border="0"></a>
+			 <!-- /СЧЕТЧИКИ -->				
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+(function(w, d, n, s, t) {
+    w[n] = w[n] || [];
+    w[n].push(function() {
+        Ya.Direct.insertInto(2268, "yd_cxem_bottom1", {
+            stat_id: 654384391,
+            site_charset: "utf-8",
+            ad_format: "direct",
+            font_size: 1.1,
+            type: "flat",
+            limit: 4,
+            title_font_size: 3,
+            site_bg_color: "FFFFFF",
+            title_color: "208EBC",
+            url_color: "1A8099",
+            text_color: "000000",
+            hover_color: "CC6666",
+            favicon: true
+        });
+    });
+    t = d.documentElement.firstChild;
+    s = d.createElement("script");
+    s.type = "text/javascript";
+    s.src = "http://an.yandex.ru/system/context.js";
+    s.setAttribute("async", "true");
+    t.insertBefore(s, t.firstChild);
+})(window, document, "yandex_context_callbacks");
+</script>
+
+<!--
+<script type="text/javascript">
+(function(w, d, n, s, t) {
+    w[n] = w[n] || [];
+    w[n].push(function() {
+        Ya.Direct.insertInto(2268, "yd_right_panel", {
+            stat_id: 46519,
+            site_charset: "utf-8",
+            ad_format: "direct",
+            font_size: 1,
+            type: "vertical",
+            limit: 3,
+            title_font_size: 3,
+            site_bg_color: "FFFFFF",
+            header_bg_color: "FFFFFF",
+            title_color: "208EBC",
+            url_color: "1A8099",
+            text_color: "333333",
+            hover_color: "0066FF",
+            favicon: true
+        });
+    });
+    t = d.documentElement.firstChild;
+    s = d.createElement("script");
+    s.type = "text/javascript";
+    s.src = "http://an.yandex.ru/system/context.js";
+    s.setAttribute("async", "true");
+    t.insertBefore(s, t.firstChild);
+})(window, document, "yandex_context_callbacks");
+</script>
+-->
+
+<script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/1295"></script>
+
+
+<script src="./Работа с дисплеем LPH8731-3C от телефонов Siemens_files/MHwxfGJ8MHw0MzI="></script></body></html>
