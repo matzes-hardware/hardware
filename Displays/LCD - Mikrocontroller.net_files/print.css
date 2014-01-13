@@ -1,0 +1,9 @@
+#top{border-bottom:1px solid black;font-family:Georgia;}
+#top h1{font-size:1.3em;}
+.sidebar{display:none;}
+#impress{display:none;}
+.editsection{display:none;}
+#forumfilter{display:none;}
+.navbar{display:none;}
+.post .foot{display:none;}
+.noprint{display:none !important;}

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://www.mikrocontroller.net/articles/LCD -->
+<html lang="de" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script async="" type="text/javascript" src="./LCD - Mikrocontroller.net_files/gpt.js"></script><script type="text/javascript">
+      var wgBreakFrames = false;
+      var wgContentLanguage = false;
+    </script>
+    
+    <meta name="generator" content="MediaWiki 1.21.1">
+<link rel="alternate" type="application/x-wiki" title="Bearbeiten" href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit">
+<link rel="edit" title="Bearbeiten" href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit">
+<link rel="shortcut icon" href="http://www.mikrocontroller.net/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.mikrocontroller.net/wikisoftware/opensearch_desc.php" title="Uc-wiki (de)">
+<link rel="EditURI" type="application/rsd+xml" href="http://www.mikrocontroller.net/wikisoftware/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Atom-Feed für „Uc-wiki“" href="http://www.mikrocontroller.net/wikisoftware/index.php?title=Spezial:Letzte_%C3%84nderungen&feed=atom">    <title>LCD - Mikrocontroller.net</title>
+    
+        <!-- <script type="text/javascript" src="/wikisoftware/skins/common/wikibits.js"></script> -->
+            <script src="./LCD - Mikrocontroller.net_files/load.php"></script><script src="./LCD - Mikrocontroller.net_files/load(1).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"LCD","wgTitle":"LCD","wgCurRevisionId":80737,"wgArticleId":47,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Bauteile","LCD"],"wgBreakFrames":false,"wgPageContentLanguage":"de","wgSeparatorTransformTable":[",	.",".	,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],"wgMonthNamesShort":["","Jan.","Feb.","Mär.","Apr.","Mai","Jun.","Jul.","Aug.","Sep.","Okt.","Nov.","Dez."],"wgRelevantPageName":"LCD","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":true,"previewDialog":false,"publish":true,"toc":false}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"mikrocontroller","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"variant":"de","language":"de","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: uc_wiki:resourceloader:filter:minify-js:7:5afc608d284909c94225e82ae67c1108 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script src="./LCD - Mikrocontroller.net_files/load(2).php"></script>
+    <script src="./LCD - Mikrocontroller.net_files/application-3395b7b340f83222e08a0ab286706278.js"></script>
+
+    <!--<script src="/javascripts/highlightCurrentLink.js" type="text/javascript"></script>-->
+    <script src="./LCD - Mikrocontroller.net_files/sorttable.js" type="text/javascript"></script><style type="text/css"></style>
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.mikrocontroller.net/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="./LCD - Mikrocontroller.net_files/screen.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./LCD - Mikrocontroller.net_files/shared.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./LCD - Mikrocontroller.net_files/main.css">
+    <link rel="stylesheet" type="text/css" media="print" href="./LCD - Mikrocontroller.net_files/print.css">
+    <style type="text/css">#nav-foren-sub {display: none;} </style>
+    <style type="text/css">#nav-tutorial-sub {display: none;} </style>
+
+    <link rel="stylesheet" type="text/css" href="./LCD - Mikrocontroller.net_files/highslide.css">
+    <!--[if lt IE 7]>
+    <link rel="stylesheet" type="text/css" href="/highslide/highslide-ie6.css" />
+    <![endif]-->
+
+
+    <!--
+    <style type="text/css">
+    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/articles/Spezial:Kategorien" title="Spezial:Kategorien">Kategorien</a>: <ul><li><a href="/articles/Kategorie:Bauteile" title="Kategorie:Bauteile">Bauteile</a></li><li><a href="/articles/Kategorie:LCD" title="Kategorie:LCD">LCD</a></li></ul></div></div>    #nav-foren-sub {display: none;}
+    </style>
+    -->
+
+<link rel="stylesheet" href="http://www.mikrocontroller.net/wikisoftware/load.php?debug=false&lang=de&modules=ext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared&only=styles&skin=mikrocontroller&*">
+<style>
+.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: uc_wiki:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: uc_wiki:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{text-decoration:none;color:black}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}
+/* cache key: uc_wiki:resourceloader:filter:minify-css:7:52b1797f70c7e4094dfa4191101944e8 */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="http://www.mikrocontroller.net/wikisoftware/load.php?debug=false&lang=de&modules=site&only=styles&skin=mikrocontroller&*">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: uc_wiki:resourceloader:filter:minify-css:7:8c158424ea41cf09c24f6f94d82b9d56 */</style>
+
+<script type="text/javascript">
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+
+googletag.cmd.push(function() {
+  //googletag.pubads().enableSingleRequest();
+  googletag.pubads().setTargeting('pagetype', 'article');
+  googletag.pubads().setTargeting('section', 'article');
+  if ('https:' == document.location.protocol) {
+    googletag.pubads().setTargeting('ssl', '1');
+  } else {
+    googletag.pubads().setTargeting('ssl', '0');
+  }
+      googletag.pubads().setTargeting('site_id', '1');
+  });
+</script>
+
+
+
+
+<script async="" src="./LCD - Mikrocontroller.net_files/load(3).php"></script></head>
+
+<body style="">
+    <div id="globalWrapper">
+    <div id="top"><h1><a href="http://www.mikrocontroller.net/">www.mikrocontroller.net</a></h1></div>
+  <table id="twocolumns">
+  <tbody><tr>
+  <td id="sidebar-left" class="sidebar">
+  <!-- begin nav -->
+<div class="nav-container">
+  <ul class="nav-first">
+    <li><b><a href="http://www.mikrocontroller.net/">Home</a></b></li>
+    <li>
+      <b><a href="http://www.mikrocontroller.net/articles/AVR">AVR</a></b>
+      <ul>
+        <li><a href="http://www.mikrocontroller.net/articles/AVR-Tutorial">AVR-Tutorial</a></li>
+        <li><a href="http://www.mikrocontroller.net/articles/AVR-GCC-Tutorial">AVR-GCC-Tutorial</a></li>
+      </ul>
+    </li>
+    <li>
+      <b><a href="http://www.mikrocontroller.net/articles/ARM">ARM</a></b>
+      <ul>
+        <li><a href="http://www.mikrocontroller.net/articles/LPC1xxx">LPC1xxx</a></li>
+        <li><a href="http://www.mikrocontroller.net/articles/LPC2000">LPC2000</a></li>
+        <li><a href="http://www.mikrocontroller.net/articles/AT91SAM">AT91SAM7</a></li>
+        <li><a href="http://www.mikrocontroller.net/articles/STM32">STM32</a></li>
+      </ul>
+    </li>
+    <li>
+      <b><a href="http://www.mikrocontroller.net/articles/MSP430">MSP430</a></b>
+    </li>
+    <li>
+      <b><a href="http://www.mikrocontroller.net/articles/Programmierbare_Logik">FPGA, CPLD &amp; Co.</a></b>
+      <ul>
+        <li><a href="http://www.mikrocontroller.net/articles/FPGA">Grundlagen zu FPGAs</a></li>
+        <li><a href="http://www.mikrocontroller.net/articles/Hardwarebeschreibungssprachen">VHDL &amp; Co.</a></li>
+        <li><a href="http://www.mikrocontroller.net/articles/Xilinx_ISE">Xilinx ISE</a></li>
+      </ul>
+    </li>
+    <li>
+      <b><a href="http://www.mikrocontroller.net/articles/Digitale_Signalverarbeitung">DSP</a></b>
+    </li>
+
+    <li>
+      <b><a href="http://www.mikrocontroller.net/articles/Elektronik_Allgemein">Elektronik allgemein</a></b>
+      <ul>
+        <li><a href="http://www.mikrocontroller.net/articles/SMD_L%C3%B6ten">SMD Löten</a></li>
+        <li><a href="http://www.mikrocontroller.net/articles/Operationsverst%C3%A4rker-Grundschaltungen">Operationsverstärker</a></li>
+        <li><a href="http://www.mikrocontroller.net/articles/Oszilloskop">Oszilloskop</a></li>
+      </ul> 
+    </li>
+
+    <li>
+      <b><a href="http://www.mikrocontroller.net/forum/all">Forum</a></b>
+      <ul>
+        <li><a href="http://www.mikrocontroller.net/forum/mikrocontroller-elektronik">µC &amp; Elektronik</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/analogtechnik">Analogtechnik</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/fpga-vhdl-cpld">FPGA, VHDL &amp; Co.</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/dsp">DSP</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/gcc">GCC</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/codesammlung">Codesammlung</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/markt">Markt</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/platinen">Platinen</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/mechanik">Mechanik &amp; Werkzeug</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/hf">HF, Funk &amp; Felder</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/hausbus">Hausbus</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/pc-programmierung">PC-Programmierung</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/pc-hardware-software">PC Hard- &amp; Software</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/ausbildung-studium-beruf">Ausbildung &amp; Beruf</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/offtopic">Offtopic</a></li>
+        <li><a href="http://www.mikrocontroller.net/forum/website">Webseite</a></li>
+       </ul>
+    </li>
+    <li><b><a href="http://www.mikrocontroller.net/buecher/">Buchtipps</a></b></li>
+<!--    <li><b><a href="http://shop.mikrocontroller.net/">Shop</a></b></li>-->
+    <li><b><a href="http://www.mikrocontroller.net/articles/Linksammlung">Linksammlung</a></b></li>
+    <li><b><a href="http://www.mikrocontroller.net/articles/Hauptseite">Artikelübersicht</a></b></li>
+    <li><b><a href="http://www.mikrocontroller.net/articles/Spezial:Recentchanges">Letzte Änderungen</a></b></li>
+  </ul>
+</div>
+<!-- end nav -->
+  <hr>
+  <!-- google_ad_section_start(weight=ignore) -->
+
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script>
+
+	<div id="p-cactions" class="portlet">
+	  <h5><a href="http://www.mikrocontroller.net/articles/LCD#toggle" onclick="javascript:toggle_visibility(&#39;p-cactions-box&#39;); return false;">▶ Dieser Artikel</a></h5>
+	  <div class="box" id="p-cactions-box">
+      <ul>
+	    <li id="ca-nstab-main" class="selected"><a href="./LCD - Mikrocontroller.net_files/LCD - Mikrocontroller.net.html" class="currentlink">Seite</a></li><li id="ca-talk" class="new"><a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=Diskussion:LCD&action=edit&redlink=1">Diskussion</a></li><li id="ca-edit"><a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit">Bearbeiten</a></li><li id="ca-history"><a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=history">Versionen/Autoren</a></li>  	  </ul>
+    </div>
+	</div>
+	<div class="portlet" id="p-personal">
+	  <h5><a href="http://www.mikrocontroller.net/articles/LCD#toggle" onclick="javascript:toggle_visibility(&#39;p-personal-box&#39;); return false;">▶ Benutzer</a></h5>
+	  <div class="box" id="p-personal-box">
+	    <ul>
+	    <li id="pt-anonuserpage"><a href="http://www.mikrocontroller.net/articles/Benutzer:93.219.137.190" class="new">93.219.137.190</a></li><li id="pt-anontalk"><a href="http://www.mikrocontroller.net/articles/Benutzer_Diskussion:93.219.137.190" class="new">Diskussionsseite dieser IP</a></li><li id="pt-anonlogin"><a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=Spezial:Anmelden&returnto=LCD">Anmelden</a></li>	    </ul>
+	  </div>
+	</div>
+  <!-- LOGO
+	<div class="portlet" id="p-logo">
+	  <a style="background-image: url(/wikisoftware/skins/common/images/wiki.png);"
+	    href="/articles/Hauptseite"
+	    title="Hauptseite"></a>
+	</div>
+  -->
+	<div id="p-search" class="portlet">
+	  <h5><a href="http://www.mikrocontroller.net/articles/LCD#toggle" onclick="javascript:toggle_visibility(&#39;p-search-box&#39;); return false;">▶ Suche</a></h5>
+	  <div class="box" id="p-search-box">
+	    <form name="searchform" action="http://www.mikrocontroller.net/articles/Spezial:Suche" id="searchform">
+	      <input id="searchInputX" name="search" type="text" accesskey="f" value=""><br>
+	      <input type="submit" name="go" class="searchButton" value="Ausführen">&nbsp;<input type="submit" name="fulltext" class="searchButton" value="Suche">
+	    </form>
+	  </div>
+	</div>
+	<div class="portlet" id="p-tb">
+	  <h5><a href="http://www.mikrocontroller.net/articles/LCD#toggle" onclick="javascript:toggle_visibility(&#39;p-tb-box&#39;); return false;">▶ Werkzeuge</a></h5>
+	    <div class="box" id="p-tb-box">
+      <ul>
+		  		  <li id="t-whatlinkshere"><a href="http://www.mikrocontroller.net/articles/Spezial:Linkliste/LCD">Links auf diese Seite</a></li>
+		  		  <li id="t-recentchangeslinked"><a href="http://www.mikrocontroller.net/articles/Spezial:%C3%84nderungen_an_verlinkten_Seiten/LCD">Änderungen an verlinkten Seiten</a></li>
+		  	      	      	      	      	      	      	      	      	      <li id="t-specialpages"><a href="http://www.mikrocontroller.net/articles/Spezial:Spezialseiten">Spezialseiten</a></li>	      	    </ul>
+      </div>
+	</div>
+  <!-- google_ad_section_end -->
+  
+  <!-- start adsense -->
+    <!-- end adsense -->
+  
+      </td><!-- end of the left (by default at least) column -->
+  <td id="main">
+    <!-- google_ad_section_start -->
+    <a name="top" id="contentTop"></a>
+        <h1 class="firstHeading">LCD</h1>
+    <div id="bodyContent">
+
+						<!-- tagline -->
+			<!-- <div id="siteSub">Aus Uc-wiki</div> -->
+			<!-- /tagline -->
+						<!-- subtitle -->
+			<div id="contentSub"></div>
+			<!-- /subtitle -->
+												<!-- jumpto -->
+			<div id="jump-to-nav" class="mw-jump">
+				Wechseln zu:				<a href="http://www.mikrocontroller.net/articles/LCD#mw-navigation">Navigation</a>, 				<a href="http://www.mikrocontroller.net/articles/LCD#p-search">Suche</a>
+			</div>
+			<!-- /jumpto -->
+						<!-- bodycontent -->
+			<div id="mw-content-text" lang="de" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Inhaltsverzeichnis</h2><span class="toctoggle">&nbsp;[<a href="http://www.mikrocontroller.net/articles/LCD#" class="internal" id="togglelink">Verbergen</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://www.mikrocontroller.net/articles/LCD#Aufbau"><span class="tocnumber">1</span> <span class="toctext">Aufbau</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="http://www.mikrocontroller.net/articles/LCD#Beleuchtung"><span class="tocnumber">1.1</span> <span class="toctext">Beleuchtung</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="http://www.mikrocontroller.net/articles/LCD#Schnittstellen"><span class="tocnumber">1.2</span> <span class="toctext">Schnittstellen</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="http://www.mikrocontroller.net/articles/LCD#Touchscreen"><span class="tocnumber">1.3</span> <span class="toctext">Touchscreen</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="http://www.mikrocontroller.net/articles/LCD#Hacks"><span class="tocnumber">1.4</span> <span class="toctext">Hacks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="http://www.mikrocontroller.net/articles/LCD#Ansteuerroutinen_Handy_LCDs"><span class="tocnumber">2</span> <span class="toctext">Ansteuerroutinen Handy LCDs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="http://www.mikrocontroller.net/articles/LCD#Vorlage_Display"><span class="tocnumber">2.1</span> <span class="toctext">Vorlage Display</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="http://www.mikrocontroller.net/articles/LCD#NOKIA_1100"><span class="tocnumber">2.2</span> <span class="toctext">NOKIA 1100</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="http://www.mikrocontroller.net/articles/LCD#NOKIA_7110"><span class="tocnumber">2.3</span> <span class="toctext">NOKIA 7110</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="http://www.mikrocontroller.net/articles/LCD#NOKIA_3310"><span class="tocnumber">2.4</span> <span class="toctext">NOKIA 3310</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="http://www.mikrocontroller.net/articles/LCD#NOKIA_3510i"><span class="tocnumber">2.5</span> <span class="toctext">NOKIA 3510i</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="http://www.mikrocontroller.net/articles/LCD#NOKIA_6100"><span class="tocnumber">2.6</span> <span class="toctext">NOKIA 6100</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="http://www.mikrocontroller.net/articles/LCD#NOKIA_N95"><span class="tocnumber">2.7</span> <span class="toctext">NOKIA N95</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="http://www.mikrocontroller.net/articles/LCD#SIEMENS_S65"><span class="tocnumber">2.8</span> <span class="toctext">SIEMENS S65</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="http://www.mikrocontroller.net/articles/LCD#SIEMENS_M55"><span class="tocnumber">2.9</span> <span class="toctext">SIEMENS M55</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="http://www.mikrocontroller.net/articles/LCD#Sonstige_Displays"><span class="tocnumber">2.10</span> <span class="toctext">Sonstige Displays</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="http://www.mikrocontroller.net/articles/LCD#Ansteuerung"><span class="tocnumber">3</span> <span class="toctext">Ansteuerung</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="http://www.mikrocontroller.net/articles/LCD#Display_Controller_Datenbl.C3.A4tter"><span class="tocnumber">4</span> <span class="toctext">Display Controller Datenblätter</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="http://www.mikrocontroller.net/articles/LCD#Projekte"><span class="tocnumber">5</span> <span class="toctext">Projekte</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="http://www.mikrocontroller.net/articles/LCD#Projekte_mit_Text-LCD"><span class="tocnumber">5.1</span> <span class="toctext">Projekte mit Text-LCD</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="http://www.mikrocontroller.net/articles/LCD#Projekte_mit_Grafik-LCD"><span class="tocnumber">5.2</span> <span class="toctext">Projekte mit Grafik-LCD</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="http://www.mikrocontroller.net/articles/LCD#Weblinks"><span class="tocnumber">6</span> <span class="toctext">Weblinks</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="http://www.mikrocontroller.net/articles/LCD#FAQ"><span class="tocnumber">7</span> <span class="toctext">FAQ</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=1" title="Abschnitt bearbeiten: Aufbau">Bearbeiten</a>]</span> <span class="mw-headline" id="Aufbau"> Aufbau </span></h2>
+<p><b>L</b>iquid <b>C</b>rystal <b>D</b>isplays, kurz LCDs, bestehen aus einer großen Fläche von Flüssigkristallen, die unter Einwirkung eines elektrischen Feldes die Polarisationsebene des Lichts drehen. Wird ein solches Display von bereits polarisiertem Licht durchleuchtet, dann erscheinen diese Kristalle mehr oder weniger hell oder dunkel. Die angelegte Spannung ist sehr gering, es muss sich aber um eine Wechselspannung handeln, da eine Gleichspannung die Kristalle zersetzt.
+</p>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=2" title="Abschnitt bearbeiten: Beleuchtung">Bearbeiten</a>]</span> <span class="mw-headline" id="Beleuchtung"> Beleuchtung </span></h3>
+<p>Die Beleuchtung eines LCDs kann durch verschiedene Möglichkeiten erfolgen.
+Kleine Displays (&lt;25cm bzw. 10" Diagonale) werden mittlerweile fast ausschließlich mit LEDs beleuchtet.
+Größere haben oft noch CCFL-Röhren, wobei auch hier leistungsstarke LEDs auf dem Vormarsch sind, da die Röhren hohe Spannungen benötigen und diese den Aufbau verkomplizieren (Röhrendicke, Inverter, HF-Felder, ...)
+</p><p>Manchmal findet man auch EL(Elektrolumineszenz)-Folien, die aufgrund ihrer vergleichsweise geringen Lichtausbeute (bei weißer Leuchtfarbe) fast nur bei monochromen Displays anzutreffen sind.
+</p>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=3" title="Abschnitt bearbeiten: Schnittstellen">Bearbeiten</a>]</span> <span class="mw-headline" id="Schnittstellen"> Schnittstellen </span></h3>
+<p>Die gängigen Schnittstellen zu einem LCD-Controller sind ein 8bit, 4bit oder serielles Interface.
+</p><p>Bei vielen "8bit"-LCDs ist es möglich, bei der Konfiguration festzulegen, dass auf 4bit Datenleitungen jeweils 2 nibble hintereinander gesendet werden. Dies spart Anschlüsse auf der Datensteuerungseinheit (PC, µC, etc). Bei 4-Bit-Ansteuerung darauf achten, dass die Datenpins 4-7 und nicht die Datenpins 0-3 des Displays an den µC angeschlossen werden müssen!
+</p>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=4" title="Abschnitt bearbeiten: Touchscreen">Bearbeiten</a>]</span> <span class="mw-headline" id="Touchscreen"> Touchscreen </span></h3>
+<p>Ein <i>Touchscreen-LCD</i> oder <i>Monitor</i> existiert als vorgefertigte Einzeleinheit nicht. Wird das unter dem Marketingwort Touchscreen erworbene Produkt zerlegt, bleibt die Eingabeeinheit Touchpanel und die Ausgabeeinheit LCD-Screen übrig. 
+</p><p>Jeder <i>Touchscreen</i> besteht aus einem Monitor, der mit einer transparenten Matrix überzogen wurde, die Berührungen an einen Controller weitergibt, der sie in Koordinaten übersetzt und das Anzeigegerät so zum Eingabegerät macht.
+</p><p>Die aus zwei (sich bei Berührung elektrisch veränderndernden) Matrixflächen bestehende Kunststofffläche wird von Systemarchitekten und Mikrocontroller.net-Besuchern beim Einbau des LCD's in das Endprodukt über die anstelle einer Maus mit Berührungen durch Gegenstände oder eines Fingers zu bedienenden Fläche platziert.
+</p><p>Das Internet gibt Aufschluss über die für die geplante Anwendung geeignete Touchpanel-Technologie und den für die benötigte Schnittstelle zu verwendenden Controller.
+</p><p>Ein Selbstbauvorschlag und Links zu einigen kommerziellen Lösungen findet sich <a class="external text" href="http://www.mikrocontroller.net/topic/6455#41382">hier</a>.
+</p>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=5" title="Abschnitt bearbeiten: Hacks">Bearbeiten</a>]</span> <span class="mw-headline" id="Hacks"> Hacks </span></h3>
+<p>Eine bei Handybastlern bekannte Spielerei ist das Abziehen der Polarisationsfolie vom LCD und dem um 90° gedrehten Aufkleben der alten oder einer neuen Folie. Dies führt zu einem hardwaremäßigen Invertieren der LCD Anzeige.
+</p><p>Übliche Text-LCD-Module sind für den Betrieb an 5V vorgesehen. Will man sie an einen Mikrocontroller mit 3V IO-Pegel anschließen, wäre eigentlich ein Pegelwandler nötig. Es gibt jedoch einen Trick, um das LCD direkt an 3V betreiben zu können. Dazu muss man wissen, dass das Problem nicht die Versorgung des Controllers auf dem LCD-Modul (der HD44780 ist ab 2,7V spezifiziert), sondern die Erzeugung der Kontrastspannung für die Anzeige ist. Selbst wenn man den Kontrastpin auf Masse legt, ist unterhalb von etwa 4V nichts mehr zu erkennen. Dies führt zu folgender Lösung: die Spannung muss noch kleiner werden, also negativ! Man legt also eine Spannung im Bereich von -1 bis -2V am Kontrastpin an. Mit dieser Methode funktionieren manche LCDs schon ab etwa 2V.
+</p>
+<h2><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=6" title="Abschnitt bearbeiten: Ansteuerroutinen Handy LCDs">Bearbeiten</a>]</span> <span class="mw-headline" id="Ansteuerroutinen_Handy_LCDs"> Ansteuerroutinen Handy LCDs </span></h2>
+<p>Es gibt noch eine bei Bastlern vergleichsweise beliebte Alternative zu den "normal" gekauften LCDs. Hier werden Ersatz-LCDs bestimmter Handytypen hergenommen und per µC angesteuert. Dadurch hat man einige Vorteile: Die Controller sind oft (eigentlich immer) bereits integriert, die Größe des gesamten Systems ist meist minimal und die LCDs sind teilweise unverschämt günstig im Vergleich zu KSS0066er oder HD44780er LCDs. Als Beispiel: Ein 132x176 Pixel LCD mit 60k Farben (!) für das Siemens S65 Handy kostet inzwischen bei Ebay um die 10 Euro zzgl. Versand und die benötigte Ansteuerung dazu hat einen Materialwert von maximal nochmal 10 Euro. Das kann man mit gekauften LCDs oder TFTs bei Reichelt &amp; Co. nicht mehr vergleichen. Allerdings erkauft man sich auch ein paar Nachteile: Es gibt teilweise (noch) keine sauberen Companionboards. Das resultiert vor Allem dann in Arbeit, wenn die LCDs mehrere Spannungen zum Laufen benötigen (oft +10V und +3,3V) oder spezielle Anschlüsse von Nöten sind (SMD-Adapter bspw.) und man somit um eine eigens entwickelte Platine schwer herumkommt. Allerdings beschäftigen sich viele Leute damit, von daher wird man oft etwas kopieren können. Als eine Auswahl an beliebten Handy-LCDs hier eine Auflistung von Displays, mit denen oft gearbeitet wird (daher findet man hier auch massenhaft Infos im Forum).
+</p><p><br>
+</p>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=7" title="Abschnitt bearbeiten: Vorlage Display">Bearbeiten</a>]</span> <span class="mw-headline" id="Vorlage_Display"> Vorlage Display </span></h3>
+<pre>resolution  &nbsp;: pixel
+display area&nbsp;: 
+colours     &nbsp;: 
+Controller  &nbsp;:
+backlight   &nbsp;: 
+adj contrast&nbsp;: 
+Link        &nbsp;: 
+Datei       &nbsp;: 
+</pre>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=8" title="Abschnitt bearbeiten: NOKIA 1100">Bearbeiten</a>]</span> <span class="mw-headline" id="NOKIA_1100">NOKIA 1100</span></h3>
+<pre>resolution  &nbsp;: pixel
+display area&nbsp;: 
+colours     &nbsp;: 
+Controller  &nbsp;:
+backlight   &nbsp;: 
+adj contrast&nbsp;: 
+Link        &nbsp;: <a rel="nofollow" class="external text" href="http://www.sunbizhosting.com/~spiral/1100/">Nokia 1100 LCD Pic interface</a>
+Datei       &nbsp;: 
+</pre>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=9" title="Abschnitt bearbeiten: NOKIA 7110">Bearbeiten</a>]</span> <span class="mw-headline" id="NOKIA_7110"> NOKIA 7110 </span></h3>
+<pre>resolution  &nbsp;: 96 x 65 pixel
+display area&nbsp;: 
+colours     &nbsp;: 1
+Controller  &nbsp;: SED1565
+backlight   &nbsp;: 
+adj contrast&nbsp;: 
+Link        &nbsp;: <a rel="nofollow" class="external free" href="http://module.ro/nokia_7110.html">http://module.ro/nokia_7110.html</a>
+Datei       &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/b/b1/Nokia7110_Lcd_library_%28SED1565%29.pdf" class="internal" title="Nokia7110 Lcd library (SED1565).pdf">Media: Nokia7110 Lcd library (SED1565).pdf</a>
+Library     &nbsp;:                            Datum:
+Pinout      &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/e/ec/Nokia_7110_LCD_pin_outputs.JPG" class="internal" title="Nokia 7110 LCD pin outputs.JPG">Media: Nokia 7110 LCD pin outputs.JPG</a>
+</pre>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=10" title="Abschnitt bearbeiten: NOKIA 3310">Bearbeiten</a>]</span> <span class="mw-headline" id="NOKIA_3310"> NOKIA 3310 </span></h3>
+<pre>resolution  &nbsp;: 84 x 48 pixel
+display area&nbsp;: 30 x 22 mm<sup>2</sup>
+colours     &nbsp;: 1
+controller  &nbsp;: Philips PCD8544
+backlight   &nbsp;: extern
+adj contrast&nbsp;: extern (V<sub>LCD1</sub>)
+Link        &nbsp;: <a rel="nofollow" class="external text" href="http://www.jtronics.de/avr-projekte.html">Lcd Ansteuerung in "C" von http://www.jtronics.de - sehr gut</a>
+Link        &nbsp;: <a class="external text" href="http://www.mikrocontroller.net/topic/25039">Nokia 3310</a>
+Link        &nbsp;: <a class="external text" href="http://www.mikrocontroller.net/topic/14817">NOKIA 3310 LCD in BAS</a>
+Link        &nbsp;: <a rel="nofollow" class="external text" href="http://tinkerish.com/blog/?tag=nokia-3310-lcd.html">http://tinkerish.com/blog/?tag=nokia-3310-lcd</a>
+Link        &nbsp;: <a rel="nofollow" class="external free" href="http://www.lcdinterfacing.info/Nokia-3310-LCD-Interface.php">http://www.lcdinterfacing.info/Nokia-3310-LCD-Interface.php</a>
+Link        &nbsp;: <a rel="nofollow" class="external text" href="http://www.radiolocman.com/shem/schematics.html?di=44132">Nokia 3310 Lcd Thermometer Using DS18B20</a>
+</pre>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=11" title="Abschnitt bearbeiten: NOKIA 3510i">Bearbeiten</a>]</span> <span class="mw-headline" id="NOKIA_3510i"> NOKIA 3510i </span></h3>
+<pre>resolution  &nbsp;: 97x65 pixel
+display area&nbsp;: 
+colours     &nbsp;: 256, 4096
+controller  &nbsp;: S1D15G14
+backlight   &nbsp;:
+adj contrast&nbsp;: 
+Datei       &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/a/a1/Nokia_3510i_LCD.pdf" class="internal" title="Nokia 3510i LCD.pdf">Nokia 3510i LCD.pdf</a>
+</pre>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=12" title="Abschnitt bearbeiten: NOKIA 6100">Bearbeiten</a>]</span> <span class="mw-headline" id="NOKIA_6100"> NOKIA 6100 </span></h3>
+<pre>resolution  &nbsp;: 130x130 pixel
+display area&nbsp;: 27 x 27 mm
+colours     &nbsp;: 256, 4096   (4096 colours supported since v 1.97.8)
+controller  &nbsp;: Epson S1D15G10 (meist grüner connector) oder Philips 
+               (PCF8833 oder LDS176 meist brauner connector)
+backlight   &nbsp;: yes
+adj contrast&nbsp;: yes
+Link        &nbsp;: <a class="external text" href="http://www.mikrocontroller.net/topic/12208">Nokia 6100 Ansteuerung in C</a>
+Link        &nbsp;: <a class="external text" href="http://www.mikrocontroller.net/topic/12218">Nokia 6100 Grafiklibrary die Zweite</a>
+Link        &nbsp;: <a rel="nofollow" class="external text" href="http://www.sparkfun.com/commerce/product_info.php?products_id=8683">http://www.sparkfun.com/ NOKIA 6100 PHILLIPS &amp; EPSON</a>
+Link        &nbsp;: <a rel="nofollow" class="external text" href="http://www.ccsinfo.com/forum/viewtopic.php?t=26461">NOKIA 6100 EPSON</a>
+Link        &nbsp;: <a rel="nofollow" class="external text" href="http://serdisplib.sourceforge.net/ser/nokcol_15g10.html">http://serdisplib.sourceforge.net/Epson</a>
+Pinout      &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/3/36/Nokia_5100%2C_6100%2C_6610%2C_6800%2C_7210%2C_7250%2C_8910i_LCD_Pins.JPG" class="internal" title="Nokia 5100, 6100, 6610, 6800, 7210, 7250, 8910i LCD Pins.JPG">Nokia 5100, 6100, 6610, 6800, 7210, 7250, 8910i LCD Pins.JPG</a>
+Library     &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/3/39/HAGEN_-_Nokia_6100_Grafiklibrary_2.2_-_16.09.2004.zip" class="internal" title="HAGEN - Nokia 6100 Grafiklibrary 2.2 - 16.09.2004.zip">HAGEN - Nokia 6100 Grafiklibrary 2.2 - 16.09.2004.zip</a>
+</pre>
+<p><b>Nokia 6100</b> &amp; kompatible: 132x132 Pixel mit 4096 Farben und ebenfalls SPI. Ein sehr beliebtes Display, mit dem sich ebenfalls sehr viele beschäftigen. Einziges Hauptproblem: Es gibt zwei unterschiedliche Controller (<a rel="nofollow" class="external text" href="http://www.e-dsp.com/controlling-a-color-graphic-lcd-epson-s1d15g10-controller-with-an-atmel-avr-atmega32l/">Epson S1D15G10</a> und <a rel="nofollow" class="external text" href="http://thomaspfeifer.net/nokia_6100_display.htm">Philips PCF8833</a>) für dasselbe Display, die allerdings nicht kompatibel angesteuert werden! Von daher ist Vorsicht geboten. Zu kaufen gibt es die Displays ab etwa 15€. Man benötigt unter Umständen noch einen SMD-Adapter, den es für etwa 4€ gibt (je nach gekaufter Anzahl). Infos gibts hier: <a rel="nofollow" class="external text" href="http://serdisplib.sourceforge.net/ser/nokcol_15g10.html">serdisp6100</a> <a rel="nofollow" class="external text" href="http://www.sparkfun.com/commerce/product_info.php?products_id=569">sparkfun</a> <a rel="nofollow" class="external text" href="http://thomaspfeifer.net/nokia_6100_display.htm">ThomasPfeifer</a> und (wie sollte es anders sein) natürlich direkt vor Ort: <a class="external text" href="http://www.mikrocontroller.net/topic/12218#new">Forumsbeitrag</a>
+</p><p>UPDATE 17.10.2007: Neuerdings ist ein zusätzlicher (und damit dritter) Controllerchip recht beliebt geworden: Epson S1D15G17 (also G17 statt G10). Das Tolle hierbei: Dieser ist zu keinem der anderen Controller voll kompatibel, sondern teilt sich nur einige Befehle. Und zudem gibts bisher noch sehr wenig Infos zu diesem Controller. Also noch mehr aufpassen beim Kauf bzw. dem Ansteuern!
+</p>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=13" title="Abschnitt bearbeiten: NOKIA N95">Bearbeiten</a>]</span> <span class="mw-headline" id="NOKIA_N95"> NOKIA N95 </span></h3>
+<pre>resolution  &nbsp;: 240 x 320 pixel
+display area&nbsp;: 40 x 55 mm
+colours     &nbsp;: 16.7 Mio.
+controller  &nbsp;:
+backlight   &nbsp;: 
+adj contrast&nbsp;: 
+Link        &nbsp;: <a class="external text" href="http://www.mikrocontroller.net/topic/142447">NOKIA N95 Display</a>
+Datei       &nbsp;:
+</pre>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=14" title="Abschnitt bearbeiten: SIEMENS S65">Bearbeiten</a>]</span> <span class="mw-headline" id="SIEMENS_S65"> SIEMENS S65 </span></h3>
+<pre>resolution  &nbsp;: 132 x 176 pixel
+display area&nbsp;: 
+colours     &nbsp;: 65.536
+controller  &nbsp;:
+backlight   &nbsp;: 
+adj contrast&nbsp;: 
+Link        &nbsp;: <a class="external text" href="http://www.mikrocontroller.net/topic/31403">The Siemens S65 132x176, 65536 color display with AVR</a>
+Link        &nbsp;: <a rel="nofollow" class="external text" href="http://www.superkranz.de/christian/S65_Display/DisplayIndex.html">http://www.superkranz.de/christian/S65_Display</a>
+Datei       &nbsp;: 
+Info        &nbsp;: Es kann sein, dass die oben verlinkte Library beim kompilieren mit dem Fehler
+               "glcd_init.asm:91: Error: number must be positive and less than 32" abbricht.
+               Eine Lösung wird in diesem Forenbeitrag gegeben: <a class="external autonumber" href="http://www.mikrocontroller.net/topic/157911">[1]</a>
+</pre>
+<p><b>Siemens S65</b> &amp; kompatible: 132x176 Pixel mit 60k Farben und wiederum SPI. Ein vergleichsweise neues LCD, das erst seit etwa ein/zwei Jahren erfolgreich angesteuert wird, obwohl man nicht einmal den verbauten Controller kennt! Re-Engineering sei Dank! Dieses Display gibt es momentan noch unverschämt günstig für etwa 10€, nur die benötigten Spannungen machen Kopfweh (10V für die HG-Beleuchtung und 2,8V für den LCD-Controller). Das Display ist wirklich vergleichsweise groß (das Größte aller hier vorgestellten) und auch noch aus einer größeren Entfernung wunderbar zu lesen/sehen. Einziges Problem: Da pro Pixel zwei volle Bytes gesendet werden müssen, benötigt ein komplett zu beschriftender Bildschirm mit 8 MHz SPI etwa 50 ms für einen Refresh. Das sieht man bspw. bei einem Übergang von schwarz auf weiß schon relativ deutlich.
+</p>
+<pre>LS020
+Datei       &nbsp;: 
+</pre>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=15" title="Abschnitt bearbeiten: SIEMENS M55">Bearbeiten</a>]</span> <span class="mw-headline" id="SIEMENS_M55"> SIEMENS M55 </span></h3>
+<pre>resolution  &nbsp;: 101 x 80 pixel
+display area&nbsp;: 
+colours     &nbsp;: 4096
+controller  &nbsp;:
+backlight   &nbsp;: yes
+adj contrast&nbsp;:  
+Link        &nbsp;: <a class="external text" href="http://www.mikrocontroller.net/topic/83267">Siemens M55 Display Datenblatt Ansteuerung</a>
+               <a rel="nofollow" class="external text" href="http://www.drzasiek.cba.pl/m55.php">www.drzasiek.cba.pl/m55.rar (von hier stammt Dateilink)</a>
+Datei       &nbsp;: <a rel="nofollow" class="external text" href="http://www.drzasiek.cba.pl/m55.rar">m55.rar - drzasiek.cba.pl</a>
+</pre>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=16" title="Abschnitt bearbeiten: Sonstige Displays">Bearbeiten</a>]</span> <span class="mw-headline" id="Sonstige_Displays"> Sonstige Displays </span></h3>
+<pre>Pinout      &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/1/15/Nokia_3410_LCD_Pinouts.JPG" class="internal" title="Nokia 3410 LCD Pinouts.JPG">Nokia 3410 LCD Pinouts.JPG</a>
+Pinout      &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/0/09/Nokia_6310_lcd_pinouts.JPG" class="internal" title="Nokia 6310 lcd pinouts.JPG">Nokia 6310 lcd pinouts.JPG</a>
+Pinout      &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/4/47/Nokia_8310_LCD_Pinouts.JPG" class="internal" title="Nokia 8310 LCD Pinouts.JPG">Nokia 8310 LCD Pinouts.JPG</a>
+</pre>
+<ul><li> <a rel="nofollow" class="external text" href="http://rossum.posterous.com/screen-play-lots-of-other-screens-for-microco">rossum.posterous.com</a> - Nokia 6100, 6101, 1600, 2760
+</li></ul>
+<ul><li> <a rel="nofollow" class="external text" href="http://colonelk.freeshell.org/s-a60/">Siemens A60</a>
+</li></ul>
+<p>Eine andere Strategie, an meist recht gute TFT-Displays zu kommen: Kleine Digitale Bilderrahmen ("DPF") als Schlüsselanhänger. Diese liefern normalerweise Displays mit 128x128 Auflösung, es gibt aber auch grössere Varianten für den Schreibtisch im 320x240-Format. Die Bezugsquellen ändern sich allerdings laufend, einigermassen aktuelle Information findet sich unter dem <a rel="nofollow" class="external text" href="http://picframe.spritesserver.nl/wiki/index.php/DPF_with_AppoTech_AX206">Spriteserver DPF wiki</a>.
+</p><p>Die meisten dieser Displays sind per Parallel-Interface (uC-Interface) ansprechbar, d.h. 8 bit Daten bidirektional, weitere Steuerleitungen: R/W, A0, #CS. Falls das Display aus dem DPF nicht ausgebaut, sondern einfach nur ein USB-fähiges LCD-Display gewünscht ist, lässt sich die Firmware auch modifizieren. Dazu gibt es unter obigem Link weitere Informationen.
+</p>
+<h2><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=17" title="Abschnitt bearbeiten: Ansteuerung">Bearbeiten</a>]</span> <span class="mw-headline" id="Ansteuerung"> Ansteuerung </span></h2>
+<p>Direkt hinter der Dot-Matrix sitzen nur ein paar Treiber, die auch die Leitungen bündeln. Das Interface daran bietet keine "Intelligenz", es werden Signale für Vertical Sync / Horizontal Sync (also Spalten/Zeilenumbruch) sowie ein Clock Signal benötigt. Es werden nacheinander alle Pixel gescant und über eine Signalleitung an/aus mitgeteilt. Da deshalb ein konstanter (hoher) Datenfluss und ein nicht geringer Speicher (Framebuffer) benötigt wird, ist es für Mikrocontroller eher weniger geeignet. 
+</p><p>Zur Ansteuerung von LCDs gibt es spezielle LCD Controller, fertige Module mit Controller und einige Prozessoren mit integrierter Ansteuerung (z.&nbsp;B. aus der <a href="http://www.mikrocontroller.net/articles/MSP430" title="MSP430">MSP430</a>-Serie, oder <a href="http://www.mikrocontroller.net/articles/AVR" title="AVR">AVR</a> wie der ATmega169 ). LCD-Module mit eingebautem Controller lassen sich meist einfach mit einem <a href="http://www.mikrocontroller.net/articles/Mikrocontroller" title="Mikrocontroller">Mikrocontroller</a> ansteuern. 
+</p><p><b>Text (character) LCDs</b> verwenden meistens den <b><a href="http://www.mikrocontroller.net/articles/HD44780" title="HD44780">HD44780</a></b> oder einen kompatiblen Controller (z.B <a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=KS0066&action=edit&redlink=1" class="new" title="KS0066 (Seite nicht vorhanden)">KS0066</a>). Das <a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=KS0066&action=edit&redlink=1" class="new" title="KS0066 (Seite nicht vorhanden)">KS0066</a> Timing und die Init-Sequenz weichen stark vom Timing des HD44780 ab! Es gibt gute Application Notes zu Displays (mit KS0066) von Hitachi. 1x16 LCDs werden oft wie 2x8 betrieben! D.h. es ist ein 'Zeilenwechsel' an Position (z.&nbsp;B. 0x40) nötig. Bei manchen Text-LCDs ist mit <b>selbstdefinierten Zeichen</b> eine <a href="http://www.mikrocontroller.net/articles/Pseudo-Graphische_LCD-Ansteuerung" title="Pseudo-Graphische LCD-Ansteuerung">Pseudo-Graphische LCD-Ansteuerung</a> möglich.
+</p><p><b>Grafik (graphic) LCDs</b> verwenden z.&nbsp;B. den <a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=T6963&action=edit&redlink=1" class="new" title="T6963 (Seite nicht vorhanden)">T6963</a>, den <a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=SED1330&action=edit&redlink=1" class="new" title="SED1330 (Seite nicht vorhanden)">SED1330</a> oder den <a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=KS0108&action=edit&redlink=1" class="new" title="KS0108 (Seite nicht vorhanden)">KS0108</a> Controller.
+</p><p>Bei LCDs ohne eigenen Controller (Laptop-LCDs z.&nbsp;B.) ist die direkte Ansteuerung sehr schwierig (weil zeitkritisch), allerdings lässt sich in manchen Fällen ein Standard-Controller nachrüsten.
+</p><p>Wenn die Ansteuerung des Displays gemeistert wurde, muss als nächstes die höheren Grafikfunktionen (Pixel an/aus, Linie, Rechteck, Kreis,...) gemeistert werden. Die entsprechenden Funktionen zum <a href="http://www.mikrocontroller.net/articles/Rastern" title="Rastern">Rastern</a> sind für µC recht resourcenfressend. Auch das abspeichern kompletter Bitmaps im ROM ist bei größeren Displays nicht wirklich praktikabel so das die Anbindung an ein größeren Speicher meistens Not tut.
+</p>
+<h2><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=18" title="Abschnitt bearbeiten: Display Controller Datenblätter">Bearbeiten</a>]</span> <span class="mw-headline" id="Display_Controller_Datenbl.C3.A4tter"> Display Controller Datenblätter </span></h2>
+<pre>Datasheet   &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/2/29/Datasheet_LDS176.pdf" class="internal" title="Datasheet LDS176.pdf">Datasheet_LDS176.pdf‎</a>
+Datasheet   &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/a/ad/Datasheet_S1D15G00_REV1_0.pdf" class="internal" title="Datasheet S1D15G00 REV1 0.pdf">Datasheet_S1D15G00_REV1_0.pdf</a>
+Datasheet   &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/e/e9/Datasheet_S1D15G14E.pdf" class="internal" title="Datasheet S1D15G14E.pdf">Datasheet_S1D15G14E.pdf</a>
+Datasheet   &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/2/26/Epson_S1D13305.pdf" class="internal" title="Epson S1D13305.pdf">Datasheet_Epson_S1D13305.pdf</a>
+Datasheet   &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/0/0a/Datasheet_HM628128D.pdf" class="internal" title="Datasheet HM628128D.pdf">Datasheet_HM628128D.pdf</a>
+Datasheet   &nbsp;: <a href="http://www.mikrocontroller.net/wikifiles/7/75/Datasheet_SED1330F-1335F-1336F.pdf" class="internal" title="Datasheet SED1330F-1335F-1336F.pdf">Media:Datasheet_SED1330F-1335F-1336F.pdf</a>
+</pre>
+<h2><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=19" title="Abschnitt bearbeiten: Projekte">Bearbeiten</a>]</span> <span class="mw-headline" id="Projekte"> Projekte </span></h2>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=20" title="Abschnitt bearbeiten: Projekte mit Text-LCD">Bearbeiten</a>]</span> <span class="mw-headline" id="Projekte_mit_Text-LCD"> Projekte mit Text-LCD </span></h3>
+<ul><li> <a href="http://www.mikrocontroller.net/articles/AVR-Tutorial:_LCD" title="AVR-Tutorial: LCD">AVR-Tutorial: LCD</a>
+</li><li> <a href="http://www.mikrocontroller.net/articles/AVR-GCC-Tutorial/LCD-Ansteuerung" title="AVR-GCC-Tutorial/LCD-Ansteuerung">AVR-GCC-Tutorial/LCD-Ansteuerung</a>
+</li><li> <a href="http://www.mikrocontroller.net/articles/Projekt_LCD_an_Parallelport" title="Projekt LCD an Parallelport" class="mw-redirect">Projekt LCD an Parallelport</a>
+</li><li> <a class="external autonumber" href="http://www.mikrocontroller.net/topic/79609#664268">[2]</a> (A) KS0066U oder Ähnliche 
+</li></ul>
+<p>--- LCD Treiber]
+</p>
+<ul><li> <a href="http://www.mikrocontroller.net/articles/Tinykon" title="Tinykon">Tinykon</a> - Menüsystem für LCD oder <a href="http://www.mikrocontroller.net/articles/UART" title="UART">UART</a>
+</li></ul>
+<h3><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=21" title="Abschnitt bearbeiten: Projekte mit Grafik-LCD">Bearbeiten</a>]</span> <span class="mw-headline" id="Projekte_mit_Grafik-LCD"> Projekte mit Grafik-LCD </span></h3>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.jtronics.de/avr-projekte.html">Bibliothek für Nokia 3310 Lcd Ansteuerung in "C" von http://www.jtronics.de - sehr gut</a>
+</li><li> <a class="external text" href="http://www.mikrocontroller.net/articles/Ansteuerung_Handy_Displays.html">Ansteuerung_Handy_Displays</a>
+</li><li> <a class="external text" href="http://www.mikrocontroller.net/forum/read-4-160854.html">LCD Controller für 640x480 LCD mit mega8515</a> von Benedikt.
+</li><li> <a class="external text" href="http://www.mikrocontroller.net/forum/read-4-422387.html">Fontgenerator</a> zum Erstellen eigener Schriftarten (LCD) von Hauke Radtki. (<a href="http://www.mikrocontroller.net/articles/Java" title="Java">Java</a>, <a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=T6963&action=edit&redlink=1" class="new" title="T6963 (Seite nicht vorhanden)">T6963c</a>)
+</li><li> <a class="external text" href="http://www.mikrocontroller.net/forum/read-4-306961.html">LCD Library T6963c</a> angepasst auf <a href="http://www.mikrocontroller.net/articles/AVR-GCC" title="AVR-GCC">AVR-GCC</a> von Nico Sachs und Florian.
+</li><li> <a href="http://www.mikrocontroller.net/articles/Projekt_T6963-LCD-Ansteuerung" title="Projekt T6963-LCD-Ansteuerung">Projekt T6963-LCD-Ansteuerung</a>
+</li><li> <a rel="nofollow" class="external text" href="http://thomaspfeifer.net/nokia_6100_display.htm">Ansteuerung eines Nokia LCDs mit einem AVR-Controller</a>  von Thomas Pfeifer
+</li><li> <a class="external text" href="http://www.mikrocontroller.net/topic/79738#665417">Digitaler Bilderrahmen mit mega8 S65 Display und SD-Karte</a> von Matthias Bode
+</li><li> <a class="external text" href="http://www.mikrocontroller.net/topic/81793#683135">Pollin E0855-2 SED1530-Treiber</a> von Mark Meise (AVR-GCC)
+</li><li> <a rel="nofollow" class="external text" href="http://www.siwawi.arubi.uni-kl.de/avr_projects/glcd2/index.html">Interfacing Atmel AVR with Graphics Liquid Crystal Displays (GLCDs)</a> (SED1520)
+</li><li> <a rel="nofollow" class="external text" href="http://pic-projekte.de/">PIC-Projekte.de</a> Ansteuern eines KS0107 (KS0108) Grafik LCD Displays in ASM mit PIC
+</li><li><a rel="nofollow" class="external text" href="http://pic-projekte.de/wordpress/?p=320">Ansteuerungsroutinen für ein EA DOGL Display für PIC Mikrocontroller</a> www.PIC-Projekte.de
+</li></ul>
+<h2><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=22" title="Abschnitt bearbeiten: Weblinks">Bearbeiten</a>]</span> <span class="mw-headline" id="Weblinks"> Weblinks </span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://pic-projekte.de/">PIC-Projekte.de</a> Gut geschriebene LCD und GLCD Tutorials
+</li><li> <a rel="nofollow" class="external text" href="http://sandiding.tripod.com/Bertys.html">Berty's Home Page</a> mit vielen Pinouts von Handy LCDs
+</li><li> <a rel="nofollow" class="external text" href="http://www.geocities.com/dinceraydin/lcd/index.html">LCD Info</a> von Dincer Aydin (Englisch).
+</li><li> <a rel="nofollow" class="external text" href="http://www.geocities.com/dinceraydin/djlcdsim/djlcdsim.html">Dincer's Text LCD Simulator V 1.021</a>  (Online, Javascript erforderlich).
+</li><li> <a rel="nofollow" class="external text" href="http://www.geocities.com/dinceraydin/djgfxlcdsim/djgfxlcdsim.html">Dincer's Graphic LCD Simulator V 1.01</a> (Online, Javascript erforderlich).
+</li><li> <a rel="nofollow" class="external text" href="http://www.pacificdisplay.com/lcd_ics.htm">Übersicht LCD-Controller und Treiber-ICs</a> bei Pacific Display Devices. (Englisch)
+</li><li> <a rel="nofollow" class="external text" href="http://www.sprut.de/electronic/lcd/index.htm">Dot-Matrix LCD's</a> von Jörg <i>sprut</i> Bredendiek 
+</li><li> <a rel="nofollow" class="external text" href="http://www.lcd-module.de/knowhow.html">LCD - Know How</a>
+</li><li> <a rel="nofollow" class="external text" href="http://passworld.co.jp/ForumMSP430/viewforum.php?f=2">Graphic LCDs for Microcontroller</a> (PassWorld YK, Englisch - Japanisch)
+</li><li> <a rel="nofollow" class="external text" href="http://www.oocities.com/p9019/lcd.html">LCD Pinouts</a> by Scott Johnson  
+</li><li> <a rel="nofollow" class="external text" href="http://web.archive.org/web/20080804232047/http://www.myke.com/lcd.htm">LCD Interfacing Reference Page</a> (HD44780) bei (www.archive.org)
+</li><li> <a rel="nofollow" class="external text" href="http://techref.massmind.org/techref/microchip/pwmvee.htm">Vee (negative power supply) (for LCD etc...) from PIC PWM</a> - Vorschlag zum Erzeugen der geringen, negativen Kontrastspannung bei manchen LCD per µC/PWM und Ladungspumpe.
+</li><li> <a rel="nofollow" class="external text" href="http://www.edn.com/article/CA6505569.html?spacedesc=designideas&industryid=44217">Microcontroller drives LCD with just one wire</a> - EDN Design Idea von Noureddine Benabadji, 12/3/07 (PIC10F)
+</li><li> <a rel="nofollow" class="external text" href="http://www.elvand.com/en/index.php?option=com_content&task=view&id=15&Itemid=40">LCD Font Generator (LFG)</a> von elvand.com (Freeware)
+</li><li> <a rel="nofollow" class="external text" href="http://homepages.tesco.net/~steve.lawther/steve/t6963c.htm">Toshiba  T6963C Controller based Displays</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.avrfreaks.net/index.php?name=PNphpBB2&file=viewtopic&t=61156">Using the KS0713/S6B1713/ST7565 LCD driver chips</a> - Tutorial bei www.avrfreaks.net (kostenkose Registrierung erforderlich)
+</li><li> <a rel="nofollow" class="external text" href="http://fluessigkristalle.com/index.htm">Flüssigkristalle und Flüssigkristallanzeigen</a> - Infos für Lehrende und Lernende inkl. Selbstbauanleitungen von Dr. Feodor Oestreicher.
+</li><li> <a rel="nofollow" class="external text" href="http://www.microchip.com/stellent/idcplg?IdcService=SS_GET_PAGE&nodeId=2608&page=1&param=en532061">Grafische Bibliothek mit Touchscreen Unterstützung</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.vdr-wiki.de/wiki/index.php/Display#Graphische_LCD-Displays">Graphische_LCD-Displays im VDR Wiki</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.microvga.com/conio-lib">uVGA-CONIO-LIB: MicroVGA-TEXT conio Library</a>
+</li><li> <a rel="nofollow" class="external text" href="http://hackaday.com/2009/09/29/how-to-generate-font-and-picture-header-files/">How to generate font and picture header files</a> auf hackaday.com
+</li><li> <a rel="nofollow" class="external text" href="http://www.mugui.de/">Font and Bitmap Generator</a> - Umfangreiche SW zur Erstellung von Programmcode aus Bitmaps und Fonts für uC auf www.muGUI.de.
+</li></ul>
+<h2><span class="editsection">[<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&action=edit&section=23" title="Abschnitt bearbeiten: FAQ">Bearbeiten</a>]</span> <span class="mw-headline" id="FAQ"> FAQ </span></h2>
+<p><b>Wie kann ich was auf ein LCD ausgeben?</b> <br> 
+</p><p>Gute Frage! Eine Methode ist sich als Einzelkämpfer durchzubeißen. Dabei helfen Datenblätter und Handbücher sowie die Suche nach Tutorials, Forenbeiträgen und ähnlichen Projekten. Oder man fragt in einem Forum. Dabei steigen die Erfolgsaussichten auf eine hilfreiche Antwort enorm, wenn man seine Hausaufgaben gemacht hat. Also Links zu Datenblättern angeben! Schaltplan beilegen! Vorhandenen Sourcecode beilegen! ...
+</p><p><b>Wie kann ich Zahlen auf LCD/UART ausgeben?</b><br>
+</p><p>Siehe die Artikel zur allgemeinen <a href="http://www.mikrocontroller.net/articles/FAQ#Wie_kann_ich_Zahlen_auf_LCD.2FUART_ausgeben.3F" title="FAQ"> FAQ</a> und zur <a href="http://www.mikrocontroller.net/articles/Festkommaarithmetik" title="Festkommaarithmetik">Festkommaarithmetik</a>.
+</p><p><b>Egal was ich mache auf dem Display erscheinen keine Zeichen! Was ist los?</b> <br> 
+</p><p>Möglicherweise ist einfach nur der Kontrast unpassend eingestellt. 
+</p><p>Es gibt auch LCDs (s. unten), die eine negative Kontrastspannung benötigen (<a class="external text" href="http://www.mikrocontroller.net/topic/81596#681507">Forenbeitrag von Thorsten</a>); näheres kann das Datenblatt klären. Man kann u.U. die benötigte negative Kontrastspannung von einem freien Anschluss am TTL-RS232 Pegelwandler nehmen (<a class="external text" href="http://www.mikrocontroller.net/topic/121074#1097636">Forenbeitrag von P. M.</a>).
+</p><p>Liste bekannter LCDs mit <b>negativer Kontrastspannung</b>:
+</p>
+<ul><li> Pollin: LCD-Modul YL162-90 / Best.Nr. 120 060 (<a rel="nofollow" class="external text" href="http://www.pollin.de/shop/downloads/D120060D.PDF">D120060D.PDF</a>)
+</li><li> Pollin: POWERTIP PC1602LRM-LSO-C
+</li><li> Pollin: LCD-Modul EPSON ECM-A0428 (<a rel="nofollow" class="external text" href="http://www.pollin.de/shop/dt/MTA3OTc4OTk-/Bauelemente/Aktive_Bauelemente/Displays/LCD_Modul_EPSON_ECM_A0428.html">Link</a>)
+</li></ul>
+<p><b>R/W Leitung vom Text-LCD ist fix mit GND verbunden und die Ansteuerung mit der LCD/AVR-Library von Peter Fleury funktioniert nicht! Was ist los?</b> <br> 
+</p><p>Die Fleury Library erwartet, dass R/W nicht fix ist, sondern vom Programm gesteuert werden kann. Das muss auch so sein, denn Peter liest das Busy Flag aus, um Warteschleifen zu vermeiden.
+</p><p><b>LCD Displaytech 204B (von Reichelt)...</b><br>
+</p><p><a class="external text" href="http://www.mikrocontroller.net/topic/99028#2081386">Forenbeitrag von Klaus</a>:
+Beim EA DIP204B-4NLW Display mit dem KS0073 drauf ist bei der Initialisierung folgendes zu beachten, sonst funktioniert die Sache nicht und das Display bleibt im 2 Zeilenmodus.
+</p>
+<ul><li> Die Adressen für die Zeilenanfang sind etwas anders.
+</li></ul>
+<ol><li> Zeile 00h
+</li><li> Zeile 20h
+</li><li> Zeile 40h
+</li><li> Zeile 60h
+</li></ol>
+<ul><li> Es gibt ein Erweiterungsbit RE 0x24 und das muss man zwingend setzen bevor dann in den 4-Bit-Modus geschaltet wird mit 0x09.
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 92/1000000
+Preprocessor generated node count: 100/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key uc_wiki:pcache:idhash:47-0!*!0!!de!*!* and timestamp 20140113112401 -->
+</div>			<!-- /bodycontent -->
+						<!-- printfooter -->
+			<div class="printfooter">
+			Von „<a href="http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&oldid=80737">http://www.mikrocontroller.net/wikisoftware/index.php?title=LCD&amp;oldid=80737</a>“			</div>
+			<!-- /printfooter -->
+									<!-- catlinks -->
+			<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://www.mikrocontroller.net/articles/Spezial:Kategorien" title="Spezial:Kategorien">Kategorien</a>: <ul><li><a href="http://www.mikrocontroller.net/articles/Kategorie:Bauteile" title="Kategorie:Bauteile">Bauteile</a></li><li><a href="http://www.mikrocontroller.net/articles/Kategorie:LCD" title="Kategorie:LCD">LCD</a></li></ul></div></div>			<!-- /catlinks -->
+									<div class="visualClear"></div>
+			<!-- debughtml -->
+						<!-- /debughtml -->
+
+      <!-- start adsense -->
+            <!-- end adsense -->
+      
+      <div class="visualClear"></div>
+    </div>
+  </td>
+  <!-- google_ad_section_end -->
+      </tr>
+      </tbody></table>
+      <!--
+      <div class="visualClear"></div>
+      <div id="footer" style="clear:both">
+    <div id="f-poweredbyico"><a href="//www.mediawiki.org/"><img src="/wikisoftware/skins/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>		<ul id="f-list">
+	  <li id="f-lastmod"> Diese Seite wurde zuletzt am 7. Januar 2014 um 16:51 Uhr geändert.</li>	  <li id="f-viewcount">Diese Seite wurde bisher 114.248-mal abgerufen.</li>	  	  	  <li id="f-about"><a href="/articles/Uc-wiki:%C3%9Cber_Uc-wiki" title="Uc-wiki:Über Uc-wiki">Über Uc-wiki</a></li>	  <li id="f-disclaimer"><a href="/articles/Uc-wiki:Impressum" title="Uc-wiki:Impressum">Impressum</a></li>	</ul>
+      </div>-->
+    </div>
+<div id="bottom">
+  <div id="impress">
+    <a href="mailto:webmaster@mikrocontroller.net?subject=Mikrocontroller.net">webmaster@mikrocontroller.net</a> – <a href="http://www.mikrocontroller.net/contact">Impressum</a> – <a href="http://www.mikrocontroller.net/user/conditions">Nutzungsbedingungen</a> – <a href="mailto:webmaster@mikrocontroller.net?subject=Anfrage%20zu%20Werbung%20auf%20Mikrocontroller.net">Werbung auf Mikrocontroller.net</a>
+  </div>
+  <div id="powered">
+<!--    powered by Ruby on Rails -->
+  </div>
+ <a href="http://www.mikrocontroller.net/util/rb"><!-- nothing --></a>
+ <!-- <a href="http://www.mikrocontroller.net/hp/curlews.php">nothing to see here</a> -->
+</div>
+
+<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi"], null, true);
+}</script>
+<script src="./LCD - Mikrocontroller.net_files/load(4).php"></script>
+<!-- Served in 0.072 secs. -->  
+
+<div class="highslide-container" style="padding: 0px; border: none; margin: 0px; position: absolute; left: 0px; top: 0px; width: 100%; z-index: 1001; direction: ltr;"><a class="highslide-loading" title="Click to cancel" href="javascript:;" style="position: absolute; top: -9999px; opacity: 0.75; z-index: 1;">Loading...</a><div style="display: none;"></div><table cellspacing="0" style="padding: 0px; border: none; margin: 0px; visibility: hidden; position: absolute; border-collapse: collapse; width: 0px;"><tbody style="padding: 0px; border: none; margin: 0px;"><tr style="padding: 0px; border: none; margin: 0px; height: auto;"><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background-image: url(http://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png); height: 20px; width: 20px; background-position: 0px 0px; background-repeat: initial initial;"></td><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background-image: url(http://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png); height: 20px; width: 20px; background-position: 0px -40px; background-repeat: initial initial;"></td><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background-image: url(http://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png); height: 20px; width: 20px; background-position: -20px 0px; background-repeat: initial initial;"></td></tr><tr style="padding: 0px; border: none; margin: 0px; height: auto;"><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background-image: url(http://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png); height: 20px; width: 20px; background-position: 0px -80px; background-repeat: initial initial;"></td><td class="drop-shadow highslide-outline" style="padding: 0px; border: none; margin: 0px; position: relative;"></td><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background-image: url(http://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png); height: 20px; width: 20px; background-position: -20px -80px; background-repeat: initial initial;"></td></tr><tr style="padding: 0px; border: none; margin: 0px; height: auto;"><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background-image: url(http://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png); height: 20px; width: 20px; background-position: 0px -20px; background-repeat: initial initial;"></td><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background-image: url(http://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png); height: 20px; width: 20px; background-position: 0px -60px; background-repeat: initial initial;"></td><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background-image: url(http://www.mikrocontroller.net/highslide/graphics/outlines/drop-shadow.png); height: 20px; width: 20px; background-position: -20px -20px; background-repeat: initial initial;"></td></tr></tbody></table></div></body></html>

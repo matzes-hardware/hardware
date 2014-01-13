@@ -1,0 +1,437 @@
+a img {
+  border: 0;
+}
+
+body {
+      font-family: "Lucida Grande", sans-serif;
+      font-size: 0.83em;
+      padding: 0;
+      margin: 0;
+      background-color: #F8F8F8;
+    }
+
+    #top {
+      background-color: #FFA500;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      width: 100%;
+      border-bottom: 1px solid #A0A0A0;
+    }
+
+    #top h1 {
+      font-family: Georgia, serif;
+      font-size: 1.4em;
+      padding: 1ex 0 0.5ex 1ex;
+      margin: 0;
+    }
+    
+    #top a {
+      text-decoration: none;
+      color: black;
+    }
+    
+    #twocolumns {
+      border-collapse: collapse;
+      width: 100%;
+      border: 0;
+      margin: 0;
+    }
+    
+    #main {
+      /* Hintergrund ganz weiss */
+      background-color: #FFF;
+      margin: 0;
+      /* IE Bug: Tabelle wird abgeschnitten wenn hier eine ex-Groessenangabe als Padding steht */
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-bottom: 12px;
+      vertical-align: top;
+    }
+
+    #main h1 {
+      /* bei Opera ist sonst der Abstand zu klein */
+      margin-top: 1.2ex;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      font-size: 1.7em;
+    }
+
+    #subtitle {
+      margin-top: 0ex;
+      padding-top: 0;
+      margin-bottom: 1ex;
+      font-size: 1em;
+    }
+
+    .sidebar {
+      width: 20.6ex;
+      padding: 0.8ex;
+      margin: 0;
+      vertical-align: top;
+      background-image: url(/images/bg.png);
+      background-color: #F4F4F4;
+      background-repeat: repeat;
+      background-position: 0 -40px;
+    }
+
+    .sidebar .box {
+      width: auto;
+      /*
+      border: 1px solid #A0A0A0;
+      background-color: white;
+      */
+      padding: 5px;
+      padding-top: 0px;
+      margin: 0;
+      margin-top: 3px;
+      margin-bottom: 10px;
+      font-size: 0.9em;
+    }
+
+/*
+    .sidebar .box ul
+    {
+      margin: 0;
+      padding: 0;
+      padding-left: 15px;
+      list-style-type: square;
+    }
+*/
+
+.sidebar ul li {
+  font-size: 0.93em;
+  margin-top: 1px;
+}
+
+.sidebar h4 {
+  font-size: 1.05em;
+  font-weight: normal;
+  margin: 0px;
+  padding: 3px;
+}
+
+.sidebar h5 {
+  font-size: 0.85em;
+  font-weight: bold;
+  margin: 0px;
+  padding: 3px;
+}
+
+#sidebar-left {
+  border-right: 1px solid #A0A0A0;
+}
+
+#sidebar-right {
+  vertical-align: top;
+  min-width: 120px;
+  max-width: 160px;
+  border-left: 1px solid #A0A0A0;
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  #sidebar-right {
+    display: table-cell;
+  }
+}
+
+#bottom {
+  clear: both;
+  border-top: 1px solid #A0A0A0;
+  margin: 0;
+  padding: 1ex;
+  font-size: 0.8em;
+}
+
+#impress {
+  /*float: left;*/
+}
+
+#powered {
+  /*float: right;*/
+  text-align: right;
+  color: #B0B0B0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.sidebar a:visited {
+  color: blue;
+}
+
+a.currentlink {
+  text-decoration: underline;
+  /*
+  background-image: url(http://www.waserbuero.ch/wicons/arrow.gif);
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 15px;
+  */
+}
+
+pre.sourcecode {
+  background-color: #E7E7E7;
+  border: 1px solid black;
+  padding: 3px;
+}
+
+pre.assembler {
+  font-size: 13px;
+  background-color: #E7E7E7;
+}
+
+.imagecaption {
+  font-size: 10px;
+  color: gray;
+}
+
+.kasten {
+  background-color: #FFFFFF;
+  border: 1px solid #A0A0A0;
+  padding: 5px;
+}
+
+.asm
+{
+  font-family: monospace;
+}
+
+/* WIKI */
+
+.portlet div
+{
+  /*display: none;*/
+}
+
+.printfooter
+{
+  display: none;
+}
+
+#searchInputX {
+  width: 18ex;
+}
+
+.sidebar #searchform {
+  padding: 0;
+  margin: 0;
+}
+
+.urlexpansion {
+  display: none;
+}
+
+.editsection {
+  font-size: 0.6em;
+}
+
+/*
+pre.code {
+  border-width: thin;
+  border-style: dashed;
+  border-color: #0000C0;
+  padding: 10px;
+  margin-left: 0%;
+  margin-right: 0%;
+  background-color: #F0F8FF;
+}
+*/
+
+/* GheShi */
+/* breiten Sourcecode mit Scrollbar; Table-Wrapper mit fixed ist notwendig, weil sich
+ * ein div immer auf die ganze Breite des Inhalts aufblaest wenn man keine absolute
+ * Breite angibt */
+div.code table {
+  border: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+/* td mit overflow: auto funktioniert in firefox nicht richtig, deshalb noch ein div */
+div.code td {
+  padding: 0;
+}
+div.code div {
+  overflow: auto;
+  padding: 7px;
+  margin: 0;
+}
+div.code pre {
+  padding: 0;
+  margin: 0;
+}
+
+a.external { color: #336644; }
+/* a:visited { color: #8D0749; } */
+a.printable { text-decoration: underline; }
+a.stub, #quickbar a.stub { color:#772233; text-decoration:none; }
+a.new, #p-cactions .new a { color: #CC2200; }
+
+/* TOPBOX */
+.topbox {
+  margin-bottom: 2ex;
+}
+
+/* NEWSITEMS */
+.newsitems {
+  margin-bottom: 3ex;
+  max-width: 110ex;
+}
+
+.newsitems h3 {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.3ex;
+  padding-top: 0.3ex;
+}
+
+hr {
+  background-color:#c0c0c0; /* Mozilla 1.4 */
+  color:#c0c0c0; /* IE 6 */
+  border: #c0c0c0; /* Opera 7.11 */
+  height: 2px; /* in Opera fuer die Anzeige noetig, in Mozilla fuer die einheitliche Hoehe */
+}
+
+.newsitem {
+  padding-bottom: 2ex;
+}
+
+.newsitem .created {
+  font-size: 0.7em;
+  border-bottom: 1px solid #A0A0A0;
+  margin-bottom: 0;
+}
+
+.newsitem .subject {
+  margin-top: 0;
+}
+
+.newsitem .text {
+ text-align: justify;
+ -webkit-hyphens: auto;
+ -moz-hyphens: auto;
+ hyphens: auto;
+}
+
+.newsitem img {
+  margin: 8px;
+  margin-top: 0;
+  border: 1px solid #A0A0A0;
+}
+
+.feedandnewsletterlinks {
+  margin-bottom: 1ex;
+  font-size: 0.9em;
+}
+.feedandnewsletterlinks .icon {
+  vertical-align: text-top;
+}
+
+img[src^="/images/icons/"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* WIKICHANGES */
+
+.wikichanges {
+}
+
+/* FORUMCHANGES */
+
+.changes td.date {
+  white-space: nowrap;
+}
+
+.changes th {
+  text-align: left;
+}
+
+.changes td {
+  font-size: 0.85em;
+}
+
+.changes table {
+}
+
+.changes {
+  border: 1px solid #A0A0A0;
+  padding: 1ex;
+}
+
+.nav-container {
+}
+
+ul.nav-first {
+  list-style-type: none; padding: 0; margin: 0;
+}
+
+ul.nav-first ul {
+  list-style-type: square; margin-left: 0; padding-left: 3ex;
+}
+
+dt { font-weight: bold; }
+
+/* Sortable tables */
+table.sortable a.sortheader {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+}
+table.sortable span.sortarrow {
+    color: black;
+    text-decoration: none;
+}
+
+/*
+a.conrad, a.isbn {
+  background: url(/images/link-hintergrund-anzeige.png) top left no-repeat;
+  padding-top: 8px;
+}
+*/
+
+/*
+.post-text-ad {
+  background-image: url(/images/icons/basket.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 18px;
+}
+*/
+
+.post-text-ad-notice {
+  font-size: smaller;
+  float: left;
+}
+
+/* Zeilenhöhen */
+/*
+#main {
+  line-height:1.45;
+}
+
+#main h1,h2,h3,h4,h5,h6 {
+  line-height: 1.2;
+}
+*/
+
+/* http://stackoverflow.com/questions/2326004/prevent-selection-in-html */
+.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+}
+
+.field_with_errors { display: inline; }
+.field_with_errors input { border: 2px solid red; }

@@ -1,0 +1,36 @@
+#toc,
+.toc {
+	border: 1px solid #bba;
+	background-color: #f7f8ff;
+	padding: 5px;
+	font-size: 95%;
+	text-align: center;
+}
+#toc h2,
+.toc h2 {
+	display: inline;
+	border: none;
+	padding: 0;
+	font-size: 100%;
+	font-weight: bold;
+}
+#toc ul,
+.toc ul {
+	list-style-type: none;
+	list-style-image: none;
+	padding: 0;
+	text-align: left;
+}
+#toc ul ul,
+.toc ul ul {
+	margin: 0 0 0 2em;
+}
+#toc .toctoggle,
+.toc .toctoggle {
+	font-size: 94%;
+}
+
+.error {
+	color: red;
+	font-size: larger;
+}
