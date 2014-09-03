@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0031)http://www.kh-gps.de/fm1216.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  
+  <meta name="Author" content="K.Hirschelmann">
+  <meta name="FM1216" content="Mozilla/4.7 [de]C-NECCK  (Win98; I) [Netscape]">
+  <title>FM1216</title>
+</head>
+<body text="#000080" bgcolor="#ffc040" link="#0000ff" vlink="#008000" alink="#00ffff">
+<center>
+<hr width="100%"></center>
+<div style="text-align: center;"><big><big><b><font size="+1"><big><big>Einfacher
+UKW-Stereoempfänger mit Philips-Tuner "FM1216ME"<br>
+und Bascom-I2C-Steuerung<br>
+<span style="font-style: italic;">NEU: Empfang von Analog-TV und
+FM-Audio im Bereich 48-865MHz<br>
+<br>
+</span></big></big></font></b></big></big>
+<div style="text-align: left;"><big><b><font size="+1">LETZTE
+ERWEITERUNG: 27.
+Februar
+2013</font></b></big><small><br>
+</small></div>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: left;"><span style="font-weight: bold;">Als
+Restposten gibt es bei Fa. Pollin für schlaffe Euro 3.95 eine
+"TV-/Radio- und ISDN-Kombokarte" [1] ( Best.-Nr. 700 621 ). Sie wird
+dadurch interessant, dass auf ihr ein PHILIPS-Tuner des Typs "FM1216ME"
+[2] verbaut ist. Ursprünglich als Schlüsselbauteil für (
+analoge ) TV- und Radio-Empfänger entwickelt, bleibt nach dem Ende
+des analogen Fernsehens aber immer noch seine Verwendbarkeit zum
+Selbstbau
+eines relativ hochwertigen FM-Stereoempfängers. <br>
+Ist kein
+optimal dafür geeignetes Werkzeug vorhanden, so sollte man
+allerdings auf ein komplettes Auslöten des Tuners verzichten und
+stattdessen die einzelnen Tuner-Anschlußpins kurz oberhalb der
+Platinenfläche abkneifen.&nbsp; Das Aushebeln über die vier
+verbleibenden
+Massekontakte sollte danach mithilfe eines kräftigen
+Lötkolbens keine weiteren Probleme bereiten. <br>
+</span>. <br>
+</div>
+<img src="./FM1216_files/fm1216_2.gif" title="" alt="" style="width: 538px; height: 371px;"><br>
+<span style="font-weight: bold;">Abb.1 Komboplatine von Fa. Pollin</span><br>
+<br>
+<img src="./FM1216_files/fm1216_5.jpg" title="" alt="" style="width: 480px; height: 275px;"><br>
+<span style="font-weight: bold;">Abb.2 Philips Tuner FM1216ME<br>
+<br>
+<img src="./FM1216_files/fm1216_6.gif" title="" alt="" style="width: 672px; height: 412px;"><br>
+Abb.3&nbsp; Blockschaltbild des Tuners "FM1216ME"<br>
+&nbsp;<br>
+</span>
+<div style="text-align: left; font-weight: bold;">Der Tuner "FM1216ME"
+benötigt nur eine 5V-Versorgungsspannung ( ca. 100mA ) und erlaubt
+dabei eine vielseitige Verwendung, wovon aber inzwischen eigentlich nur
+noch die Verwendung als FM-Rundfunkempfänger von Interesse ist.
+Dabei kann er entweder ein Mono- oder unterstützt vom internen
+Decoder auch ein Stereo-Signal bereitstellen. Zur Weiterverarbeitung
+kann z.B. eine Aktivbox verwendet werden. Über einen
+zusätzlich verfügbaren MPX-Ausgang ( Pin 14 ) lässt sich
+bei Bedarf
+auch noch z.B. ein RDS-Decoder anschliessen.<br>
+</div>
+<br>
+<img src="./FM1216_files/fm1216_1.gif" title="" alt="" style="width: 688px; height: 492px;"><br>
+<span style="font-weight: bold;">Abb.4&nbsp; Minimalversion einer
+FM-Radio-Tunersteuerung mit Prozessor ATTINY45 </span><br style="font-weight: bold;">
+<br>
+<div style="text-align: left; font-weight: bold;">Die
+I2C-Tunersteuerung erfolgt über seine Pins 4 ( SCL ) und 5 ( SDA
+). Zum Empfang meines Lieblingssenders habe ich dabei eine
+Minimalversion der Steuersoftware mit dem Prozessor ATTINY45 ( Abb.4 )
+getestet.&nbsp; Nach Programmstart wird hierbei immer die dazu im
+Programm abgelegte Frequenz
+aufgerufen. Mithilfe der Up- und Down-Tasten lässt sich diese zwar
+in jeweils 100KHz-Schritten ändern, aber ohne Frequenzanzeige ist
+diese Lösung zum Empfang auch anderer Sender natürlich wenig
+elegant.&nbsp; Daher habe ich die Software jetzt ( im Mai 2012 ) noch
+dahingehend erweitert, dass parallel zu den I2C-Anschlüssen SCL
+und SDA auch noch ein Standard-LCD-Modul angesteuert werden kann. Dabei
+wird zusätzlich noch ein mit dem IC PCF8574P aufgebauter I2C- zu
+LCD-Adapter benötigt ( Abb.5 ). Einen an dieser Stelle geeigneten
+Bausatz
+gibt es für wenige Euros z.B hier [3].&nbsp; Vom gleichen
+Lieferanten sind auch passende LCD-Displays erhältlich [4]. Obwohl
+die Steuerplatine vorzugsweise für 2x16 Zeichen-Displays ausgelegt
+ist, sollten an dieser Stelle auch 1x16-Zeichen-Versionen verwendbar
+sein. Zu beachten ist noch, dass die auf der Zusatzplatine befindliche
+Brücken entsprechend einer I2C-Adresse 40hex gesetzt werden
+müssen. <br>
+Nachdem die Hintergrundbeleuchtung des LC-Displays ein kleiner
+zusätzlicher Stromfresser ist, wurde noch die Möglichkeit
+geschaffen, sie durch Masseverbindung von Port B2 ( Pin7 ) des ATTINY45
+auch ausschalten zu können. <br>
+<br>
+<div style="text-align: center;"><a href="./FM1216_files/fm1216_3.gif"><img src="./FM1216_files/fm1216_3.gif" title="" alt="" style="border: 2px solid ; width: 1000px; height: 332px;"></a><br>
+</div>
+<div style="text-align: center;">Abb.5 &nbsp; Zusammenschaltung mit
+Pollin-Board und LCD&nbsp; ( Click für Grossdarstellung )<br>
+</div>
+<br>
+Wird alternativ zum ATTINY45 ein ATMEGA8-Prozessor verwendet, so
+ermöglicht das den direkten Anschluss eines zusätzlichen
+LC-Displays ( 1x16Z oder 2x16Z ), womit die Anzeige der jeweiligen
+Empfangsfrequenz auf einfache Weise realisierbar ist. Die zu den
+besprochenen Einsatzvarianten gehörenden Softwareversionen sind
+weiter unten auf dieser Seite verfügbar und
+können natürlich auch noch leicht an eigene Anforderungen
+angepasst werden. <br>
+Als Besonderheit ist noch anzumerken, daß es gemäß
+Herstellerangaben erforderlich ist, die PLL des Tuners nach dem
+Einschalten und vor dem Setzen der später gewünschten
+UKW-Empfangsfrequenzen immer erst einmal kurzzeitig auf eine relativ
+hohe
+TV-Frequenz z.B. im Bereich um 150MHz abzustimmen. In den
+beigefügten Programmen wurde das bereits berücksichtigt.<br>
+Im vorliegenden Fall wird die PLL des Tuners im 50KHz-Raster betrieben.
+Dabei berechnet sich der via I2C-Steuerung zum Empfang einer bestimmten
+Frequenz "Fe" einzugebende Teilungsfaktor zu ( Fe+ 10.7 ) * 20. Eine
+Frequenz von beispielsweise 103.7 MHz ergibt somit: ( 103.7 + 10.7 ) *
+20 = 2288 als Dezimalwert bzw. 8F0 als der in die entsprechenden
+Sendebytes zu schreibende Hex-Wert.&nbsp; <br>
+Im Testprogramm ist der mithilfe der
+Up/Down-Tasten abdeckbare Empfangsbereich auf 87.5-107.9 MHz begrenzt.
+Grundsätzlich erlaubt der Tuner aber auch eine Verwendung
+über diese Grenzen hinaus. So hätte man in früheren
+Zeiten z.B. den TV-Ton von CCIR-Kanal 4-Stationen auf 67.75 MHz
+abhören können, aber alle entsprechenden Sender sind
+inzwischen
+verstummt. Ein Radio-DXer könnte aber auf diese Weise aber aber
+immer noch versuchen, Empfangsversuche im jenseits von Polen durchaus
+noch verwendeten OIRT-Rundfunkband 68-74 MHz durchzuführen .<br>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: center;"><big><b><font size="+1"><big>EMPFANG
+VON ANALOG-TV UND <br>
+FM-AUDIO IM FREQUENZBEREICH 48-865MHz</big></font></b></big>
+<hr style="width: 100%; height: 2px;"></div>
+Der Tuner "FM1216ME" deckt einen Frequenzbereich von ca. 48 MHz bis
+oberhalb von 863 MHz ab. Dabei
+erfolgt eine Aufteilung in die drei Telbereiche: LOW: 48-160MHz;
+MID:160-442MHz und HI: 442-863 MHz. Die Bandgrenzen sind allerdings nur
+als
+Näherungswerte zu betrachten und können in gewissem Umfang
+überschritten werden. Interessant ist dabei
+auch, dass ( Breitband- ) FM-Empfang nicht nur im UKW-Rundfunkbereich
+87.5-108 MHz , sondern im gesamten Tuner-Empfangsbereich realisierbar
+ist,
+was weitere Einsatzmöglichkeiten erlaubt. Hierzu zählt z.B.
+ein Empfang der am oberen Bereichsende zwischen
+863-865 MHz ( siehe unten ) angesiedelten drahtlosen
+Kopfhörersysteme und
+Mikrofone.<br>
+Weiterhin ist natürlich auch eine Verwendung des Tuners als
+analoger TV-Empfangsteil möglich. Nachdem die terrestrische
+Ausstrahlung entsprechender Signale aber fast überall beendet
+wurde, besteht eine Möglichkeit zur Nutzung
+dieser Betriebart allenfalls noch in Verbindung mit Signalen
+aus den Kabelnetzen oder im Rahmen des Amateurfernsehens ( ATV ).
+Hier lässt
+sich der "FM1216ME" nach wie vor als
+Direktempfänger für das 70cm-Band oder auch als Nachsetzer
+für Mikrowellenconverter einsetzen. <br>
+Im FM-Mode arbeitet der Tuner "FM1216" standardmäig im
+Low-Band-Mode, was bedeutet, dass alle Frequenzen zwischen etwa 48 und
+160 MHz durch Eingabe der entsprechenden Frequenzbefehle direkt
+anwählbar sind, wobei das auch den eigentlichen
+UKW-Rundfunkbereich einschliesst. Soll auf höheren
+Frequenzen im FM-Mode gearbeitet werden, so ist das&nbsp;
+entsprechende Band-Modul per Softwarebefehl aufzurufen.<br>
+<br>
+<div style="text-align: center;"><img src="./FM1216_files/fm1216_7.gif" title="" alt="" style="width: 845px; height: 602px;"><br>
+Abb.6&nbsp; <span style="font-weight: bold;">Minimalversion für
+TV-Analogempfang mit Prozessor ATTINY45<br>
+<br>
+</span>
+<div style="text-align: left;">Abb.6 zeigt die Aussenbeschaltung des
+Tuners für
+den analogen TV-Empfang. An seinem Pin 12 steht ein Videosignal mit
+1Vss an 75Ohm zur Verfügung (Abb.7
+).
+Die Tonausgänge Pin 11 und 14 liefern Signale mit etwa 450mVss,
+wobei Verbraucher über Trennkondensatoren angeschlossen werden
+sollten. <br>
+</div>
+</div>
+<br>
+<div style="text-align: center;"><img src="./FM1216_files/fm1216_5.gif" title="" alt="" style="width: 555px; height: 349px;"><br>
+</div>
+<div style="text-align: center;">Abb.7&nbsp;&nbsp;&nbsp;
+Pegelverhältnisse am Video-Ausgang des FM1216ME<br>
+</div>
+<br>
+Über die Ports B2-B4 des ATTINY 45 ( Pin 7, 2, 3, ) bzw. Schalter
+S1-S3 lassen sich bis zu 8 im
+Programmcode fest abgelegte Fernsehkanäle anwählen. Als
+Schalter empfiehlt sich ein kleiner binär codierter Drehschalter
+mit 10 oder 16 Stellungen.<br>
+Ein BASCOM-Mustercode für Fernsehempfang im PAL B/G-Mode (
+Tonträgerabstand: 5.5 MHz * )&nbsp; ist unten
+herunterladbar. Die
+im beispielhaften BAS-File enthaltenen Frequenzdaten für die max.
+möglichen 8 Kanäle lassen sich entsprechend eigener
+Wünsche
+ändern.&nbsp; <br>
+* Durch Änderung von Steuerbits sind auch
+Bild/Tonträgerabstände von 6.0 MHz und 6.5 MHz möglich. <br>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: center;"><big><big>FM-EMPFANG IM BEREICH
+863-865 MHZ<br>
+</big></big>
+<hr style="width: 100%; height: 2px;"></div>
+Der Tuner "FM1216ME" lässt sich auch zum Empfang von Signalen
+verwenden, die im Frequenzbereich zwischen
+863-865 MHz von den dort angesiedelten drahtlosen
+Kopfhörersystemen und
+Mikrofonen ausgesandt werden. Um alle hier verfügbaren
+Breitband-FM-Aussendungen aufnehemen zu können, genügt ein
+125 KHz-Raster, womit sich 14 Empfangskanäle ergeben. Zu
+ihrer Abstimmung wurde ein sehr einfaches, m.W. ursprünglich von
+Burkhard Kainka vorgeschlagenes Verfahren benutzt: Dabei wird der im
+"ATTINY45" integrierte 10Bit-AD-Wandler benutzt, um aus einer
+anliegenden Analogspannung zwischen 0V und +5V die zum Kanalaufruf
+benötigten numerischen Werte zu generieren. Zur Abstimmung
+zwischen 863 und 865 MHz genügt somit ein einfaches Potentiometer,
+wobei dessen Schleifer mit dem entsprechenden Analogeingang des
+Prozessors zu verbinden ist.<br>
+Gegenüber der in Abb.4 für den FM-Rundfunk realisierten
+Version ergeben sich hierzu folgende Änderungen: <br>
+Die variable Abstimmspannung ist an Eingang PB4 ( Pin3 ) des Prozessors
+zu legen. Über die Ports PB2 ( Pin7 ) und PB3 ( Pin2 ) kann ggf.
+zwischen MONO- (
+offen ) und STEREO-Empfang ( an Masse ) gewählt werden.
+Voraussetzung für Stereo-Empfang ist allerdings, dass die
+Sendeseite die gleiche Norm verwendet, wie wir sie vom FM-Rundfunk
+kennen. <br>
+Die zugehörigen BASCOM-Quellcodes lassen sich weiter unten
+herunterladen.<br>
+</div>
+<hr style="width: 100%; height: 2px;"><big style="font-weight: bold;"><big>NACHBAU
+</big></big><br>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: left;"><span style="font-weight: bold; font-style: italic;">Die
+BASCOM-AVR-Files für die FM-Radio-Versionen können <a href="http://www.kh-gps.de/fm1216.zip">hier</a>
+heruntergeladen werden: </span><br style="font-style: italic;">
+<span style="font-weight: bold;">* FM-Radio Version für Prozessor
+ATTINY45
+ohne Display</span><br style="font-weight: bold;">
+<span style="font-weight: bold;">* FM-Radio Version für Prozessor
+ATTINY45
+für Frequenzanzeige über LC-Display ( benötigt
+Zusatzboard mit PCF8574P ) </span><br style="font-weight: bold;">
+<span style="font-weight: bold;">* FM-Radio Version für Prozessor
+ATMEGA8
+für Frequenzanzeige über LC-Display<br>
+</span><span style="font-weight: bold; font-style: italic;"><br>
+Das
+BASCOM-AVR-File für die 863-865MHz-Version kann <a href="http://www.kh-gps.de/fm1216_864.zip">hier</a>
+heruntergeladen werden: </span><br style="font-style: italic;">
+<span style="font-weight: bold; font-style: italic;"><br>
+Das
+BASCOM-AVR-File für die TV-Version kann <a href="http://www.kh-gps.de/fm1216_tv.zip">hier</a>
+heruntergeladen werden: </span><br style="font-style: italic;">
+<span style="font-weight: bold;">* TV-Version für Prozessor
+ATTINY45&nbsp; 8 Kanäle&nbsp; mit
+BCD-Schalter S1-S3&nbsp; <br>
+<br>
+Anm.: Vermutlich erlaubt der
+relativ geringe Umfang der erstellten BASCOM-Programme auch eine
+Kompilierung unter Verwendung der im Internet kostenlos
+herunterladbaren Demo-Version [5].&nbsp; <br>
+<br>
+Was die TV-Version betrifft, so bin ich nach Zusendung einer
+entsprechenden Frequenzliste aber auch gern bereit, ein
+anwenderspezifisches HEX-File zu erstellen oder nach vorheriger
+Absprache auch ggf. einen entsprechend programmierten ATTINY45 zu
+liefern. <br>
+</span>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: center;"><big><big><span style="font-weight: bold;">PROGRAMMIERUNG</span></big></big><br>
+</div>
+<hr style="width: 100%; height: 2px;"><span style="font-weight: bold;">Um
+vom BASCOM-Kompiler erzeugte HEX- oder BIN-Files in den Flash-Bereich
+der ATMEGA- und ATTINY-Processoren
+übertragen zu können, verwende ich einen
+USB-ICSP-Programmierstick nach [7]. Über die Downloadseite der
+gleichen Firma kann auch eine dazu passende Windows-Software
+heruntergeladen werden [8]. </span><br style="font-weight: bold;">
+<div style="text-align: left;"><span style="font-weight: bold;"><br>
+</span></div>
+<div style="text-align: center;"><big><b><font size="+1"><small><img style="width: 400px; height: 376px;" title="" alt="" src="./FM1216_files/fm1216_8.gif"></small></font></b></big><br>
+</div>
+<div style="text-align: center;"><big><b><font size="+1"><small>Abb.8&nbsp;
+ICSP-Programmieradapter</small></font></b></big><br>
+</div>
+<big><b><font size="+1"><small><br>
+</small></font></b></big>
+<div style="text-align: left;"><span style="font-weight: bold;">Für
+ATTINY-Prozessoren wurde </span><span style="font-weight: bold;">ein
+kleiner Adapter gem. Abb.8 aufgebaut. Er besteht im Wesentlichen nur
+aus </span><span style="font-weight: bold;">einem 6pol. Wannenstecker
+und einer 8pol. DIL-IC-Fassung. Nach seiner Verbindung mit dem
+Progammierstick kann er zur ICSP-Programmierung eines in
+die DIL-Fassung gesteckten Microcontrollers benutzt werden.</span><span style="font-weight: bold;">&nbsp;&nbsp; </span><br>
+</div>
+</div>
+<hr style="width: 100%; height: 2px;"><big><big><span style="font-weight: bold;">LINKS</span><br style="font-weight: bold;">
+</big></big>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: left; font-weight: bold;">[1]&nbsp; <a href="http://www.pollin.de/shop/dt/ODczOTkyOTk-/Computer_und_Zubehoer/Hardware/Erweiterungskarten/TV_Radio_und_ISDN_Kombokarte.html">http://www.pollin.de/shop/dt/ODczOTkyOTk-/Computer_und_Zubehoer/Hardware/Erweiterungskarten/TV_Radio_und_ISDN_Kombokarte.html<br>
+</a>[2]&nbsp; <a href="http://www.loharens.de/fm1216me/FM1216ME_MK3.pdf">http://www.loharens.de/fm1216me/FM1216ME_MK3.pdf&nbsp;</a>
+( Datenblatt Tuner FM1216ME )<br>
+</div>
+<div style="text-align: left; font-weight: bold;">[3]&nbsp; <a href="http://www.pollin.de/shop/dt/NDU4OTgxOTk-/Bausaetze_Module/Bausaetze/LCD_I2C_Modul.html">http://www.pollin.de/shop/dt/NDU4OTgxOTk-/Bausaetze_Module/Bausaetze/LCD_I2C_Modul.html</a><br>
+[4] <a href="http://www.pollin.de/shop/dt/ODc1OTc4OTk-/Bauelemente_Bauteile/Aktive_Bauelemente/Displays/LCD_Modul_TC1602A_08.html">http://www.pollin.de/shop/dt/ODc1OTc4OTk-/Bauelemente_Bauteile/Aktive_Bauelemente/Displays/LCD_Modul_TC1602A_08.html</a><br>
+[5] <a href="http://www.mcselec.com/index.php?option=com_docman&task=cat_view&gid=99&Itemid=54">http://www.mcselec.com/index.php?option=com_docman&amp;task=cat_view&amp;gid=99&amp;Itemid=54</a><br>
+[6] <a href="http://www.nxp.com/documents/data_sheet/TDA9887.pdf">http://www.nxp.com/documents/data_sheet/TDA9887.pdf&nbsp;</a>&nbsp;
+( Datenblatt ZF-IC TDA9887 )<br>
+[7] <a href="http://shop.myavr.de/index.php?sp=article.sp.php&artID=200006">http://shop.myavr.de/index.php?sp=article.sp.php&amp;artID=200006</a><br>
+[8] <a href="http://shop.myavr.de/index.php?sp=download.sp.php">http://shop.myavr.de/index.php?sp=download.sp.php</a>
+<br>
+[9] <a href="http://www.loharens.de/fm1216me/FQ1200MK3%20application%20note%201_0.pdf">http://www.loharens.de/fm1216me/FQ1200MK3%20application%20note%201_0.pdf</a>&nbsp;
+( Application Note FQ1200MK3-Tuner Serie ) <br>
+[10] <a href="http://www.loharens.de/fm1216me/tda7040.pdf">http://www.loharens.de/fm1216me/tda7040.pdf</a>
+( Datenblatt Stereo-Decoder TDA7040 )&nbsp; <br>
+[11] <a href="http://www.loharens.de/fm1216me/TSA5523M_1.pdf">http://www.loharens.de/fm1216me/TSA5523M_1.pdf</a>&nbsp;
+( Datenblatt PLL TSA5523M )<br>
+<br>
+&nbsp;Auf diese Seite führende LINKS sind auch im interessanten
+LABORTAGEBUCH von
+Burkhard Kainka zu finden:<br>
+&nbsp; <a href="http://www.elektronik-labor.de/Labortagebuch/Labortagebuch.html">http://www.elektronik-labor.de/Labortagebuch/Labortagebuch.html
+</a><br>
+&nbsp;
+<a href="http://www.elektronik-labor.de/Labortagebuch/Tagebuch0213.html#fm">http://www.elektronik-labor.de/Labortagebuch/Tagebuch0213.html#fm</a>&nbsp;
+( Direktlink ) <br>
+<a href="http://www.pollin.de/shop/dt/NDU4OTgxOTk-/Bausaetze_Module/Bausaetze/LCD_I2C_Modul.html"></a>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: center;"><span style="font-weight: bold;">E-Mail
+contact via:</span> <img style="width: 178px; height: 28px;" title="" alt="" src="./FM1216_files/callmail.gif">
+<hr style="width: 100%; height: 2px;"><a href="http://www.kh-gps.de/"><img style="border-style: solid; border-width: 2px; width: 78px; height: 76px;" title="" alt="" src="./FM1216_files/backpnt.gif"></a><br>
+</div>
+<center>
+<hr width="100%"></center>
+<div id="dp_swf_engine">
+<object style="width: 1px; height: 1px;" id="_dp_swf_engine" name="_dp_swf_engine" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1" align="middle" type="application/x-shockwave-flash" height="1"><param name="_cx" value="26"><param name="_cy" value="26"><param name="FlashVars" value=""><param name="Movie" value="http://static.dealply.com/flash/dealply_swf_engine.swf"><param name="Src" value="http://static.dealply.com/flash/dealply_swf_engine.swf"><param name="WMode" value="Transparent"><param name="Play" value="0"><param name="Loop" value="-1"><param name="Quality" value="High"><param name="SAlign" value=""><param name="Menu" value="-1"><param name="Base" value=""><param name="AllowScriptAccess" value="always"><param name="Scale" value="ShowAll"><param name="DeviceFont" value="0"><param name="EmbedMovie" value="0"><param name="BGColor" value=""><param name="SWRemote" value=""><param name="MovieData" value=""><param name="SeamlessTabbing" value="1"><param name="Profile" value="0"><param name="ProfileAddress" value=""><param name="ProfilePort" value="0"><param name="AllowNetworking" value="all"><param name="AllowFullScreen" value="false"><param name="AllowFullScreenInteractive" value=""><param name="IsDependent" value="0"></object></div>
+</div>
+</div>
+
+
+</body></html>
