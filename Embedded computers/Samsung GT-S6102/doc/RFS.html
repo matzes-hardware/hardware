@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+    <title>
+      RFS – movitool
+    </title><link rel="search" href="/trac/movitool/search" /><link rel="help" href="/trac/movitool/wiki/TracGuide" /><link rel="alternate" href="/trac/movitool/wiki/RFS?format=txt" type="text/x-trac-wiki" title="Plain Text" /><link rel="start" href="/trac/movitool/wiki" /><link rel="stylesheet" href="/trac/movitool/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/movitool/chrome/common/css/wiki.css" type="text/css" /><link rel="shortcut icon" href="/trac/movitool/chrome/site/images/samsung-linux.ico" type="image/x-icon" /><link rel="icon" href="/trac/movitool/chrome/site/images/samsung-linux.ico" type="image/x-icon" /><link type="application/opensearchdescription+xml" rel="search" href="/trac/movitool/search/opensearch" title="Search movitool" /><script type="text/javascript" src="/trac/movitool/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/movitool/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/movitool/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/movitool/chrome/common/js/ie_pre7_hacks.js"></script><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor("Link to this section");
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="/trac/movitool/chrome/site/mystyle.css" />
+  </head>
+  <body>
+    <div id="siteheader">
+    </div>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="/trac/movitool"><img src="/trac/movitool/chrome/site/images/movitoolsmall.png" alt="Samsung M1/H1 movinand.bin file management tool" /></a>
+      </div>
+      <form id="search" action="/trac/movitool/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/movitool/login">Login</a></li><li><a href="/trac/movitool/prefs">Preferences</a></li><li><a href="/trac/movitool/wiki/TracGuide">Help/Guide</a></li><li class="last"><a href="/trac/movitool/about">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="/trac/movitool/wiki">Wiki</a></li><li><a href="/trac/movitool/timeline">Timeline</a></li><li><a href="/trac/movitool/roadmap">Roadmap</a></li><li><a href="/trac/movitool/browser">Browse Source</a></li><li><a href="/trac/movitool/report">View Tickets</a></li><li class="last"><a href="/trac/movitool/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+              <li class="first"><a href="/trac/movitool/wiki/WikiStart">Start Page</a></li><li><a href="/trac/movitool/wiki/TitleIndex">Index</a></li><li><a href="/trac/movitool/wiki/RFS?action=history">History</a></li><li class="last"><a href="/trac/movitool/wiki/RFS?action=diff&amp;version=33">Last Change</a></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <h3 id="RFSakaRobustFileSystem">RFS aka Robust File System</h3>
+<p>
+From <a class="ext-link" href="http://www.samsung.com/global/business/semiconductor/products/flash/Products_RFS_PortingGuide.html"><span class="icon">Samsung documentation</span></a>:<br />
+<br />
+</p>
+<blockquote class="citation">
+<p>
+ SAMSUNG RFS (Robust File System) is an embedded flash file system that uses SAMSUNG OneNAND flash memory as storage on any consumer electronic devices.<br />
+ SAMSUNG RFS runs in the Linux kernel and is <strong>fully compatible with FAT file system standards (FAT16/32).</strong> 
+</p>
+</blockquote>
+<p>
+<br />
+<br />
+RFS is simply a FAT16 (maybe 32 too, in my movinand.bin is 16) with a transaction log for journaling (file $rfs_log.lo$) in root and a partition mark of 0x83 (linux)...<br />
+<strong>$rfs_log.lo$</strong> is a 128kb file of all 0x00 (NULL).<br />
+<br />
+RFS filesystems from <strong>/proc/mounts</strong>
+</p>
+<pre class="wiki">...
+/dev/stl9 /mnt/rsv rfs rw,code page=utf8,vfat,fcache(blks)=128 0 0
+/dev/mmca1 /mnt/ums rfs rw,code page=utf8,vfat,fcache(blks)=128 0 0
+/dev/mmca2 /opt rfs rw,code page=utf8,vfat,fcache(blks)=128 0 0
+/dev/mmca3 /mnt/csc rfs rw,code page=utf8,vfat,fcache(blks)=128 0 0
+</pre><p>
+There are two interesting parameters: <i>vfat</i> and <i>fcache(blks)=128</i>.
+</p>
+<ul><li><strong>vfat</strong> mybe RFS can be used on top of other filesystem???
+</li><li><strong>fcache(blks)=128</strong> $rfs_log.lo$ is 128kb long, mybe related???
+</li></ul><p>
+<br />
+<br />
+</p>
+<h3 id="XSRakaeXtendedSectorRemapper">XSR aka eXtended Sector Remapper</h3>
+<p>
+We can start from <a class="ext-link" href="http://www.samsung.com/global/business/semiconductor/products/flash/Products_XSR_PortingGuide.html"><span class="icon">Samsung XSR documentation</span></a>
+<br />
+<br />
+XSR is a layer between filesystems and NAND devices that uses logical sector relocation to prevent too many overwrites of the same block and to relocate bad blocks.
+</p>
+<ul><li>STL (Sector Translation Layer) are the logical devices on top of XSR
+</li><li>BML (Block Management Layer) are the devices on bottom of XSR exatly on top on NAND low level drivers.
+</li></ul><p>
+If one analyzes the content of an stl device wich contains an RFS (f.e. stl9), he will see a FAT as secribed upper in this page. On the other hand if someone analyzes the contet of the relative bml (f.e. bml9) he will see someting like this:
+</p>
+<pre class="wiki">00000000  64 00 01 00 02 00 00 00  01 00 00 00 58 53 52 32  |d...........XSR2|
+00000010  3e 00 00 00 0c 00 00 00  a5 a5 a5 a5 60 04 00 00  |&gt;...........`...|
+00000020  04 00 00 00 c1 ff ff ff  f3 ff ff ff fb ff ff ff  |................|
+00000030  a7 ac ad cd 9f fb ff ff  5a 5a 5a 5a 01 ff ff ff  |........ZZZZ....|
+00000040  08 00 00 00 f7 ff ff ff  ff ff ff ff ff ff ff ff  |................|
+00000050  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+00000100  09 1c 09 1d 09 1e 09 1f  09 20 09 21 09 22 09 23  |......... .!.".#|
+00000110  09 24 09 25 09 26 09 27  09 28 09 29 09 2a 09 2b  |.$.%.&amp;.'.(.).*.+|
+00000120  09 44 09 45 09 46 09 47  09 60 09 61 09 62 09 63  |.D.E.F.G.`.a.b.c|
+00000130  0a 02 0a 03 0a 04 0a 05  0a 26 0a 27 0a 28 0a 29  |.........&amp;.'.(.)|
+00000140  0a 42 0a 43 0a 44 0a 45  0a 66 0a 67 0a 68 0a 69  |.B.C.D.E.f.g.h.i|
+00000150  0b 04 0b 05 0b 06 0b 07  0b 24 0b 25 0b 26 0b 27  |.........$.%.&amp;.'|
+00000160  0b 48 0b 49 0b 4a 0b 4b  0b 64 0b 65 0b 66 0b 67  |.H.I.J.K.d.e.f.g|
+00000170  0b 7c 0b 7d 0b 7a 0b 7b  89 fe 89 fe 89 fe 89 fe  |.|.}.z.{........|
+00000180  89 fe 89 fe 89 fe 89 fe  89 fe 89 fe 89 fe 89 fe  |................|
+*
+000001f0  89 fe 89 fe 89 fe 89 fe  89 fe 89 fe ff ff ff ff  |................|
+00000200  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+00000800  63 6f 6e 64 69 74 69 6f  6e 20 3a 20 36 34 20 0a  |condition : 64 .|
+00000810  4a 61 6e 20 31 39 20 31  30 3a 34 31 3a 34 30 20  |Jan 19 10:41:40 |
+
+...
+
+</pre><p>
+<br />
+<br />
+</p>
+<h3 id="a.rfsimagefiles">".rfs" image files</h3>
+<p>
+The begining of my datafs.rfs is:
+</p>
+<pre class="wiki">00000000  64 00 01 00 02 00 00 00  01 00 00 00 58 53 52 32  |d...........XSR2|
+00000010  00 00 00 00 00 00 00 00  a5 a5 a5 a5 5a 00 00 00  |............Z...|
+00000020  01 00 00 00 ff ff ff ff  ff ff ff ff fe ff ff ff  |................|
+00000030  a7 ac ad cd a5 ff ff ff  5a 5a 5a 5a 01 ff ff ff  |........ZZZZ....|
+00000040  08 00 00 00 f7 ff ff ff  ff ff ff ff ff ff ff ff  |................|
+00000050  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+00000800  ff ff 01 00 00 ff ff ff  aa aa 5a aa fe ff 00 ff  |..........Z.....|
+00000810  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+00000840  eb 3c 90 6c 69 62 46 41  54 20 20 00 10 01 01 00  |.&lt;.libFAT  .....|
+00000850  02 00 02 48 1d f8 04 00  08 00 01 00 00 00 00 00  |...H............|
+
+...
+
+</pre><p>
+As we can see it is similar to the content of the BML on bottom of STL with RFS in it.
+<br />
+<br />
+<a style="padding:0; border:none" href="/trac/movitool/chrome/site/images/XSR_structure_RFS_highlight.jpg"><img src="/trac/movitool/chrome/site/images/XSR_structure_RFS_highlight.jpg" alt="/trac/movitool/chrome/site/images/XSR_structure_RFS_highlight.jpg" title="/trac/movitool/chrome/site/images/XSR_structure_RFS_highlight.jpg" /></a>
+<br />
+Unfortunately in my "datafs.rfs" at address 0x00000840 doesn't contain a coerent FAT, this means we need more investigation on the XSR translation table/blocks to be able to reconstruct an RFS.
+<br />
+<br />
+</p>
+<h3 id="Researchnotes">Research notes</h3>
+<div style="border: 2pt solid; text-align: center" class="important"><p>
+These are my raw research notes... ASAP I'll reorder them... I hope :-)
+</p>
+</div><p>
+<br />
+In bml9 image there are <strong>240</strong> of these:
+</p>
+<pre class="wiki">01de0000  64 00 01 00 02 00 00 00  01 00 00 00 58 53 52 32  |d...........XSR2|
+</pre><p>
+<br />
+Digging a little into /proc we can find this:
+</p>
+<pre class="wiki"># more /proc/rfs/bmlinfo
+XSR VERSION: 1.5.2-p4
+
+minor       position           size    blocks       id
+   1: 0x00000000-0x00040000 0x00040000      2        0
+   2: 0x00040000-0x00640000 0x00600000     48        1
+   3: 0x00640000-0x00780000 0x00140000     10        2
+   4: 0x00780000-0x008c0000 0x00140000     10        3
+   5: 0x008c0000-0x00dc0000 0x00500000     40        4
+   6: 0x00dc0000-0x012c0000 0x00500000     40        5
+   7: 0x012c0000-0x02140000 0x00e80000    116        6
+   8: 0x02140000-0x0cb40000 0x0aa00000   1360        7
+   9: 0x0cb40000-0x0e940000 0x01e00000    240        8
+  10: 0x0e940000-0x0f940000 0x01000000    128        9
+  11: 0x0f940000-0x0fa40000 0x00100000      8       10
+
+(0) bad mapping information
+  No  BadBlock   RsvBlock
+</pre><p>
+<br />
+<strong>LOOK</strong> bml9 (minor 9) has <strong>240</strong> blocks.... I've already saw this value...
+</p>
+<p>
+Let's see if there is a regularity in these blocks:
+</p>
+<pre class="wiki">00000000  64 00 01 00 02 00 00 00  01 00 00 00 58 53 52 32  |d...........XSR2|
+...
+00020000  64 00 01 00 02 00 00 00  01 00 00 00 58 53 52 32  |d...........XSR2|
+...
+00040000  64 00 01 00 02 00 00 00  01 00 00 00 58 53 52 32  |d...........XSR2|
+...
+</pre><p>
+<br />
+00020000 = <strong>128Kb</strong> per block
+<br />
+<br />
+Some interesting tools on the phone:
+</p>
+<pre class="wiki"># ffdisk
++---------------------------------------------------------------------+
+|  ffdisk : RFS-level Partitioning Tool for Flash Block Devices       |
++---------------------------------------------------------------------+
+
+Usage : ffdisk [-a] &lt;flash_block_dev&gt;
+
+        -a option that automatically format without user interaction
+        -u user-region-percentage
+                Must be (100 &gt;= percentage &gt; 0)
+                The default is 100
+        -r reserved-area
+                Must be (10 &gt;= area &gt;= 2)
+                The default is 2
+        &lt;flash_block_dev&gt; : device file for an FTL block device
+                            (ex) /dev/bml0/1 : 1st FTL block device
+                                 /dev/bml0/2 : 2nd FTL block device
+                                 /dev/bml0/3 : 3rd FTL block device
+
+        version 1.2.3
+</pre><p>
+<br />
+</p>
+<pre class="wiki"># fformat
+Usage:
+fformat [-s sectors-per-cluster] [-S logical-sector-size] [-F fat-size]
+        [-p page-size-to-align] [-v]
+        OUT_FILE/FLASH_BLK_DEV
+
+        -s sectors-per-cluster
+                Must be a power of 2, i.e. 1, 2, 4, ... 64.
+                The default is 2
+        -S logical-sector-size
+                Must be a power of 2, greater than or equal to 512,
+                i.e. 512, 1024, 2048, 4096
+                The default is 512
+        -F fat-size
+                The type of file allocation table used(16, 32 bit)
+                If nothing is specified, fat-size is automatically selected.
+        -p page-size-to-align
+                Each area is aligned to NAND page size
+                i.e. 0(no alignment), 2048, 4096
+                The default is 4096, zero means disable to the alignment
+        -l volume-label
+                Must be under 11 characters
+        -v verbose option
+        version 1.2.3
+#
+</pre><p>
+<br />
+<br />
+Let's analyze a tipical block:
+</p>
+<pre class="wiki">001e0000  64 00 01 00 02 00 00 00  01 00 00 00 58 53 52 32  |d...........XSR2|
+001e0010  4c 00 00 00 05 00 00 00  a5 a5 a5 a5 f4 03 00 00  |L...............|
+001e0020  09 00 00 00 b3 ff ff ff  fa ff ff ff f6 ff ff ff  |................|
+001e0030  a7 ac ad cd 0b fc ff ff  5a 5a 5a 5a 01 ff ff ff  |........ZZZZ....|
+001e0040  08 00 00 00 f7 ff ff ff  ff ff ff ff ff ff ff ff  |................|
+001e0050  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+001e0100  01 02 01 03 01 04 01 05  01 06 01 07 01 08 01 09  |................|
+001e0110  01 0a 01 0b 01 0c 01 0d  01 10 01 11 01 12 01 13  |................|
+001e0120  01 2c 01 2d 01 2e 01 2f  01 50 01 51 01 52 01 53  |.,.-.../.P.Q.R.S|
+001e0130  01 6c 01 6d 01 6e 01 6f  02 12 02 13 02 14 02 15  |.l.m.n.o........|
+001e0140  02 2e 02 2f 02 30 02 31  02 52 02 53 02 54 02 55  |.../.0.1.R.S.T.U|
+001e0150  02 6e 02 6f 02 70 02 71  04 4a 04 4b 04 4c 04 4d  |.n.o.p.q.J.K.L.M|
+001e0160  04 4e 04 4f 04 50 04 51  04 52 04 53 04 54 04 55  |.N.O.P.Q.R.S.T.U|
+001e0170  04 56 04 57 04 58 04 59  04 12 04 13 04 14 04 15  |.V.W.X.Y........|
+001e0180  04 32 04 33 04 34 04 35  04 5a 04 5b 04 5c 04 5d  |.2.3.4.5.Z.[.\.]|
+001e0190  04 76 04 77 04 78 04 79  04 7a 04 7b 04 7c 04 7d  |.v.w.x.y.z.{.|.}|
+001e01a0  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+001e0800  6f 20 64 65 76 6d 67 72  5f 6d 6f 6e 3a 20 72 65  |o devmgr_mon: re|
+</pre><p>
+<br />
+</p>
+<p>
+Data begins at <strong>+ 0x800</strong> (2048 byte) from starting of the block, this means 126kb of data per block.
+</p>
+<pre class="wiki">-rw-r--r--  1 root root 31457280 Mar 12 12:07 bml9.img
+-rw-r--r--  1 root root 30707712 Mar 12 12:06 stl9.img
+</pre><p>
+<br />
+</p>
+<p>
+126K per block of data<br />
+30707712 (stl9 block size in byte) / 1024 / 126 (kb of data per block) = 238 blocks<br />
+240 - 238 = 2 spare block <strong>look at -r reserved-area of ffdisk</strong><br />
+<br />
+NOW remains to understand how to sort XSR blocks ;-)
+<br />
+<br />
+<strong>OT IMPORTANT:</strong>
+<br />
+max facrotyfs.cramfs = 1360 blocks * 128 kb / 1024 = 170 Mb
+</p>
+
+        
+        
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="/trac/movitool/wiki/RFS?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/trac/movitool/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="/trac/movitool/about"><strong>Trac 0.11.3</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <div id="sitefooter">
+    </div>
+    <div id="googleads">
+<script type="text/javascript"><!--
+google_ad_client = "pub-4270233329034508";
+/* 120x240, creato 05/03/10 */
+google_ad_slot = "5996053684";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+    </div>
+<!-- *********************************************************************
+     * You may use this code for free on any web page provided that 
+     * these comment lines and the following credit remain in the code.
+     * From http://www.javascript-fx.com
+     ****************************************************************  -->
+<script type="text/javascript">
+<!--
+function JSFX_FloatTopRight()
+{
+	var startX = 6, startY = 160;
+	var ns = (navigator.appName.indexOf("Netscape") != -1);
+	var d = document;
+	var px = document.layers ? "" : "px";
+	function ml(id)
+	{
+		var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+		if(d.layers)el.style=el;
+		el.sP=function(x,y){this.style.right=x+px;this.style.top=y+px;};
+		el.x = startX; el.y = startY;
+		return el;
+	}
+	window.stayTopRight=function()
+	{
+		var pY = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
+		var dY = (pY > startY) ? pY : startY;
+		ftlObj.y += (dY - ftlObj.y)/8;
+		ftlObj.sP(ftlObj.x, ftlObj.y);
+		setTimeout("stayTopRight()", 40);
+	}
+	ftlObj = ml("googleads");
+	stayTopRight();
+}
+JSFX_FloatTopRight();
+//-->
+</script>
+  </body>
+</html>
