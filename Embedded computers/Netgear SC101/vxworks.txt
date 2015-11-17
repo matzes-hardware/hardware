@@ -1,0 +1,124 @@
+Minimal POST completed...     Success.
+PSPBoot1.0 rev: 0.10.4
+(c) Copyright 2002-2003 Texas Instruments, Inc. All Rights Reserved.
+Current mac address = 00-18-4d-3a-2c-cb
+Already exist available mac address...
+                                      
+Press ESC for monitor... 3321
+
+(psbl) 
+
+Booting...
+                                                                    
+usanBypassInit() : hddInit() : HDD Initialization failed
+Attached TCP/IP interface to dummy unit 254
+Attaching interface lo0...done
+
+Adding 3876 symbols for standalone.
+
+                                                                           
+                             .:;ZZZZZZZZZZZZZZ;:.
+                         .;ZZZZZZZZZZZZZZZZZZZZZZZZZ:.
+                      ;ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ:
+                   :ZZZZZZZZZZZZZZZ;;;;;;;ZZZZZZZZZZZZZZZZZ;
+                .ZZZZZZZZZ;'                    ';ZZZZZZZZZZZZ.
+              .ZZZZZZZ:                              ;ZZZZZZZZZZ.
+             :ZZZZ;.           ZZZZZZZZZZZZZZZZ         ;ZZZZZZZZ;
+            ;ZZZ.              ZZZZZZZZZZZZZZZZ           :ZZZZZZZZ:
+           ZZ;                 ZZZZZZZZZZZZZZZZ             .ZZZZZZZZ
+          ZZ                            ZZZZZZ                ZZZZZZZZ
+         ;;                            :ZZZZZ;              :. ;ZZZZZZZ   .:
+         :                             ZZZZZZ                :ZZZZZZZZZZZZZ
+                                      :ZZZZZ;                 :ZZZZZZZZZZZ;
+                                      ZZZZZZ                   :ZZZZZZZZZZ
+                                     :ZZZZZ;                     ZZZZZZZZ;
+                                     ZZZZZZ                       ZZZZZZZ
+      :                             ;ZZZZZ:                        ZZZZZ;
+     .Z,                            ZZZZZZ                          ;ZZZ
+     ZZZ:                          :ZZZZZ;                           :Z;
+    :ZZZZZ                         ZZZZZZ                             :
+    ZZZZZZZ                       :ZZZZZ;
+   :ZZZZZZZZ:                     ZZZZZZ
+   ZZZZZZZZZZ:                   :ZZZZZ;
+  :ZZZZZZZZZZZ:                  ZZZZZZ.                            :
+  ZZZZZZZZZZZZZ:                :ZZZZZ;                            ;;
+ :'   ZZZZZZZ: ':               ZZZZZZ                            ;Z
+       ZZZZZZZZ                :ZZZZZ;                           ZZ
+        ZZZZZZZZ,              ZZZZZZ                          ;ZZ
+         :ZZZZZZZZ:            ZZZZZZZZZZZZZZZZ              ZZZZ
+           :ZZZZZZZZ;          ZZZZZZZZZZZZZZZZ           ;ZZZZ:
+             ZZZZZZZZZZ;       ZZZZZZZZZZZZZZZZ       :;ZZZZZ:                
+               ZZZZZZZZZZZZ;.                    .;ZZZZZZZZZ
+                 ;ZZZZZZZZZZZZZZZZZ;;;;;;;;ZZZZZZZZZZZZZZ;
+                    :ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ;
+                        ;ZZZZZZZZZZZZZZZZZZZZZZZZZZ;
+                            ':;ZZZZZZZZZZZZZZ;:'
+                                                  
+                                                    
+                                                      
+                               CPU: Zetera RDK006.  Processor #0.
+                              Memory Size: 0x800000.  BSP version 5.0/0.
+-> 
+	       ========================================================
+	       Board           : Zetera RDK006
+	       SOC             : Avalanche D, ChipId: 0x2, Version: 1
+	       PSP Version     : 5.0.0.33567502
+	       Type            : Base PSP-V 5.0.0 GA Release
+	       PSPWIZ Version  : 0.3
+	       MIPS freq       : 125000000 Hz,
+	       System Freq     : 125000000 Hz,
+	       VBUS freq       : 62500000 Hz
+	       BasePSP mode    : Routing
+	       ========================================================
+                                                                  
+                                                                    
+MicroSAN Version : 4.23.0
+Date : Apr 26 2007 (18:03:51)
+                               
+                                 
+Starting MicroSAN...
+                      
+Network link disconnected.
+
+->help                                      
+
+MicroSAN Version : 4.23.0                                                       
+Date : Apr 26 2007 (18:03:51)                                                   
+iam       "user"[,"passwd"]    Set user name and passwd                         
+whoami                         Print user name                                  
+devs                           List devices                                     
+ld        [syms[,noAbort][,"name"]] Load stdin, or file, into memory            
+                               (syms = add symbols to table:                    
+                               -1 = none, 0 = globals, 1 = all)                 
+lkup      ["substr"]         List symbols in system symbol table                
+lkAddr    address              List symbol table entries near address           
+checkStack  [task]             List task stack sizes and usage                  
+printErrno  value              Print the name of a status value                 
+period    secs,adr,args... Spawn task to call function periodically             
+repeat    n,adr,args...    Spawn task to call function n times (0=forever)      
+version                        Print VxWorks version info, and boot line        
+                                                                                
+NOTE:  Arguments specifying 'task' can be either task ID or name.               
+                                                                                
+value = 1 = 0x1                                                                 
+
+->version
+VxWorks (for Zetera RDK006) version 5.5.1.                                      
+Kernel: WIND version 2.6.                                                       
+Made on Apr 26 2007, 18:04:00.                                                  
+Boot line:                                                                      
+dummy(254,0)host:file tn=dummy h=192.138.139.235 e=192.138.40.80:FFFFFF00 u=ax5 
+pw=ax5                                                                          
+value = 98 = 0x62 = 'b'                                                         
+
+
+->devs
+drv name                                                                        
+  0 /null                                                                       
+  1 /tyCo/0                                                                     
+  1 /tyCo/1                                                                     
+  4 host:                                                                       
+value = 25 = 0x19                                                               
+
+->reboot
+
